@@ -4,30 +4,24 @@
   
     
     <entry>
-      <title>博客之路</title>
-      <link href="/2019/07/18/190718/"/>
-      <url>/2019/07/18/190718/</url>
+      <title>从Markdown到latex</title>
+      <link href="/2019/07/18/20190718hexo/"/>
+      <url>/2019/07/18/20190718hexo/</url>
       
-        <content type="html"><![CDATA[<a id="more"></a><h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><p>换行<br>了</p>]]></content>
+        <content type="html"><![CDATA[<p>#从Markdown到latex</p><ul><li>Markdown是目前互联网上最流行的写作语言，它使用一些简单的符号来标记文本格式，其简洁的语法、优美的格式以及强大的软件支持深受广大网友的喜爱。</li></ul><ul><li>Late是一种基于TeX的排版系统,常用于科技论文的排版。其优点在于模板化的排版和对数学公式、符号的完美支持。</li></ul><h2 id="Markdown基础语法"><a href="#Markdown基础语法" class="headerlink" title="Markdown基础语法"></a>Markdown基础语法</h2><h3 id="Markdown-标题"><a href="#Markdown-标题" class="headerlink" title="Markdown 标题"></a>Markdown 标题</h3><p>使用 # 号标记<br>使用 # 号可表示 1-6 级标题，一级标题对应一个 # 号，二级标题对应两个 # 号，以此类推。</p><p>(```)</p><h2 id="这是二级标题"><a href="#这是二级标题" class="headerlink" title="这是二级标题"></a>这是二级标题</h2><h3 id="这是三级标题"><a href="#这是三级标题" class="headerlink" title="这是三级标题"></a>这是三级标题</h3><h4 id="这是四级标题"><a href="#这是四级标题" class="headerlink" title="这是四级标题"></a>这是四级标题</h4><h5 id="这是五级标题"><a href="#这是五级标题" class="headerlink" title="这是五级标题"></a>这是五级标题</h5><h6 id="这是六级标题"><a href="#这是六级标题" class="headerlink" title="这是六级标题"></a>这是六级标题</h6><p>(```)</p>]]></content>
       
       
-      
-        <tags>
-            
-            <tag> 学习 </tag>
-            
-        </tags>
       
     </entry>
     
     
     
     <entry>
-      <title>Hello World</title>
-      <link href="/2019/07/18/hello-world/"/>
-      <url>/2019/07/18/hello-world/</url>
+      <title>博客之路</title>
+      <link href="/2019/07/18/20190718blog/"/>
+      <url>/2019/07/18/20190718blog/</url>
       
-        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><a id="more"></a><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+        <content type="html"><![CDATA[<h2 id="为什么要写博客？"><a href="#为什么要写博客？" class="headerlink" title="为什么要写博客？"></a>为什么要写博客？</h2><a id="more"></a><h3 id="1-加深对知识和技术的理解"><a href="#1-加深对知识和技术的理解" class="headerlink" title="1.加深对知识和技术的理解"></a>1.加深对知识和技术的理解</h3><p>书写是为了更多的思考，每天写博客,可以加深对知识点和技术点的理解。在我们学习和工作中,经常会对某个技术点运用的不熟悉。如果用博客的形式写出来, 就可以在这个过程中查阅相关的资料并进行整理，逐渐解决自己的疑问，加深对知识的理解。</p><h3 id="2-自己日后用到"><a href="#2-自己日后用到" class="headerlink" title="2.自己日后用到"></a>2.自己日后用到</h3><p>博客相当于笔记本,把自己最需要的重要的知识都记录下来。平时可以多翻阅学习，等哪天在遇到同样的问题,我们也可以方便的寻找答案。</p><h3 id="3-见证自己的成长"><a href="#3-见证自己的成长" class="headerlink" title="3.见证自己的成长"></a>3.见证自己的成长</h3><p>写博客能督促自己的学习，翻阅自己以前写的博客，很容易找到自己的成长轨迹，知道自己的进步与不足。在经过长时间的积累后，自己写的博客一定能让自己有些成就感。</p><h2 id="写什么内容"><a href="#写什么内容" class="headerlink" title="写什么内容"></a>写什么内容</h2><h3 id="1-web前端及其相关知识"><a href="#1-web前端及其相关知识" class="headerlink" title="1.web前端及其相关知识"></a>1.web前端及其相关知识</h3><h3 id="2-数学分析、高等代数等专业课等知识"><a href="#2-数学分析、高等代数等专业课等知识" class="headerlink" title="2.数学分析、高等代数等专业课等知识"></a>2.数学分析、高等代数等专业课等知识</h3><h3 id="3-数学建模模型与方法"><a href="#3-数学建模模型与方法" class="headerlink" title="3.数学建模模型与方法"></a>3.数学建模模型与方法</h3>]]></content>
       
       
       
