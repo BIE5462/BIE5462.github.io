@@ -172,7 +172,7 @@
 			
 				<div class="m_search">
 					<form name="searchform" class="form u-search-form">
-						<input type="text" class="input u-search-input" placeholder="搜索" />
+						<input type="text" class="input u-search-input" placeholder="Search" />
 						<i class="icon fas fa-search fa-fw"></i>
 					</form>
 				</div>
@@ -370,7 +370,7 @@
 <p>Markdown是目前互联网上最流行的写作语言，它使用一些简单的符号来标记文本格式，其简洁的语法、优美的格式以及强大的软件支持深受广大网友的喜爱。</p>
 </blockquote>
 <blockquote>
-<p>Late是一种基于TeX的排版系统,常用于科技论文的排版。其优点在于模板化的排版和对数学公式、符号的完美支持。</p>
+<p>Late是一种基于TeX的排版系统,常用于科技论文的排版。其优点在于模板化的排版和对数学公式、符号的完美支持。可用于数学建模论文写作。</p>
 </blockquote>
 <a id="more"></a>
 
@@ -424,8 +424,44 @@
 <p>对齐方式<br>我们可以设置表格的对齐方式：<br><code>-:</code> 设置内容和标题栏居右对齐。<br><code>:-</code>设置内容和标题栏居左对齐。<br><code>:-:</code> 设置内容和标题栏居中对齐。</p>
 <h1 id="latex基础语法"><a href="#latex基础语法" class="headerlink" title="latex基础语法"></a>latex基础语法</h1><hr>
 <h2 id="LaTeX框架"><a href="#LaTeX框架" class="headerlink" title="LaTeX框架"></a>LaTeX框架</h2><p><code>\documentclass{article}</code><br><code>\begin{document}</code><br><code>Hello LaTeX</code><br><code>\end{document}</code></p>
-<h3 id="常用宏包"><a href="#常用宏包" class="headerlink" title="常用宏包"></a>常用宏包</h3><p><code>\documentclass[a4paper,12pt,twoside]{article}</code>  %双面打印，A4纸，小四号字体<br><code>\usepackage{CJK}</code>    %使用中文<br><code>\usepackage{pgf}</code>    %创建PostScript和pdf格式的图形<br><code>\usepackage{tikz}</code>   %配合pgf宏包创建复杂图表<br><code>\usepackage{latexsym}</code>   %使用不同的符号字体宏包<br><code>\usepackage{graphicx}</code>   %插入浮动图片的宏包<br><code>\usepackage{setspace}</code>   %使用间距宏包<br><code>\usepackage{type1cm}</code>   %设置字体大小的宏包<br><code>\usepackage{geometry}</code>  %设置页边距的宏包<br><code>\usepackage{verbatim}</code>  %多行注释宏包<br><code>\usepackage{ccaption}</code>  %实现浮动对象的双语说明de宏包<br><code>\usepackage{indentfirst}</code>   %首行缩进宏包<br><code>\usepackage[latin1]{inputenc}</code>  %接受不同的输入编码宏包<br><code>\usepackage{amsmath,amssymb}</code>    %编辑数学公式，定理等宏包<br><code>\usetikzlibrary{arrows,automata}</code>   %箭头，流程图之类的符号宏包<br><code>\usepackage{times}</code>  %使得英文默认字体都是Times New Roman<br><code>\geometry{left=3.0cm,right=2.5cm,top=2.5cm,bottom=2.5cm}</code>   %设置页边距<br>详情参考官网</p>
-<p>###</p>
+<h3 id="常用宏包"><a href="#常用宏包" class="headerlink" title="常用宏包"></a>常用宏包</h3><blockquote>
+<p><code>\documentclass[a4paper,12pt,twoside]{article}</code>  %双面打印，A4纸，小四号字体<br><code>\usepackage{CJK}</code>    %使用中文<br><code>\usepackage{pgf}</code>    %创建PostScript和pdf格式的图形<br><code>\usepackage{tikz}</code>   %配合pgf宏包创建复杂图表<br><code>\usepackage{latexsym}</code>   %使用不同的符号字体宏包<br><code>\usepackage{graphicx}</code>   %插入浮动图片的宏包<br><code>\usepackage{setspace}</code>   %使用间距宏包<br><code>\usepackage{type1cm}</code>   %设置字体大小的宏包<br><code>\usepackage{geometry}</code>  %设置页边距的宏包<br><code>\usepackage{verbatim}</code>  %多行注释宏包<br><code>\usepackage{ccaption}</code>  %实现浮动对象的双语说明de宏包<br><code>\usepackage{indentfirst}</code>   %首行缩进宏包<br><code>\usepackage[latin1]{inputenc}</code>  %接受不同的输入编码宏包<br><code>\usepackage{amsmath,amssymb}</code>    %编辑数学公式，定理等宏包<br><code>\usetikzlibrary{arrows,automata}</code>   %箭头，流程图之类的符号宏包<br><code>\usepackage{times}</code>  %使得英文默认字体都是Times New Roman<br><code>\geometry{left=3.0cm,right=2.5cm,top=2.5cm,bottom=2.5cm}</code>   %设置页边距<br>详情参考官网</p>
+</blockquote>
+<h3 id="中文"><a href="#中文" class="headerlink" title="中文"></a>中文</h3><p>如果需要使用中文，则需要使用中文包<code>\usepackage{ctex}</code>。同时，还需要注意，排版时需要使用XeLaTeX。</p>
+<h3 id="支持空格"><a href="#支持空格" class="headerlink" title="支持空格"></a>支持空格</h3><p>LaTeX默认是忽略文字之间的空格的，需要支持空格的话，你有三种方式：</p>
+<ul>
+<li>你{ }好啊！</li>
+<li>你\ 好啊！</li>
+<li>\usepackage[space]{ctex}<br>一般来说，最后一种方式是比较常见的。</li>
+</ul>
+<h3 id="设置A4"><a href="#设置A4" class="headerlink" title="设置A4"></a>设置A4</h3><p>这里设置纸张大小，字体大小，一个最简单的LaTeX模板就制作完成了。</p>
+<p>\documentclass[11pt,a4paper]{article}<br>\usepackage[space]{ctex}<br>\begin{document}<br>你好！LaTeX。<br>\end{document}12345</p>
+<h3 id="标题、作者以及日期"><a href="#标题、作者以及日期" class="headerlink" title="标题、作者以及日期"></a>标题、作者以及日期</h3><p>当然，如果你不想显示日期的话可以使用<code>\date{}</code>花括号中留空。注意maketitle是将title、author、date等全部显示出来，如果没有这一句，则上面的设置全部不起作用。</p>
+<h3 id="脚注"><a href="#脚注" class="headerlink" title="脚注"></a>脚注</h3><p>比如，这里给LaTeX添加一个脚注（使用\footnote指令）。脚注会显示在本页的左下角，并且以横线与正文隔开。</p>
+<p>你好！LaTeX\footnote{LaTeX是一个与Word比肩，甚至更好的工具}。</p>
+<h3 id="标题级别"><a href="#标题级别" class="headerlink" title="标题级别"></a>标题级别</h3><p>不同的文章类型标题级别不完全相同（比如，如果为book的话还有chapter级别），以下为article的几种标题级别。</p>
+<p><code>\part{part标题}</code><br><code>\section{section标题}</code><br><code>\subsection{subsection标题}</code><br><code>\subsubsection{subsubsection标题}</code><br><code>\paragraph{paragraph标题}</code><br><code>\subparagraph{subparagraph标题}123456</code></p>
+<h3 id="插入图片"><a href="#插入图片" class="headerlink" title="插入图片"></a>插入图片</h3><p>下面这个是最简单的scale是缩放尺寸。</p>
+<p><code>\includegraphics[scale=0.6]{latex.png}1</code></p>
+<p>更复杂的浮动设置，如下。</p>
+<p><code>\begin{figure}[h]</code><br><code>\begin{center}</code><br><code>\includegraphics[scale=0.8]{test_demo.jpg}</code><br><code>\end{center}</code><br>\caption</p>
+<p>注意，scale为图片缩放比例，caption为位于图片下面的那行描述，label为引用图片的标签（可以随意设置，一般设置和图片名一致好记）。</p>
+<p><code>\ref{fig:test_demo}1</code></p>
+<p>在文中可以这样引用，“人体姿态估计，就是将一幅图像或一段视频中，人的头、手、躯干和腿部关节点位置恢复出来，做出一个由关节点构成的骨架如图\ref {fig:test_demo}所示。”</p>
+<h3 id="代码片段"><a href="#代码片段" class="headerlink" title="代码片段"></a>代码片段</h3><p>前提需要引入宏包<code>\usepackage{listings}</code>，注意将language设置成目标语言类型。</p>
+<p><code>\begin{lstlisting}[language={Python}]</code><br><code>#Layer3 - Convolution</code><br><code>with tf.variable_scope(&#39;layer3-conv2&#39;):</code><br><code>conv2_weights =tf.get_variable(&#39;weight&#39;,[5,5,6,16])</code><br><code>initializer   =tf.truncated_normal_initializer(stddev=0.1))</code><br><code>conv2_biases = tf.get_variable(&#39;bias&#39;,[16])</code> <code>initializer=tf.constant_initializer(0.0))</code><br><code>conv2 = tf.nn.conv2d(pool1,conv2_weights,</code><br><code>strides=[1,1,1,1],padding=&#39;VALID&#39;)</code><br><code>relu2 = tf.nn.relu(tf.nn.bias_add(conv2,conv2_biases))</code><br><code>\end{lstlisting}</code></p>
+<h3 id="字体大小"><a href="#字体大小" class="headerlink" title="字体大小"></a>字体大小</h3><p>注意使用大括号限定范围，否则将影响后文。另外，补充一下字体尺寸从小到大依次为：</p>
+<ol>
+<li>\tiny  2. \scriptsize   3.  \footnotesize  4. \small   5. \normalsize</li>
+</ol>
+<ol start="6">
+<li>\large  7. \Large   8. \LARGE  9. \huge  10. \Huge</li>
+</ol>
+<h3 id="一个简单的模板"><a href="#一个简单的模板" class="headerlink" title="一个简单的模板"></a>一个简单的模板</h3><p>将以上的知识点总结一下，可以整理出以下这个模板。一般排版，交作业基本上也就用到这些知识点了。（注意，这里需要使用XeLaTeX生成排版）。</p>
+<p>补充：在LaTeX中，%符号后面的文字将被视为注释内容。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">\documentclass[11pt, a4paper]&#123;article&#125;</span><br><span class="line">\usepackage[space]&#123;ctex&#125;</span><br><span class="line">\title&#123;LaTeX快速入门&#125;</span><br><span class="line">\author&#123;qingdujun&#125;</span><br><span class="line">\date&#123;\today&#125;</span><br><span class="line">\begin&#123;document&#125;</span><br><span class="line">\maketitle</span><br><span class="line">你好！LaTeX\footnote&#123;LaTeX是一个与Word比肩，甚至更好的工具&#125;。</span><br><span class="line">%\includegraphics[scale=0.6]&#123;latex.png&#125;</span><br><span class="line">\part&#123;part标题&#125;</span><br><span class="line">\section&#123;section标题&#125;</span><br><span class="line">\subsection&#123;subsection标题&#125;</span><br><span class="line">\subsubsection&#123;subsubsection标题&#125;</span><br><span class="line">\paragraph&#123;paragraph标题&#125;</span><br><span class="line">\subparagraph&#123;subparagraph标题&#125;</span><br><span class="line">\begin&#123;thebibliography&#125;&#123;99&#125;</span><br><span class="line">\bibitem&#123;1&#125; 参考文献1</span><br><span class="line">\bibitem&#123;2&#125; 参考文献2</span><br><span class="line">\end&#123;thebibliography&#125;</span><br><span class="line">\begin&#123;appendix&#125;</span><br><span class="line">\section&#123;附录1&#125;</span><br><span class="line">\section&#123;附录2&#125;</span><br><span class="line">\end&#123;appendix&#125;</span><br><span class="line">\end&#123;document&#125;</span><br></pre></td></tr></table></figure>
+
+<p>作者：卿笃军<br>来源：CSDN<br>原文：<a href="https://blog.csdn.net/qingdujun/article/details/80805613" target="_blank" rel="noopener">https://blog.csdn.net/qingdujun/article/details/80805613</a><br>版权声明：本文为博主原创文章，转载请附上博文链接！</p>
 
         </div>
         
@@ -437,10 +473,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-07-19T08:03:24+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-07-19T14:08:06+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>最后更新于 Jul 19, 2019</p>
+    <p>last updated at Jul 19, 2019</p>
   </a>
 </div>
 
@@ -463,7 +499,7 @@
 Markdown是目前互联网上最流行的写作语言，它使用一些简单的符号来标记文本格式，其简洁的语法、优美的格式以及强大的软件支持深受广大网友的喜爱。
 
 
-Late是一种基于TeX的排版系统,常用于科技论文的排版。其优点在于模板化的排版和对数学公式、符号的完美支持。
+Late是一种基于TeX的排版系统,常用于科技论文的排版。其优点在于模板化的排版和对数学公式、符号的完美支持。可用于数学建模论文写作。
 "
           
           >
@@ -480,7 +516,7 @@ Late是一种基于TeX的排版系统,常用于科技论文的排版。其优点
 Markdown是目前互联网上最流行的写作语言，它使用一些简单的符号来标记文本格式，其简洁的语法、优美的格式以及强大的软件支持深受广大网友的喜爱。
 
 
-Late是一种基于TeX的排版系统,常用于科技论文的排版。其优点在于模板化的排版和对数学公式、符号的完美支持。
+Late是一种基于TeX的排版系统,常用于科技论文的排版。其优点在于模板化的排版和对数学公式、符号的完美支持。可用于数学建模论文写作。
 "
           
           >
@@ -497,7 +533,7 @@ Late是一种基于TeX的排版系统,常用于科技论文的排版。其优点
 Markdown是目前互联网上最流行的写作语言，它使用一些简单的符号来标记文本格式，其简洁的语法、优美的格式以及强大的软件支持深受广大网友的喜爱。
 
 
-Late是一种基于TeX的排版系统,常用于科技论文的排版。其优点在于模板化的排版和对数学公式、符号的完美支持。
+Late是一种基于TeX的排版系统,常用于科技论文的排版。其优点在于模板化的排版和对数学公式、符号的完美支持。可用于数学建模论文写作。
 "
           
           >
@@ -525,7 +561,7 @@ Late是一种基于TeX的排版系统,常用于科技论文的排版。其优点
                 
                     <section class="next">
                         <span class="art-item-right" aria-hidden="true">
-                            <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
+                            <h6>Next&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
                             <h4>
                                 <a href="/2019/07/18/20190718blog/" rel="prev" title="博客之路">
                                     
@@ -635,14 +671,14 @@ Late是一种基于TeX的排版系统,常用于科技论文的排版。其优点
   <section class='widget toc-wrapper'>
     
 <header class='pure'>
-  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;本文目录</div>
+  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;TOC</div>
   
     <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div>
   
 </header>
 
     <div class='content pure'>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#从Markdown到latex"><span class="toc-text">从Markdown到latex</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Markdown基础语法"><span class="toc-text">Markdown基础语法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Markdown-标题"><span class="toc-text">Markdown 标题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Markdown-段落"><span class="toc-text">Markdown 段落</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#换行"><span class="toc-text">换行</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#字体"><span class="toc-text">字体</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#分隔线"><span class="toc-text">分隔线</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#下划线"><span class="toc-text">下划线　</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Markdown-列表"><span class="toc-text">Markdown 列表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Markdown-区块"><span class="toc-text">Markdown 区块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Markdown-代码"><span class="toc-text">Markdown 代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Markdown-链接"><span class="toc-text">Markdown 链接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Markdown-图片"><span class="toc-text">Markdown 图片</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Markdown-表格"><span class="toc-text">Markdown 表格</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#latex基础语法"><span class="toc-text">latex基础语法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#LaTeX框架"><span class="toc-text">LaTeX框架</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#常用宏包"><span class="toc-text">常用宏包</span></a></li></ol></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#从Markdown到latex"><span class="toc-text">从Markdown到latex</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Markdown基础语法"><span class="toc-text">Markdown基础语法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Markdown-标题"><span class="toc-text">Markdown 标题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Markdown-段落"><span class="toc-text">Markdown 段落</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#换行"><span class="toc-text">换行</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#字体"><span class="toc-text">字体</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#分隔线"><span class="toc-text">分隔线</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#下划线"><span class="toc-text">下划线　</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Markdown-列表"><span class="toc-text">Markdown 列表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Markdown-区块"><span class="toc-text">Markdown 区块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Markdown-代码"><span class="toc-text">Markdown 代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Markdown-链接"><span class="toc-text">Markdown 链接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Markdown-图片"><span class="toc-text">Markdown 图片</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Markdown-表格"><span class="toc-text">Markdown 表格</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#latex基础语法"><span class="toc-text">latex基础语法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#LaTeX框架"><span class="toc-text">LaTeX框架</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#常用宏包"><span class="toc-text">常用宏包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#中文"><span class="toc-text">中文</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#支持空格"><span class="toc-text">支持空格</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#设置A4"><span class="toc-text">设置A4</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#标题、作者以及日期"><span class="toc-text">标题、作者以及日期</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#脚注"><span class="toc-text">脚注</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#标题级别"><span class="toc-text">标题级别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#插入图片"><span class="toc-text">插入图片</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码片段"><span class="toc-text">代码片段</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#字体大小"><span class="toc-text">字体大小</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#一个简单的模板"><span class="toc-text">一个简单的模板</span></a></li></ol></li></ol></li></ol>
     </div>
   </section>
 
@@ -847,19 +883,19 @@ Late是一种基于TeX的排版系统,常用于科技论文的排版。其优点
     </div>
   
   <br>
-  <div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+  <div><p>Blog content follows the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
 </div>
   <div>
-    本站使用
+    Use
     <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename">BIEBLOG</a>
-    作为主题
+    as theme
     
-      ，
-      总访问量为
+      , 
+      total visits
       <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
-      次
+      times
     
-    。
+    . 
   </div>
 </footer>
 <script>setLoadingBarProgress(80);</script>
@@ -965,15 +1001,15 @@ Late是一种基于TeX的排版系统,常用于科技论文的排版。其优点
 <!-- 复制 -->
 <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
 <script>
-  let COPY_SUCCESS = "复制成功";
-  let COPY_FAILURE = "复制失败";
+  let COPY_SUCCESS = "Copied";
+  let COPY_FAILURE = "Copy failed";
   /*页面载入完成后，创建复制按钮*/
   !function (e, t, a) {
     /* code */
     var initCopyCode = function(){
       var copyHtml = '';
       copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
-      copyHtml += '  <i class="fa fa-copy"></i><span>复制</span>';
+      copyHtml += '  <i class="fa fa-copy"></i><span>Copy</span>';
       copyHtml += '</button>';
       $(".highlight .code pre").before(copyHtml);
       var clipboard = new ClipboardJS('.btn-copy', {
