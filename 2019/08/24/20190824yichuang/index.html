@@ -172,7 +172,7 @@
 			
 				<div class="m_search">
 					<form name="searchform" class="form u-search-form">
-						<input type="text" class="input u-search-input" placeholder="搜索" />
+						<input type="text" class="input u-search-input" placeholder="搜尋" />
 						<i class="icon fas fa-search fa-fw"></i>
 					</form>
 				</div>
@@ -450,13 +450,13 @@
 <li>便于处理复杂的决策变量约束条件</li>
 </ul>
 <h4 id="交叉互换"><a href="#交叉互换" class="headerlink" title="交叉互换"></a>交叉互换</h4><p>与高中生物原理基本相同，两个相互配对的染色体按某种方式相互交换其部分基因，从而形成两个新的个体。</p>
-<p><img src="https://github.com/BIE5462/blog-tupian/blob/master/1.png" alt="alt 属性文本"></p>
+<p><img src="https://github.com/BIE5462/blog-tupian/blob/master/1.png?raw=true" alt="alt 属性文本"></p>
 <p>染色体1和染色体4单点交叉重组:<br>|个体|染色体|配对|交叉点位置|重组结果<br>|—|—|—|—|—|<br>|1|100 110|1-4|3|100 001<br>|4|011 001|1-4|3|011 110</p>
 <h3 id="基因变异"><a href="#基因变异" class="headerlink" title="基因变异"></a>基因变异</h3><p>是改变染色体某个(些)位上的基因。</p>
 <p>例如, 设染色体 s=11001101 将其第三位上的0变为1, 即：</p>
 <p>s=11001101 →11101101= s′。</p>
 <p>s′也可以看做是原染色体s的子代染色体。</p>
-<h2 id="遗传算法基本流程"><a href="#遗传算法基本流程" class="headerlink" title="遗传算法基本流程"></a>遗传算法基本流程</h2><p><img src="https://github.com/BIE5462/blog-tupian/blob/master/2.png" alt="alt 属性文本"></p>
+<h2 id="遗传算法基本流程"><a href="#遗传算法基本流程" class="headerlink" title="遗传算法基本流程"></a>遗传算法基本流程</h2><p><img src="https://github.com/BIE5462/blog-tupian/blob/master/2.png?raw=true" alt="alt 属性文本"></p>
 <p>基本遗传算法步骤：</p>
 <ul>
 <li><p>步1 在搜索空间U上定义一个适应度函数f(x)，给定种群规模N，交叉率Pc和变异率Pm，代数T； 　</p>
@@ -481,7 +481,7 @@
 <p>那么各个个体的被选中的概率为：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">α1 = ( 5 / 25 ) * 100% = 20%</span><br><span class="line">α2 = ( 8 / 25 ) * 100% = 32%</span><br><span class="line">α3 = ( 3 / 25 ) * 100% = 12%</span><br><span class="line">α4 = ( 7 / 25 ) * 100% = 28%</span><br><span class="line">α5 = ( 2 / 25 ) * 100% = 8%</span><br></pre></td></tr></table></figure>
 
-<p><img src="https://github.com/BIE5462/blog-tupian/blob/master/3.png" alt="alt 属性文本"></p>
+<p><img src="https://github.com/BIE5462/blog-tupian/blob/master/3.png?raw=true" alt="alt 属性文本"></p>
 <p>可以看出，适应性越高的个体被选中的概率就越大。</p>
 <h3 id="遗传算法的参数设计原则"><a href="#遗传算法的参数设计原则" class="headerlink" title="遗传算法的参数设计原则"></a>遗传算法的参数设计原则</h3><ol>
 <li>种群的规模</li>
@@ -530,7 +530,7 @@
 </ol>
 <h3 id="适应度函数改进"><a href="#适应度函数改进" class="headerlink" title="适应度函数改进"></a>适应度函数改进</h3><p>待补充</p>
 <h2 id="一个遗传算法的手工模拟计算示例"><a href="#一个遗传算法的手工模拟计算示例" class="headerlink" title="一个遗传算法的手工模拟计算示例"></a>一个遗传算法的手工模拟计算示例</h2><p>求二元函数的最大值：</p>
-<p><img src="https://github.com/BIE5462/blog-tupian/blob/master/4.jpg" alt="alt 属性文本"></p>
+<p><img src="https://github.com/BIE5462/blog-tupian/blob/master/4.jpg?raw=true" alt="alt 属性文本"></p>
 <p>参考<a href="https://blog.csdn.net/b2b160/article/details/4680853/" target="_blank" rel="noopener">https://blog.csdn.net/b2b160/article/details/4680853/</a></p>
 <h3 id="编码"><a href="#编码" class="headerlink" title="编码"></a>编码</h3><p>传算法的运算对象是表示个体的符号串，所以必须把变量 x1, x2 编码为一种<br>符号串。本题中，用无符号二进制整数来表示。</p>
 <p>因 x1, x2 为 0 ~ 7之间的整数，所以分别用3位无符号二进制整数来表示，将它<br>们连接在一起所组成的6位无符号二进制数就形成了个体的基因型，表示一个可<br>行解。<br>例如，<br>基因型 X＝101110 所对应的表现型是：x＝[ 5，6 ]。</p>
@@ -647,17 +647,17 @@
 </ol>
 <p>在Matlab命令行窗口中输入<code>optimtool</code>，打开工具箱。</p>
 <p>在弹出的界面中选择ga，如下就是遗传算法GUI的使用界面</p>
-<p><img src="https://github.com/BIE5462/blog-tupian/blob/master/5.jpg" alt="alt 属性文本"></p>
+<p><img src="https://github.com/BIE5462/blog-tupian/blob/master/5.jpg?raw=true" alt="alt 属性文本"></p>
 <ol start="3">
 <li>应用适应度函数</li>
 </ol>
 <p>需要注意的是，建立的适应度函数要在当前文件夹下。填写页面如下，用句柄的方式引用适应度函数，设置变量个数为1，x范围为-10到10，以一步的步长绘制最好的适应度值，最好的个体值。</p>
-<p><img src="https://github.com/BIE5462/blog-tupian/blob/master/6.jpg" alt="alt 属性文本"></p>
+<p><img src="https://github.com/BIE5462/blog-tupian/blob/master/6.jpg?raw=true" alt="alt 属性文本"></p>
 <ol start="4">
 <li>start</li>
 </ol>
 <p>计算结果</p>
-<p><img src="https://github.com/BIE5462/blog-tupian/blob/master/7.jpg" alt="alt 属性文本"></p>
+<p><img src="https://github.com/BIE5462/blog-tupian/blob/master/7.jpg?raw=true" alt="alt 属性文本"></p>
 <h4 id="ga函数"><a href="#ga函数" class="headerlink" title="ga函数"></a>ga函数</h4><p>参考<a href="https://blog.csdn.net/qq_37043191/article/details/77898335" target="_blank" rel="noopener">https://blog.csdn.net/qq_37043191/article/details/77898335</a></p>
 <h3 id="遗传算法MATLAB实现案例"><a href="#遗传算法MATLAB实现案例" class="headerlink" title="遗传算法MATLAB实现案例"></a>遗传算法MATLAB实现案例</h3><p>参考<a href="https://www.jianshu.com/p/374624820e3a" target="_blank" rel="noopener">https://www.jianshu.com/p/374624820e3a</a></p>
 <h4 id="无约束目标函数的最大值"><a href="#无约束目标函数的最大值" class="headerlink" title="无约束目标函数的最大值"></a>无约束目标函数的最大值</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br></pre></td><td class="code"><pre><span class="line">% 案例一：无约束目标函数的最大值</span><br><span class="line">% 求解maxf(x)=200*e(−0.05x)*sinx; x∈[−2,2]</span><br><span class="line">%主程序：用遗传算法求解y=200*exp(-0.05*x).*sin(x)在[-2 2]区间上的最大值</span><br><span class="line">clc;</span><br><span class="line">clear ;</span><br><span class="line">close all;</span><br><span class="line">global BitLength</span><br><span class="line">global boundsbegin</span><br><span class="line">global boundsend</span><br><span class="line">bounds=[-2 2];%一维自变量的取值范围</span><br><span class="line">precision=0.0001; %运算精度</span><br><span class="line">boundsbegin=bounds(:,1);</span><br><span class="line">boundsend=bounds(:,2);</span><br><span class="line">%计算如果满足求解精度至少需要多长的染色体</span><br><span class="line">BitLength=ceil(log2((boundsend-boundsbegin)&apos; ./ precision));</span><br><span class="line">popsize=50; %初始种群大小</span><br><span class="line">Generationnmax=12;  %最大代数</span><br><span class="line">pcrossover=0.90; %交配概率</span><br><span class="line">pmutation=0.09; %变异概率</span><br><span class="line">%产生初始种群</span><br><span class="line">population=round(rand(popsize,BitLength));</span><br><span class="line">%计算适应度,返回适应度Fitvalue和累积概率cumsump</span><br><span class="line">[Fitvalue,cumsump]=fitnessfun(population);</span><br><span class="line">Generation=1;</span><br><span class="line">while Generation&lt;Generationnmax+1</span><br><span class="line">    for j=1:2:popsize</span><br><span class="line">        %选择操作</span><br><span class="line">        seln=selection(population,cumsump);</span><br><span class="line">        %交叉操作</span><br><span class="line">        scro=crossover(population,seln,pcrossover);</span><br><span class="line">        scnew(j,:)=scro(1,:);</span><br><span class="line">        scnew(j+1,:)=scro(2,:);</span><br><span class="line">        %变异操作（在原交叉基础上有进行变异)</span><br><span class="line">        smnew(j,:)=mutation(scnew(j,:),pmutation);</span><br><span class="line">        smnew(j+1,:)=mutation(scnew(j+1,:),pmutation);</span><br><span class="line">    end</span><br><span class="line">    population=smnew;  %产生了新的种群</span><br><span class="line">    %计算新种群的适应度</span><br><span class="line">    [Fitvalue,cumsump]=fitnessfun(population);</span><br><span class="line">    %记录当前代最好的适应度和平均适应度</span><br><span class="line">    [fmax,nmax]=max(Fitvalue);</span><br><span class="line">    fmean=mean(Fitvalue);</span><br><span class="line">    ymax(Generation)=fmax;</span><br><span class="line">    ymean(Generation)=fmean;</span><br><span class="line">    %记录当前代的最佳染色体个体</span><br><span class="line">    x=transform2to10(population(nmax,:));</span><br><span class="line">    %自变量取值范围是[-2 2],需要把经过遗传运算的最佳染色体整合到[-2 2]区间</span><br><span class="line">    xx=boundsbegin+x*(boundsend-boundsbegin)/(power((boundsend),BitLength)-1);</span><br><span class="line">    xmax(Generation)=xx;</span><br><span class="line">    Generation=Generation+1</span><br><span class="line">end</span><br><span class="line">Generation=Generation-1;</span><br><span class="line">Bestpopulation=xx</span><br><span class="line">Besttargetfunvalue=targetfun(xx)</span><br><span class="line">%绘制经过遗传运算后的适应度曲线。一般地，如果进化过程中种群的平均适应度与最大适</span><br><span class="line">%应度在曲线上有相互趋同的形态，表示算法收敛进行得很顺利，没有出现震荡；在这种前</span><br><span class="line">%提下，最大适应度个体连续若干代都没有发生进化表明种群已经成熟。</span><br><span class="line">figure(1);</span><br><span class="line">hand1=plot(1:Generation,ymax);</span><br><span class="line">set(hand1,&apos;linestyle&apos;,&apos;-&apos;,&apos;linewidth&apos;,1.8,&apos;marker&apos;,&apos;*&apos;,&apos;markersize&apos;,6)</span><br><span class="line">hold on;</span><br><span class="line">hand2=plot(1:Generation,ymean);</span><br><span class="line">set(hand2,&apos;color&apos;,&apos;r&apos;,&apos;linestyle&apos;,&apos;-&apos;,&apos;linewidth&apos;,1.8,...</span><br><span class="line">    &apos;marker&apos;,&apos;h&apos;,&apos;markersize&apos;,6)</span><br><span class="line">xlabel(&apos;进化代数&apos;);ylabel(&apos;最大/平均适应度&apos;);xlim([1 Generationnmax]);</span><br><span class="line">legend(&apos;最大适应度&apos;,&apos;平均适应度&apos;);</span><br><span class="line">box off;hold off;</span><br><span class="line"></span><br><span class="line">%子程序：新种群交叉操作,函数名称存储为crossover.m</span><br><span class="line">function scro=crossover(population,seln,pc)</span><br><span class="line">BitLength=size(population,2);</span><br><span class="line">pcc=IfCroIfMut(pc);  %根据交叉概率决定是否进行交叉操作，1则是，0则否</span><br><span class="line">if pcc==1</span><br><span class="line">    chb=round(rand*(BitLength-2))+1;  %在[1,BitLength-1]范围内随机产生一个交叉位</span><br><span class="line">    scro(1,:)=[population(seln(1),1:chb) population(seln(2),chb+1:BitLength)];</span><br><span class="line">    scro(2,:)=[population(seln(2),1:chb) population(seln(1),chb+1:BitLength)];</span><br><span class="line">else</span><br><span class="line">    scro(1,:)=population(seln(1),:);</span><br><span class="line">    scro(2,:)=population(seln(2),:);</span><br><span class="line">end</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">%子程序：计算适应度函数, 函数名称存储为fitnessfun</span><br><span class="line">function [Fitvalue,cumsump]=fitnessfun(population)</span><br><span class="line">global BitLength</span><br><span class="line">global boundsbegin</span><br><span class="line">global boundsend</span><br><span class="line">popsize=size(population,1);   %有popsize个个体</span><br><span class="line">for i=1:popsize</span><br><span class="line">    x=transform2to10(population(i,:));  %将二进制转换为十进制</span><br><span class="line">    %转化为[-2,2]区间的实数</span><br><span class="line">    xx=boundsbegin+x*(boundsend-boundsbegin)/(power((boundsend),BitLength)-1);</span><br><span class="line">    Fitvalue(i)=targetfun(xx);  %计算函数值，即适应度</span><br><span class="line">end</span><br><span class="line">%给适应度函数加上一个大小合理的数以便保证种群适应值为正数</span><br><span class="line">Fitvalue=Fitvalue&apos;+230;</span><br><span class="line">%计算选择概率</span><br><span class="line">fsum=sum(Fitvalue);</span><br><span class="line">Pperpopulation=Fitvalue/fsum;</span><br><span class="line">%计算累积概率</span><br><span class="line">cumsump = cumsum(Pperpopulation);</span><br><span class="line">cumsump=cumsump&apos;;</span><br><span class="line">end</span><br><span class="line">%子程序：新种群变异操作，函数名称存储为mutation.m</span><br><span class="line">function snnew=mutation(snew,pmutation)</span><br><span class="line">BitLength=size(snew,2);</span><br><span class="line">snnew=snew;</span><br><span class="line">pmm=IfCroIfMut(pmutation);  %根据变异概率决定是否进行变异操作，1则是，0则否</span><br><span class="line">if pmm==1</span><br><span class="line">    chb=round(rand*(BitLength-1))+1;  %在[1,BitLength]范围内随机产生一个变异位</span><br><span class="line">    snnew(chb)=abs(snew(chb)-1);   %进行一个0-1,1-0的反转</span><br><span class="line">end</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">%子程序：判断遗传运算是否需要进行交叉或变异, 函数名称存储为IfCroIfMut.m</span><br><span class="line">function pcc=IfCroIfMut(mutORcro)</span><br><span class="line">% 生成一个长为100的序列，随机选中一个点，该点前面的所有数为1，后面为1,</span><br><span class="line">% 然后又随机生成一个数进行判断是1还是0.</span><br><span class="line">test(1:100)=0;</span><br><span class="line">l=round(100*mutORcro);</span><br><span class="line">test(1:l)=1;</span><br><span class="line">n=round(rand*99)+1;</span><br><span class="line">pcc=test(n);</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">%子程序：新种群选择操作, 函数名称存储为selection.m</span><br><span class="line">function seln=selection(population,cumsump)</span><br><span class="line">%从种群中选择两个个体</span><br><span class="line">for i=1:2</span><br><span class="line">    r=rand;  %产生一个随机数</span><br><span class="line">    prand=cumsump-r;</span><br><span class="line">    j=1;</span><br><span class="line">    while prand(j)&lt;0</span><br><span class="line">        j=j+1;</span><br><span class="line">    end</span><br><span class="line">    seln(i)=j; %选中个体的序号</span><br><span class="line">end</span><br><span class="line">end</span><br><span class="line">%子程序：将2进制数转换为10进制数,函数名称存储为transform2to10.m</span><br><span class="line">function x=transform2to10(Population)</span><br><span class="line">BitLength=size(Population,2);</span><br><span class="line">x=Population(BitLength);</span><br><span class="line">for i=1:BitLength-1</span><br><span class="line">    x=x+Population(BitLength-i)*power(2,i);</span><br><span class="line">end</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">%子程序：对于优化最大值或极大值函数问题，目标函数可以作为适应度函数</span><br><span class="line">%函数名称存储为targetfun.m</span><br><span class="line"></span><br><span class="line">function y=targetfun(x) %目标函数</span><br><span class="line">y=200*exp(-0.05*x).*sin(x);</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
@@ -668,7 +668,7 @@
 <p>参考<a href="https://www.jianshu.com/p/374624820e3a" target="_blank" rel="noopener">https://www.jianshu.com/p/374624820e3a</a></p>
 <p>参考<a href="https://blog.csdn.net/robert_chen1988/article/details/53003300" target="_blank" rel="noopener">https://blog.csdn.net/robert_chen1988/article/details/53003300</a></p>
 <p>参考<a href="https://www.jianshu.com/p/b3cd8e674ff0" target="_blank" rel="noopener">https://www.jianshu.com/p/b3cd8e674ff0</a></p>
-<p><img src="https://github.com/BIE5462/blog-tupian/blob/master/8.png" alt="alt 属性文本"></p>
+<p><img src="https://github.com/BIE5462/blog-tupian/blob/master/8.png?raw=true" alt="alt 属性文本"></p>
 <h4 id="染色体的编码"><a href="#染色体的编码" class="headerlink" title="染色体的编码"></a>染色体的编码</h4><p>我们将一个城市抽象为一个基因，而城市的旅行顺序，可以看做一个离散型问题，因此我们可以采用1~n的整数，对这n个城市进行一一编码，</p>
 <p>我们对编码好的城市，进行任意的排列，即让一组基因组成一个染色体，染色体的意义为</p>
 <ul>
@@ -679,7 +679,7 @@
 </ul>
 <h4 id="适应度函数"><a href="#适应度函数" class="headerlink" title="适应度函数"></a>适应度函数</h4><p>由于种群需要不断进化，为此我们需要定义一个规则，来评估打分当前环境下哪些种群可以生存，哪些种群将被淘汰，我们将这个规则叫做适应度函数</p>
 <p>我们可以设计出TSP模型下的适应度函数为：一次旅行路线行走的总距离的倒数</p>
-<p><img src="https://github.com/BIE5462/blog-tupian/blob/master/9.png" alt="alt 属性文本"></p>
+<p><img src="https://github.com/BIE5462/blog-tupian/blob/master/9.png?raw=true" alt="alt 属性文本"></p>
 <p>可以看出：总距离越长，适应度越低；总距离越短，适应度越高</p>
 <h4 id="精英种群的选择"><a href="#精英种群的选择" class="headerlink" title="精英种群的选择"></a>精英种群的选择</h4><p>轮盘赌法</p>
 <hr>
@@ -694,10 +694,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-08-24T19:39:37+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-08-24T19:46:30+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>最后更新于 Aug 24, 2019</p>
+    <p>最後更新於 Aug 24, 2019</p>
   </a>
 </div>
 
@@ -766,7 +766,7 @@
                 
                     <section class="prev">
                         <span class="art-item-left">
-                            <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页</h6>
+                            <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一頁</h6>
                             <h4>
                                 <a href="/2019/08/24/20190824shenjing/" rel="prev" title="BP神经网络">
                                   
@@ -781,7 +781,7 @@
                 
                     <section class="next">
                         <span class="art-item-right" aria-hidden="true">
-                            <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
+                            <h6>下一頁&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
                             <h4>
                                 <a href="/2019/08/11/20190811putao/" rel="prev" title="葡萄酒问卷调查">
                                     
@@ -891,7 +891,7 @@
   <section class='widget toc-wrapper'>
     
 <header class='pure'>
-  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;本文目录</div>
+  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;本文目錄</div>
   
     <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div>
   
@@ -1001,7 +1001,7 @@
   <section class='widget category'>
     
 <header class='pure'>
-  <div><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;文章分类</div>
+  <div><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;文章分類</div>
   
     <a class="rightBtn"
     
@@ -1132,7 +1132,7 @@
     </div>
   
   <br>
-  <div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+  <div><p>博客內容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh_TW">姓名標示-非商業性-相同方式分享 4.0 國際 (CC BY-NC-SA 4.0) 協議</a></p>
 </div>
   <div>
     本站使用
@@ -1250,15 +1250,15 @@
 <!-- 复制 -->
 <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
 <script>
-  let COPY_SUCCESS = "复制成功";
-  let COPY_FAILURE = "复制失败";
+  let COPY_SUCCESS = "複製成功";
+  let COPY_FAILURE = "複製失敗";
   /*页面载入完成后，创建复制按钮*/
   !function (e, t, a) {
     /* code */
     var initCopyCode = function(){
       var copyHtml = '';
       copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
-      copyHtml += '  <i class="fa fa-copy"></i><span>复制</span>';
+      copyHtml += '  <i class="fa fa-copy"></i><span>複製</span>';
       copyHtml += '</button>';
       $(".highlight .code pre").before(copyHtml);
       var clipboard = new ClipboardJS('.btn-copy', {
