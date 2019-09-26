@@ -172,7 +172,7 @@
 			
 				<div class="m_search">
 					<form name="searchform" class="form u-search-form">
-						<input type="text" class="input u-search-input" placeholder="Search" />
+						<input type="text" class="input u-search-input" placeholder="搜尋" />
 						<i class="icon fas fa-search fa-fw"></i>
 					</form>
 				</div>
@@ -320,6 +320,312 @@
       
         
   <h2 class="title">
+    <a href="/2019/09/25/20190925feixianxing/">
+      非线性规划
+    </a>
+  </h2>
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    <a href="https://bie5462.github.io" rel="nofollow">
+      
+        <i class="fas fa-user" aria-hidden="true"></i>
+      
+      <p>BIE5462</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2019-09-25</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      <a id="more"></a>
+
+<h1 id="非线性规划"><a href="#非线性规划" class="headerlink" title="非线性规划"></a>非线性规划</h1><p>非线性规划是一种求解目标函数或约束条件中有一个或几个非线性函数的最优化问题的方法。</p>
+<ul>
+<li><p><strong>目标函数</strong>:选定适当的<strong>目标变量</strong>和<strong>决策变量</strong>，并建立起目标变量与决策变量之间的函数关系，称之为目标函数。</p>
+</li>
+<li><p><strong>约束条件</strong>:将各种限制条件加以抽象，得出决策变量应满足的一些等式或不等式，称之为约束条件。</p>
+<h2 id="数学表达"><a href="#数学表达" class="headerlink" title="数学表达"></a>数学表达</h2></li>
+</ul>
+<p>$$ minf(X)\<br>s.t.;g_{i}(X)\leq  0　 \qquad i=1,\cdots ,m\<br>;;;\quad h_{j}(X)=0   \qquad ;; j=1,\cdots ,p$$</p>
+<p>其中：</p>
+<ul>
+<li>$X=(x_{1}，…，x_{n})$ 为模型的决策变量，属于定义域D</li>
+<li>$f，g_{i},h_{j}$ 都是定义在n维向量空间的某子集D（定义域）上的实值函数</li>
+<li>f为目标函数，g,h为约束函数；g为不等式约束，h为等式约束</li>
+<li>至少有一个是非线性函数。</li>
+</ul>
+<h2 id="无约束非线性规划"><a href="#无约束非线性规划" class="headerlink" title="无约束非线性规划"></a>无约束非线性规划</h2><p>指寻求 n元实函数f在整个n维向量空间Rn上的最优值点的方法。</p>
+<h3 id="一般模型"><a href="#一般模型" class="headerlink" title="一般模型"></a>一般模型</h3><p>$$minf(X)\<br>x\geq 0$$</p>
+<h3 id="一维搜索方法"><a href="#一维搜索方法" class="headerlink" title="一维搜索方法"></a>一维搜索方法</h3><p>指寻求函数在某区间上的最优值点方法，大多是逐次搜索的迭代算法。</p>
+<ul>
+<li>基本思想：</li>
+</ul>
+<p>在一个近似点处选定一个有利搜索方向,沿这个方向进行一维寻查,得出新的近似点。然后对新点施行同样手续，如此反复迭代，直到满足预定的精度要求为止。根据搜索方向的取法不同，可以有各种算法。</p>
+<ul>
+<li>分类：</li>
+</ul>
+<p>这类迭代算法可分为两类。一类需要用目标函数的导函数，称为<strong>解析法</strong>（梯度法，牛顿法，共轭梯度法）。另一类不涉及导数，只用到函数值，称为<strong>直接法</strong>（斐波那契法）。</p>
+<h3 id="迭代思想"><a href="#迭代思想" class="headerlink" title="迭代思想"></a>迭代思想</h3><p>给出f(x)的极小点的初始值$X^{(0)}$ ，按某种规律计算出一系列的$X^{(k)}(k=1,2,\cdots)$,希望点阵 $X^{(k)}$ 的极限$x^{(*)}$ 就是f(x)的一个极小点。</p>
+<p>由一个解向量$x^{(k)}$ 求出另一个新的解向量$x^{(k+1)}$ ,向量是由方向和长度确定的，所以$X^{(k+1)}=X^{k}+ \lambda P^{k}(k= 1,2,\cdots)$</p>
+<p>即求解 $\lambda_{k}$ 和 $P^{k}$，选择 $\lambda_{k}$ 和 $P^{k}$ 的原则是使目标函数在点阵上的值逐步减小，即<br>$$ f(X^{0})≥f(X^{1})≥\cdots≥f(X^{K})≥\cdots $$<br>检验 ${X^{(k)}}$ 是否收敛与最优解，及对于给定的精度ε&gt;0，是否 $\left | \bigtriangledown f(X^{k+1}) \right |\leqslant \varepsilon$.</p>
+<h3 id="斐波那契法-Fibonacci-method"><a href="#斐波那契法-Fibonacci-method" class="headerlink" title="斐波那契法(Fibonacci method)"></a>斐波那契法(Fibonacci method)</h3><blockquote>
+<p>二分法的推广</p>
+</blockquote>
+<ul>
+<li><strong>斐波那契分数法(Fibonacci)</strong></li>
+</ul>
+<p>是一种一维搜索的区间消去法。这种方法与0.618法（黄金分割法）类似，也是用于单峰函数，在计算过程中，也是第1次迭代需要计算两个迭代点，以后每次迭代只需新算一点，另一点取自上次迭代。</p>
+<ul>
+<li><strong>斐波那契法与0.618法的主要区别</strong></li>
+</ul>
+<p>探索区间长度的缩短率不是采用黄金分割数，而是采用斐波那契数，计算函数值的次数n也是已知的。</p>
+<ul>
+<li><strong>斐波那契数列定义</strong></li>
+</ul>
+<p>数列从第3个数起，后面的每个数都是它前面那两个数的和。如果把斐波那契数列的任何一项除以前一项，将会得到一个比值极限约为0.618，俗称黄金分割点。<br>$$F_{0}=F_{1}=1\<br>F_{n}=F_{n-1}+F_{n-2}(n=2,3,4,\cdots )$$<br>称相邻两个Fibonacci数之比为 $\frac{F_{n-1}}{F_{n}}$ Fibonacci分数</p>
+<ul>
+<li><strong>斐波那契法计算方法</strong></li>
+</ul>
+<p>考虑一维极小值问题$minf(t),a\leqslant t\leqslant b$，若$minf(t)$ 是[0,1]区间上的下单峰函数，我们将通过不断的缩短[0,1]的长度，来探索$minf(t)$ 的近似最优解。</p>
+<p>对于区间[0,1]，确定搜索次数n，则选择两点：<br>$$t_{1}=\frac{F_{n-1}}{F_{n}},t_{2}=\frac{F_{n-2}}{F_{n}}$$<br>比较$f(t_{1}),f(t_{2})$，消去其中较小值所在的一段区间；在缩短后的搜索区间上，再作第二步迭代；如此继续迭代下去，共做n次迭代，搜索区间长度缩短为1/Fn(使小于给定值)。</p>
+<ul>
+<li>Fibonacci法的matlab实现</li>
+</ul>
+<p>参考相关博客</p>
+
+      
+    </div>
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post reveal ">
+  
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  <h2 class="title">
+    <a href="/2019/09/09/20190909shijian/">
+      时间序列分析
+    </a>
+  </h2>
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    <a href="https://bie5462.github.io" rel="nofollow">
+      
+        <i class="fas fa-user" aria-hidden="true"></i>
+      
+      <p>BIE5462</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2019-09-09</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      <a id="more"></a>
+
+
+
+<h1 id="什么是时间序列"><a href="#什么是时间序列" class="headerlink" title="什么是时间序列"></a>什么是时间序列</h1><p>时间数列也叫动态数列，是指把某种现象在不同时间上的各个变量值按照时间的先后顺序排列而形成的一种数列。确定已有的时间序列的变化模式，并假定这种模式会延续到未来。</p>
+<h2 id="时间数列由以下两个因素组成："><a href="#时间数列由以下两个因素组成：" class="headerlink" title="时间数列由以下两个因素组成："></a>时间数列由以下两个因素组成：</h2><ol>
+<li><strong>时间要素</strong>，</li>
+</ol>
+<p>某一现象发生的时间，包括时间单位和时间长短；</p>
+<ol start="2">
+<li><strong>数据要素</strong>，</li>
+</ol>
+<p>即现象在不同时间上的变量值。时间数列不论其数值大小，每一个数值所在的位置都是由它所处的时间决定的，即数字顺序是按时间的先后顺序排列。</p>
+<h2 id="时间数列的作用："><a href="#时间数列的作用：" class="headerlink" title="时间数列的作用："></a>时间数列的作用：</h2><ol>
+<li>深入揭示现象变化的数量特征；</li>
+<li>反映现象发展变化的趋势和规律；</li>
+<li>揭示现象变化的内在原因，为预测和决策提供可靠的数量信息。</li>
+</ol>
+<h2 id="时间序列预测法的基本特点"><a href="#时间序列预测法的基本特点" class="headerlink" title="时间序列预测法的基本特点"></a>时间序列预测法的基本特点</h2><ul>
+<li>假设事物发展趋势会延伸到未来</li>
+<li>预测所依据的数据具有不规则性</li>
+<li>不考虑事物发展之间的因果关系</li>
+</ul>
+<p>时间序列也称动态序列，是指将某种现象的指标数值按照时间顺序排列而成的数值序列。大量的社会经济统计指标都是依据年、季度、月、日，甚至实时（秒）统计的，因此，时间序列是某个统计指标（变量）长期变动的数值表现。</p>
+<p>时间序列由两个组成要素构成：1、第一个要素是时间要素；2、第二个要素是数值要素。时间序列根据时间和数值性质的不同，可以分为<strong>时期时间序列</strong>和<strong>时点时间序列</strong>。例如下方某间食杂店的销售额时间序列，就是时期时间序列，统计的是每一年，在一年时间内该食杂店的销售总额。<br>|年份|2012|2013|2014|2015|2016|<br>|—|—|—|—|—|—|<br>销售收入（万元）|32|35|40|42.8|47</p>
+<p>时间序列可以反映某个现象的发展变化状态。通过对时间序列的分析，可以反映现象发展变化的趋势和规律，再通过对影响时间序列的各种因素进行测定，可以进一步解释现象变化的内在原因，为预测和决策提供可靠的数据支持。</p>
+<h1 id="时间序列分解"><a href="#时间序列分解" class="headerlink" title="时间序列分解"></a>时间序列分解</h1><p>因为时间序列是某个指标数值长期变化的数值表现，所以时间序列数值变化背后必然蕴含着<strong>数值变换的规律性</strong>，这些规律性就是时间序列分析的切入点。</p>
+<p>一般情况下，时间序列的数值变化规律有以下四种：<strong>长期变动趋势</strong>、<strong>季节变动规律</strong>、<strong>周期变动规律</strong>和<strong>不规则变动</strong>。</p>
+<p>不同的数值变化规律是由不同影响因素决定的。这些影响因素有<strong>长期</strong>起作用的因素，也有<strong>短期</strong>因素；有<strong>可以预知和控制</strong>的因素，也有<strong>未知和不可控制</strong>的因素；这些因素相互作用和影响，从而使时间序列的变化趋势呈现不同的特点。</p>
+<h2 id="长期趋势"><a href="#长期趋势" class="headerlink" title="长期趋势"></a>长期趋势</h2><p>长期趋势指的是统计指标在相当长的一段时间内，受到长期趋势影响因素的影响，表现出持续上升或持续下降的趋势，通常用字母T表示。例如，随着国家经济的发展，人均收入将逐渐提升；随着科学技术的发生，劳动生产率也不断提高。</p>
+<h2 id="季节变动"><a href="#季节变动" class="headerlink" title="季节变动"></a>季节变动</h2><p>季节变动是指由于季节的转变使得指标数值发生周期性变动。由此可见，指标数值的季节变动是以年为周期的，一般以月、季、周为时间单位，不能以年作单位，通常用S表示。引起季节变动的因素有自然因素，也有人为因素。例如，蔬菜食品价格，棉衣销售量都会随着季节气温的变化而周期变化；每年的长假（五一、十一、春节）都会引起出行人数的大量增加。</p>
+<h2 id="循环变动"><a href="#循环变动" class="headerlink" title="循环变动"></a>循环变动</h2><p>循环变动与季节变动的周期不同，循环变动通常以若干年为周期，在曲线图上表现为波浪式的周期变动。这种周期变动的特征变现为增加和减少交替出现。最典型的周期案例就是市场经济的商业周期。</p>
+<h2 id="不规则变动"><a href="#不规则变动" class="headerlink" title="不规则变动"></a>不规则变动</h2><p>不规则变动是由某些随机因素导致的数值变化，这些因素的作用是不可预知和没有规律性的，因此对数值的变化影响变形为不规则变动。</p>
+<p>以上四种变动就是时间序列数值变化的分解结果。有时这些变动会同时出现在一个时间序列里面，有时也可能只出现一种或几种，这是由引起各种变动的影响因素决定的。正是由于变动组合的不确定性，时间序列的数值变化才那么千变万化。四种变动与指标数值最终变动的关系可能是叠加关系，也可能是乘积关系。</p>
+<h2 id="叠加模型和乘积模型"><a href="#叠加模型和乘积模型" class="headerlink" title="叠加模型和乘积模型"></a>叠加模型和乘积模型</h2><p>上述四种影响因素有时可能同时出现，共同影响某一现象的变化，有时也可能只有几种因素其作用。一般情况下，长期趋势是影响时间数列变动的基本因素。上述四种因素和现象总量之间的关系可以是：</p>
+<ol>
+<li>加法模型</li>
+</ol>
+<p>现象总量=长期趋势+季节变动+循环变动+不规则变动<br>适用于四种因素相互独立的情况。</p>
+<ol start="2">
+<li>乘法模型</li>
+</ol>
+<p>现象总量=长期趋势*季节变动*循环变动*不规则变动<br>适用于各影响因素相互联系的条件，实际应用中，一般采用这种模型。</p>
+<p>反映在具体的时间序列图上，如果随着时间的推移，序列的季节波动变得越来越大，则反映各种变动之间的关系发生变化，建议使用乘积模型；反之，如果时间序列图的波动保持恒定，则可以直接使用叠加模型。</p>
+<h2 id="时间数列分类"><a href="#时间数列分类" class="headerlink" title="时间数列分类"></a>时间数列分类</h2><ol>
+<li>按研究对象的数量分类。</li>
+</ol>
+<p>可以分为<strong>一元时间数列</strong>和<strong>多元时间数列</strong>。<br>但是，如果按年、月的顺序排列气温和降水量等，每一时间上都对应两个变量，则为多元时间数列。多元时间数列，不仅可以描述变量的变化规律，还可以揭示各变量间相互依存关系的动态规律性。</p>
+<ol start="2">
+<li>按时间的连续性分类。</li>
+</ol>
+<p>可以分为离散型时间数列和连续性时间数列两种。比如上面表格就是离散型时间数列；食品厂油炸机上的温度监控图就是连续性时间数列。</p>
+<ol start="3">
+<li>时间数列按照变量值的表现形式不同，</li>
+</ol>
+<p>可以分为<strong>绝对数时间数列</strong>、<strong>相对数时间数列</strong>和<strong>平均数时间数列</strong>三种，绝对数时间数列是基本的。</p>
+<ul>
+<li>绝对数时间数列</li>
+</ul>
+<p>绝对数时间数列又可以分为时期数列和时点数列。时期数列中的每一个数值都表明现象在一段时间内所达到的总量，例如上表销售额就是时期数列；时点数列的每一个数值都放映某种现象在一定时点上所达到的水平或所处的状态，例如库存表就是实时的库存情况。</p>
+<ul>
+<li>相对数时间数列</li>
+</ul>
+<p>相对数时间数列是把同一性质的相对指标按照时间顺序排列，用以说明现象之间数量关系的变化过程。相对数是将有联系的变量处理后得到的数值，例如，实际值与计划值相比，用来表示计划完成的情况。</p>
+<ul>
+<li>平均数时间数列</li>
+</ul>
+<p>平均数时间数列是把一系列同一性质的平均指标数值按时间顺序排列而形成的时间数列，用以放映现象的一般水平在时间上的变化。例如做长期趋势分析用到的移动平均法。</p>
+<h2 id="时间数列制作原则"><a href="#时间数列制作原则" class="headerlink" title="时间数列制作原则"></a>时间数列制作原则</h2><p>时间数列的目的，是为了通过对时间数列的对比分析，放映现象的发展变化过程及其发展变化的规律性。为此，必须保证时间数列中的各项指标数值具有可比性，主要包括以下几个方面：</p>
+<ul>
+<li>时间上的可比性</li>
+</ul>
+<p>时期数列中各项指标数值与时期的长短直接相关，因而，在同一个数列中，各个指标数值所属的时间长短应尽量一致，但这个原则不是绝对的，有时为了特殊需要，也可以编制时期不同的时期数列。对于时间数列，则不一样，因为时点数列的各个指标与时期长短无关，可以根据需要而定。</p>
+<ul>
+<li>总体范围的可比性</li>
+</ul>
+<p>这里的范围是指所研究现象的空间范围。例如，现象所包括的地区范围、隶属关系范围、分组范围等，这些范围在不同的历史时期会有变化，对指标产生影响，从而失去可比性。因而对总体范围有变化的资料，必须加以调整，以保障所编制的时间数列具有可比性。</p>
+<ul>
+<li>指标内容的可比性</li>
+</ul>
+<p>只有同质的现象才能进行动态对比，时间数列中的每一个数值都具有一定的社会内容，而不是一个抽象数字。</p>
+<ul>
+<li>各项指标数值的计算方法、计算单位以及计算价格等的可比性</li>
+</ul>
+<p>如反映劳动生产率变化时，指标值是工人生产率还是全员生产率；是以产值计算的，还是以实物量计算的前后应保持一致。排列价值指标时，是以现行价格，还是以不变价格计算，因为一般现行价格在不同时间不具有可比性，因而一般价值指标应按不变价格的形式进行排列。</p>
+<h1 id="时间序列预处理"><a href="#时间序列预处理" class="headerlink" title="时间序列预处理"></a>时间序列预处理</h1><h2 id="平稳性检验"><a href="#平稳性检验" class="headerlink" title="平稳性检验"></a>平稳性检验</h2><h1 id="平稳时间序列自相关图"><a href="#平稳时间序列自相关图" class="headerlink" title="平稳时间序列自相关图"></a>平稳时间序列自相关图</h1>
+      
+    </div>
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post reveal ">
+  
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  <h2 class="title">
     <a href="/2019/09/05/20190904ODE/">
       常微分方程()
     </a>
@@ -385,7 +691,7 @@
         <div class="readmore">
           <a href="/2019/09/05/20190904ODE/" class="flat-box">
             <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-            Read More
+            閱讀全文
           </a>
         </div>
       
@@ -475,7 +781,7 @@
         <div class="readmore">
           <a href="/2019/09/04/20190904tongji/" class="flat-box">
             <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-            Read More
+            閱讀全文
           </a>
         </div>
       
@@ -565,7 +871,7 @@
         <div class="readmore">
           <a href="/2019/08/24/20190824shenjing/" class="flat-box">
             <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-            Read More
+            閱讀全文
           </a>
         </div>
       
@@ -655,7 +961,7 @@
         <div class="readmore">
           <a href="/2019/08/24/20190824yichuang/" class="flat-box">
             <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-            Read More
+            閱讀全文
           </a>
         </div>
       
@@ -745,7 +1051,7 @@
         <div class="readmore">
           <a href="/2019/08/11/20190811putao/" class="flat-box">
             <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-            Read More
+            閱讀全文
           </a>
         </div>
       
@@ -845,7 +1151,7 @@
         <div class="readmore">
           <a href="/2019/08/01/20190801chazhi/" class="flat-box">
             <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-            Read More
+            閱讀全文
           </a>
         </div>
       
@@ -946,7 +1252,7 @@
         <div class="readmore">
           <a href="/2019/08/01/20190725matlab1/" class="flat-box">
             <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-            Read More
+            閱讀全文
           </a>
         </div>
       
@@ -1046,213 +1352,7 @@
         <div class="readmore">
           <a href="/2019/07/19/20190719branch/" class="flat-box">
             <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-            Read More
-          </a>
-        </div>
-      
-    </div>
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post reveal ">
-  
-
-
-  <section class='meta'>
-    
-    
-    <div class="meta" id="header-meta">
-      
-        
-  <h2 class="title">
-    <a href="/2019/07/19/20190720git/">
-      Git基础语法
-    </a>
-  </h2>
-
-
-      
-      <div class='new-meta-box'>
-        
-          
-        
-          
-            
-  <div class='new-meta-item author'>
-    <a href="https://bie5462.github.io" rel="nofollow">
-      
-        <i class="fas fa-user" aria-hidden="true"></i>
-      
-      <p>BIE5462</p>
-    </a>
-  </div>
-
-
-          
-        
-          
-            <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2019-07-19</p>
-  </a>
-</div>
-
-          
-        
-          
-            
-  
-  <div class='new-meta-item category'>
-    <a href='/categories/Git/' rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>Git</p>
-    </a>
-  </div>
-
-
-          
-        
-          
-            
-
-          
-        
-          
-            
-
-          
-        
-      </div>
-      
-        <hr>
-      
-    </div>
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      <blockquote>
-<p>Git 是目前世界上被最广泛使用的现代软件版本管理系统。如今有惊人数量的软件项目依赖 Git 进行版本管理，这些项目包括开源以及各种商业软件。Git 在职业软件开发者中拥有良好的声誉。</p>
-</blockquote>
-<blockquote>
-<p>本章内容对Git语法知识的整理，包含Git对常见命令的介绍和基本操作，方便学习、查找与记忆。<br>参考：官方书籍《Pro Git》以及<a href="https://github.com/geeeeeeeeek/git-recipes.git" target="_blank" rel="noopener">https://github.com/geeeeeeeeek/git-recipes.git</a></p>
-</blockquote>
-      
-        <div class="readmore">
-          <a href="/2019/07/19/20190720git/" class="flat-box">
-            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-            Read More
-          </a>
-        </div>
-      
-    </div>
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post reveal ">
-  
-
-
-  <section class='meta'>
-    
-    
-    <div class="meta" id="header-meta">
-      
-        
-  <h2 class="title">
-    <a href="/2019/07/18/20190718hexo/">
-      从Markdown到Latex
-    </a>
-  </h2>
-
-
-      
-      <div class='new-meta-box'>
-        
-          
-        
-          
-            
-  <div class='new-meta-item author'>
-    <a href="https://bie5462.github.io" rel="nofollow">
-      
-        <i class="fas fa-user" aria-hidden="true"></i>
-      
-      <p>BIE5462</p>
-    </a>
-  </div>
-
-
-          
-        
-          
-            <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2019-07-18</p>
-  </a>
-</div>
-
-          
-        
-          
-            
-  
-  <div class='new-meta-item category'>
-    <a href='/categories/排版写作/' rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>排版写作</p>
-    </a>
-  </div>
-
-
-          
-        
-          
-            
-
-          
-        
-          
-            
-
-          
-        
-      </div>
-      
-        <hr>
-      
-    </div>
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      <blockquote>
-<p>Markdown是目前互联网上最流行的写作语言，它使用一些简单的符号来标记文本格式，其简洁的语法、优美的格式以及强大的软件支持深受广大网友的喜爱。</p>
-</blockquote>
-<blockquote>
-<p>Latex是一种基于TeX的排版系统,常用于科技论文的排版。其优点在于模板化的排版和对数学公式、符号的完美支持。可用于数学建模论文写作。</p>
-</blockquote>
-      
-        <div class="readmore">
-          <a href="/2019/07/18/20190718hexo/" class="flat-box">
-            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-            Read More
+            閱讀全文
           </a>
         </div>
       
@@ -1278,7 +1378,7 @@
           
             <a class="next" rel="next" href="/archives/2019/page/2/">
               <section class="post next">
-                &nbsp;Next&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i>
+                &nbsp;下一頁&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i>
               </section>
             </a>
           
@@ -1495,7 +1595,7 @@
   <section class='widget category'>
     
 <header class='pure'>
-  <div><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Categories</div>
+  <div><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;文章分類</div>
   
     <a class="rightBtn"
     
@@ -1626,19 +1726,19 @@
     </div>
   
   <br>
-  <div><p>Blog content follows the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
+  <div><p>博客內容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh_TW">姓名標示-非商業性-相同方式分享 4.0 國際 (CC BY-NC-SA 4.0) 協議</a></p>
 </div>
   <div>
-    Use
+    本站使用
     <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename">BIEBLOG</a>
-    as theme
+    作為主題
     
-      , 
-      total visits
+      ，
+      總訪問量為
       <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
-      times
+      次
     
-    . 
+    。
   </div>
 </footer>
 <script>setLoadingBarProgress(80);</script>
@@ -1790,15 +1890,15 @@
 <!-- 复制 -->
 <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
 <script>
-  let COPY_SUCCESS = "Copied";
-  let COPY_FAILURE = "Copy failed";
+  let COPY_SUCCESS = "複製成功";
+  let COPY_FAILURE = "複製失敗";
   /*页面载入完成后，创建复制按钮*/
   !function (e, t, a) {
     /* code */
     var initCopyCode = function(){
       var copyHtml = '';
       copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
-      copyHtml += '  <i class="fa fa-copy"></i><span>Copy</span>';
+      copyHtml += '  <i class="fa fa-copy"></i><span>複製</span>';
       copyHtml += '</button>';
       $(".highlight .code pre").before(copyHtml);
       var clipboard = new ClipboardJS('.btn-copy', {
