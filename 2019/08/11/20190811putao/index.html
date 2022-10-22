@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  <title>葡萄酒问卷调查 | BIEBLOG</title>
+  
+  <meta name="keywords" content="数据结构与算法,智能计算,最优化理论">
+  
+  
+  <meta name="description" content="我的学习之路">
+  
+
+  
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.6.3/css/all.min.css">
+  
+
+  
+
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.5/css/style.css">
+
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+  
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  
+  
+  <div class="cover-wrapper">
+    <cover class='cover post half'>
+      
+        
+  <h1 class='title'>BIEBOLG</h1>
+
+
+  <div class="m_search">
+    <form name="searchform" class="form u-search-form">
+      <input type="text" class="input u-search-input" placeholder="查找文章" />
+      <i class="icon fas fa-search fa-fw"></i>
+    </form>
+  </div>
+
+<div class='menu navgation'>
+  <ul class='h-list'>
+    
+      
+        <li>
+          <a class="nav home" href="/"
+            
+            
+            id="home">
+            <i class='fas fa-rss fa-fw'></i>&nbsp;全部文章
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="/category"
+            
+            
+            id="category">
+            <i class='fas fa-folder-open fa-fw'></i>&nbsp;文章分类
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="/tag"
+            
+            
+            id="tag">
+            <i class='fas fa-hashtag fa-fw'></i>&nbsp;文章标签
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="/about"
+            
+              rel="nofollow"
+            
+            
+            id="about">
+            <i class='fas fa-info-circle fa-fw'></i>&nbsp;关于本站
+          </a>
+        </li>
+      
+    
+  </ul>
+</div>
+
+      
+    </cover>
+    <header class="l_header pure">
+  <div id="loading-bar-wrapper">
+    <div id="loading-bar" class="pure"></div>
+  </div>
+
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+      <a class="logo flat-box" href='/' >
+        
+          BIEBLOG
+        
+      </a>
+			<div class='menu navgation'>
+				<ul class='h-list'>
+          
+  					
+  						<li>
+								<a class="nav flat-box" href="/"
+                  
+                  
+                  id="home">
+									<i class='fas fa-grin fa-fw'></i>&nbsp;主页
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/category"
+                  
+                    rel="nofollow"
+                  
+                  
+                  id="category">
+									<i class='fas fa-folder-open fa-fw'></i>&nbsp;分类
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/tag"
+                  
+                    rel="nofollow"
+                  
+                  
+                  id="tag">
+									<i class='fas fa-hashtag fa-fw'></i>&nbsp;标签
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/timeline"
+                  
+                    rel="nofollow"
+                  
+                  
+                  id="timeline">
+									<i class='fas fa-history fa-fw'></i>&nbsp;时间轴
+								</a>
+							</li>
+      			
+      		
+				</ul>
+			</div>
+
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="Search" />
+						<i class="icon fas fa-search fa-fw"></i>
+					</form>
+				</div>
+			
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a class="fas fa-search fa-fw" href='javascript:void(0)'></a></li>
+				
+				<li class='s-menu'><a class="fas fa-bars fa-fw" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+
+		<div class='nav-sub container container--flex'>
+			<a class="logo flat-box"></a>
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a class="flat-btn fas fa-comments fa-fw" href='javascript:void(0)'></a></li>
+        
+          <li class='s-toc'><a class="flat-btn fas fa-list fa-fw" href='javascript:void(0)'></a></li>
+        
+			</ul>
+		</div>
+	</div>
+</header>
+	<aside class="menu-phone">
+    <header>
+		<nav class="menu navgation">
+      <ul>
+        
+          
+            <li>
+							<a class="nav flat-box" href="/"
+                
+                
+                id="home">
+								<i class='fas fa-rss fa-fw'></i>&nbsp;全部文章
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/category"
+                
+                
+                id="category">
+								<i class='fas fa-folder-open fa-fw'></i>&nbsp;文章分类
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/tag"
+                
+                
+                id="tag">
+								<i class='fas fa-hashtag fa-fw'></i>&nbsp;文章标签
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/about"
+                
+                  rel="nofollow"
+                
+                
+                id="about">
+								<i class='fas fa-info-circle fa-fw'></i>&nbsp;关于本站
+							</a>
+            </li>
+          
+       
+      </ul>
+		</nav>
+    </header>
+	</aside>
+<script>setLoadingBarProgress(40);</script>
+
+  </div>
+
+
+  <div class="l_body">
+    <div class='body-wrapper'>
+      <div class='l_main'>
+  
+
+  
+    <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
+      
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  
+    <h1 class="title">
+      <a href="/2019/08/11/20190811putao/">
+        葡萄酒问卷调查
+      </a>
+    </h1>
+  
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    <a href="http://example.com" rel="nofollow">
+      
+        <i class="fas fa-user" aria-hidden="true"></i>
+      
+      <p>杨春波</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2019-08-11</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/%E5%85%B6%E4%BB%96/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>其他</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+  
+    <div class="new-meta-item browse busuanzi">
+      <a class='notlink'>
+        <i class="fas fa-eye" aria-hidden="true"></i>
+        <p>
+          <span id="busuanzi_value_page_pv">
+            <i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i>
+          </span>
+        </p>
+      </a>
+    </div>
+  
+
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          <p>葡萄酒企业片调查问卷回答的相关信息</p>
+<span id="more"></span>
+
+<h1 id="葡萄酒问卷"><a href="#葡萄酒问卷" class="headerlink" title="葡萄酒问卷"></a>葡萄酒问卷</h1><h2 id="问题一：公司主推品牌"><a href="#问题一：公司主推品牌" class="headerlink" title="问题一：公司主推品牌"></a>问题一：公司主推品牌</h2><h3 id="淘宝上的葡萄酒价格信息"><a href="#淘宝上的葡萄酒价格信息" class="headerlink" title="淘宝上的葡萄酒价格信息"></a>淘宝上的葡萄酒价格信息</h3><table>
+<thead>
+<tr>
+<th>品牌</th>
+<th>价格区间</th>
+<th>详细信息</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>慕拉</td>
+<td>100元以下</td>
+<td>淘宝销售量第一，查不到品牌相关信息，</td>
+</tr>
+<tr>
+<td>长城</td>
+<td>100-200元</td>
+<td>传奇品质，百年张裕</td>
+</tr>
+<tr>
+<td>张裕</td>
+<td>200-300元</td>
+<td>地道好酒，天赋灵犀</td>
+</tr>
+<tr>
+<td>拉菲</td>
+<td>400-500元</td>
+<td>国际知名品牌，法国生产</td>
+</tr>
+</tbody></table>
+<h2 id="参考：-国内葡萄酒品牌信息"><a href="#参考：-国内葡萄酒品牌信息" class="headerlink" title="参考： 国内葡萄酒品牌信息"></a>参考： 国内葡萄酒品牌信息</h2><h3 id="张裕葡萄酒"><a href="#张裕葡萄酒" class="headerlink" title="张裕葡萄酒"></a>张裕葡萄酒</h3><h4 id="“传奇品质，百年张裕”"><a href="#“传奇品质，百年张裕”" class="headerlink" title="“传奇品质，百年张裕”"></a><strong>“传奇品质，百年张裕”</strong></h4><p>1892年，由著名爱国华侨实业家张弼士投资300万两白银创办，是中国第一个工业化生产葡萄酒的厂家。中国葡萄酒工业化的序幕由此拉开。</p>
+<p>1914年，在南洋劝业会上和上海招商局于南京举办的商品列赛会上,张裕的白兰地、琼瑶浆、红葡萄酒等产品被授予最优等奖章。1915年， 在巴拿马太平洋万国博览会上,张裕的白兰地、<br>红葡萄酒、雷司令、 琼瑶浆等产品荣获金质奖章和最优等奖状,中国第一次有了举世公认的葡萄酒，张裕开创了中国葡萄酒工业化生产的新纪元，被誉为”<strong>中国葡萄酒工业的摇篮</strong>”。</p>
+<h4 id="文化影响"><a href="#文化影响" class="headerlink" title="文化影响"></a>文化影响</h4><p>虽然我国的葡萄酒市场潜力巨大，但由于生活习惯和消费水平的影响，中国的葡萄酒消费群体较小，人们对葡萄酒知识和文化的了解甚少，更谈不上对葡萄酒的鉴赏。因此张裕认为，对于葡萄酒市场这个有待培育的市场来说，传播文化就等于开拓市场。</p>
+<p>而在文化传播方面，张裕有着独有的优势。张裕公司是中国最早的葡萄酒生产企业，在110多年的发展史中不仅创造了独具特色的品牌文化，也为中国葡萄酒文化写下了灿烂的一笔。在此基础之上，张裕近几年来加大了对积淀下来的丰厚文化资源的挖掘和传播力度。</p>
+<h3 id="长城葡萄酒"><a href="#长城葡萄酒" class="headerlink" title="长城葡萄酒"></a>长城葡萄酒</h3><h4 id="“地道好酒，天赋灵犀”"><a href="#“地道好酒，天赋灵犀”" class="headerlink" title="“地道好酒，天赋灵犀”"></a>“地道好酒，天赋灵犀”</h4><p>长城葡萄酒是“全球500强企业”中粮集团旗下驰名品牌，是中国葡萄酒第一品牌， 是“中国名牌产品”和“行业标志性品牌”，同时是国宴用酒。长城葡萄酒连续多年产销量居全国第一。</p>
+<h3 id="王朝葡萄酒"><a href="#王朝葡萄酒" class="headerlink" title="王朝葡萄酒"></a>王朝葡萄酒</h3><h4 id="“酒的王朝，王朝的酒”"><a href="#“酒的王朝，王朝的酒”" class="headerlink" title="“酒的王朝，王朝的酒”"></a>“酒的王朝，王朝的酒”</h4><p>公司从国外引进了具有国际先进水平的葡萄酒生产设备和技术，拥有国际酿酒名种葡萄原料种植基地近3万亩，建立了技术开发（科研）中心，有强劲的科技开发能力。公司现生产具有中国地域风格的三大系列80多个品种具有欧洲风格的葡萄酒，生产能力为4万吨&#x2F;年，是亚洲地区规模最大的全汁高档葡萄酒生产企业之一。</p>
+<h3 id="威龙葡萄酒"><a href="#威龙葡萄酒" class="headerlink" title="威龙葡萄酒"></a>威龙葡萄酒</h3><h4 id="“威龙干红”"><a href="#“威龙干红”" class="headerlink" title="“威龙干红”"></a>“威龙干红”</h4><p>威龙公司所处的烟台地区，被国际葡萄与葡萄酒组织(OIV)认证为亚洲唯一的葡萄与葡萄酒城。所产的葡萄酒也被国家予以原产地保护，威龙公司列为首批企业。威龙出产的葡萄与世界上最著名的波尔多地区的葡萄品质相似，被人们誉为”中国的波尔多”。也上榜中国葡萄酒品牌排行榜。<br>威龙干红葡萄酒连续四年荣获国家名牌称号，被中国消费者协会认定为国内葡萄酒行业唯一推荐品牌的称号,大力发展低端红酒，使企业快速上规模，完成了企业的原始积累.作为十大红酒品牌之一，已经是行业第四的销售额了</p>
+<h3 id="新天葡萄酒"><a href="#新天葡萄酒" class="headerlink" title="新天葡萄酒"></a>新天葡萄酒</h3><h4 id="“葡萄故乡，四季阳光”"><a href="#“葡萄故乡，四季阳光”" class="headerlink" title="“葡萄故乡，四季阳光”"></a>“葡萄故乡，四季阳光”</h4><p>新天葡萄酒2006年初，新天国际进入战略全面调整阶段。调整的核心就是全力发展葡萄酒产业.十大红酒品牌，经历了艰苦探索的新天，终于找到了自己的优势定位，同样在讲产地，说法却比长城的高明的多，消费者也容易认同和理解“葡萄故乡出好酒”的诉求。</p>
+<h2 id="国际葡萄酒品牌"><a href="#国际葡萄酒品牌" class="headerlink" title="国际葡萄酒品牌"></a>国际葡萄酒品牌</h2><blockquote>
+<p>参考百度百科</p>
+</blockquote>
+<h3 id="罗曼尼-康帝酒园"><a href="#罗曼尼-康帝酒园" class="headerlink" title="罗曼尼-康帝酒园"></a>罗曼尼-康帝酒园</h3><p>推荐年份：1997年</p>
+<p>罗曼尼-康帝(Romane Conti)葡萄酒珍稀而名贵，多年来一直独占世界第一葡萄酒宝座，1500多美元一瓶的价格便是最好的证明。无论其生产年份，Romane Conti价格均在1000美元左右。它色泽深沉，具有淡淡的酱油香、花香和甘草味，芳香浓郁，沁人心脾。</p>
+<h3 id="柏翠酒庄"><a href="#柏翠酒庄" class="headerlink" title="柏翠酒庄"></a>柏翠酒庄</h3><p>推荐年份：1998年</p>
+<p>在肯尼迪时代，梅洛(Merlot)葡萄酒可以说是白宫的最爱。尽管其正式名称是柏翠酒庄(Chateau Petrus)，但其标签却简称为“Petrus”。葡萄通常提前收获，让其慢慢成熟。其中，1998年的柏翠无疑是一个神话般的作品，它拥有浓郁的深紫色，散发出黑色水果、焦糖、摩卡和香草的复杂香味，口感纯净、集中、饱满，甜美的单宁中带有一丝丝酸度，并且回味持久。 [1]</p>
+<h3 id="里鹏酒庄"><a href="#里鹏酒庄" class="headerlink" title="里鹏酒庄"></a>里鹏酒庄</h3><p>推荐年份：1999年</p>
+<p>Thienpont家族的里鹏葡萄酒同样是车库葡萄酒。Le Pin是法文的松树之意，它的名称源于庄园内几棵标致性的大松树。里鹏酒庄占地仅5英亩，每年平均生产约6,000瓶Pomerol美酒。Thienpont家族的里鹏葡萄酒可以说是最声名显赫的波尔多葡萄酒之一。它具有柔和的摩卡、黑樱桃和加仑味，口感丰满，深受葡萄酒收藏家青睐。也被称为世界葡萄酒业的一个触目的奇迹。 [1]</p>
+<h3 id="拉图酒庄"><a href="#拉图酒庄" class="headerlink" title="拉图酒庄"></a>拉图酒庄</h3><p>推荐年份：1990年</p>
+<p>拉图酒庄(Chateau Latour)是法国最卓有声誉的酒庄之一，这里出产的Pauillac葡萄酒位列全球三大Pauillac葡萄酒之列。肥沃的土壤为葡萄种植和葡萄酒酿造，创造了得天独厚的条件。梅多克(Médoc)地区的葡萄酒以口味活泼而著称，而Chateau Latour Pauillac 1990从众多美酒中脱颖而出，被《葡萄酒观察家》评为1993年最佳葡萄酒，并给予极高的评价。</p>
+<h3 id="拉菲酒庄"><a href="#拉菲酒庄" class="headerlink" title="拉菲酒庄"></a>拉菲酒庄</h3><p>推荐年份：1996年</p>
+<p>好千里马也需遇伯乐。18世纪中期，一位法国政治家被派往外国。临行前，医生建议他带上几瓶拉菲(Lafite)葡萄酒作为滋补品。这位政治家非常喜欢这种酒，就向国王路易十五进献了几瓶，不久这种葡萄酒就在凡尔赛一举成名，被称为“御酒”。Chateau Lafite Rothschild Pauillac 1996色泽深沉，薄荷和黑加仑香味灵动怡人，口感如丝般顺滑，回味悠长。</p>
+<h2 id="问题二：公司主推产品类型"><a href="#问题二：公司主推产品类型" class="headerlink" title="问题二：公司主推产品类型"></a>问题二：公司主推产品类型</h2><h3 id="葡萄酒分类"><a href="#葡萄酒分类" class="headerlink" title="葡萄酒分类"></a>葡萄酒分类</h3><blockquote>
+<p>按颜色分类</p>
+</blockquote>
+<h4 id="红葡萄酒（Red-Wines）"><a href="#红葡萄酒（Red-Wines）" class="headerlink" title="红葡萄酒（Red Wines）"></a>红葡萄酒（Red Wines）</h4><p>这是一种由红葡萄品种压榨&#x2F;浸皮后，经带皮发酵而来的葡萄酒。在发酵过程中，酒液可以充分萃取果皮中的颜色和风味物质，呈现紫红、宝石红、石榴红、茶红色甚至红棕色等各种不同程度的颜色，同时带有较为丰富的口感特征。</p>
+<h4 id="白葡萄酒（White-Wines）"><a href="#白葡萄酒（White-Wines）" class="headerlink" title="白葡萄酒（White Wines）"></a>白葡萄酒（White Wines）</h4><p>通常，白葡萄酒会由白葡萄品种破皮压榨后，经不带皮发酵制成，所以酒液颜色大多浅淡，多为柠檬绿色、柠檬色、金黄色、琥珀色甚至棕色等。有时候，白葡萄酒也可以经红葡萄品种去皮压榨后发酵而来。</p>
+<h4 id="桃红葡萄酒（Rose-Wines）"><a href="#桃红葡萄酒（Rose-Wines）" class="headerlink" title="桃红葡萄酒（Rose Wines）"></a>桃红葡萄酒（Rose Wines）</h4><p>桃红葡萄酒大多由红葡萄品种酿制，由于葡萄浸皮时间短，所萃取的色素有限，因而颜色大多介于红白葡萄酒之间，常呈粉色、三文鱼色甚至橘红色。值得一提的是，一些果皮呈粉色的白葡萄品种也可用来酿制桃红葡萄酒，灰皮诺（Pinot Grigio&#x2F;Pinot Gris）就是一个例子。</p>
+<blockquote>
+<p>按二氧化碳压力分类</p>
+</blockquote>
+<h4 id="静止葡萄酒（Still-Wines）"><a href="#静止葡萄酒（Still-Wines）" class="headerlink" title="静止葡萄酒（Still Wines）"></a>静止葡萄酒（Still Wines）</h4><p>静止葡萄酒（也译作平静葡萄酒）通常指的是在 20℃ 时，二氧化碳压力小于 0.05MPa 的葡萄酒，这种葡萄酒几乎不含二氧化碳，是市面上最常见的一种葡萄酒。</p>
+<h4 id="起泡酒（Sparkling-Wines）"><a href="#起泡酒（Sparkling-Wines）" class="headerlink" title="起泡酒（Sparkling Wines）"></a>起泡酒（Sparkling Wines）</h4><p>起泡酒和静止酒相对，通常指的是在 20℃ 时，二氧化碳压力大于或等于 0.05MPa 的葡萄酒，其中香槟（Champagne）就是最典型的代表。不过根据起泡程度的不同，起泡酒还可以细分为以下两类：</p>
+<h4 id="高泡葡萄酒（Sparkling-Wines）："><a href="#高泡葡萄酒（Sparkling-Wines）：" class="headerlink" title="高泡葡萄酒（Sparkling Wines）："></a>高泡葡萄酒（Sparkling Wines）：</h4><p>在 20℃ 时，经自然发酵产生的二氧化碳压力大于或等于 0.35MPa 的起泡酒。其中，当酒瓶容量小于 250mL 时，二氧化碳压力大于或等于 0.3MPa 的葡萄酒也可称作高泡葡萄酒。</p>
+<h4 id="低泡葡萄酒（Semi-Sparkling-Wines）："><a href="#低泡葡萄酒（Semi-Sparkling-Wines）：" class="headerlink" title="低泡葡萄酒（Semi-Sparkling Wines）："></a>低泡葡萄酒（Semi-Sparkling Wines）：</h4><p>在 20℃ 时，瓶内二氧化碳压力处于 0.05MPa-0.34MPa 之间的葡萄酒。</p>
+<blockquote>
+<p>其他分类参考知乎<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/30052054">https://zhuanlan.zhihu.com/p/30052054</a></p>
+</blockquote>
+<h2 id="问题三：葡萄酒市场等级"><a href="#问题三：葡萄酒市场等级" class="headerlink" title="问题三：葡萄酒市场等级"></a>问题三：葡萄酒市场等级</h2><p>不同国家，不同公司有不同形式的等级划分。欧盟葡萄酒法律要求每瓶葡萄酒都要标明其质量等级，但具体等级由各国自己制定，因此各国不同等级的酒较难直接比较。</p>
+<ul>
+<li>中国暂无葡萄酒市场质量分级制度<blockquote>
+<p>参考文章</p>
+</blockquote>
+</li>
+</ul>
+<p>《浅析中国葡萄酒市场开展质量分级工作的必要性和紧迫性》<br><a target="_blank" rel="noopener" href="http://epaper.cqn.com.cn/article/471048.html">http://epaper.cqn.com.cn/article/471048.html</a></p>
+<p>《一篇文章读懂各国葡萄酒分级制度》<br><a target="_blank" rel="noopener" href="http://www.winesinfo.com/html/2017/4/145-71895.html">http://www.winesinfo.com/html/2017/4/145-71895.html</a></p>
+<h2 id="问题四：葡萄酒行业最需要解决的问题"><a href="#问题四：葡萄酒行业最需要解决的问题" class="headerlink" title="问题四：葡萄酒行业最需要解决的问题"></a>问题四：葡萄酒行业最需要解决的问题</h2><h3 id="王琦-葡萄酒产业要直面六大问题"><a href="#王琦-葡萄酒产业要直面六大问题" class="headerlink" title="王琦:葡萄酒产业要直面六大问题"></a>王琦:葡萄酒产业要直面六大问题</h3><blockquote>
+<p>4月18日，中国酒业协会葡萄酒分会在北京组织召开2018年<br>中国酒业协会葡萄酒分会理事会（扩大）会议。会上，中国<br>酒业协会常务副理事长王琦在做会议工作报告中指出: 葡<br>萄酒产业需要直面原料生产成本过高、竞争力弱；产品质量<br>明显提升，但货架期还需延长；重建筑、轻原料，重设备、<br>轻管理；人才缺乏；市场推广弱；葡萄酒行业文化建设严重<br>缺位六大问题。</p>
+</blockquote>
+<ul>
+<li>原料生产成本过高、竞争力弱</li>
+</ul>
+<p>因生态、土地制度等的约束, 加上栽培技术和机械化水平低, 造成酿酒葡萄原料成本高, 这是国产葡萄酒竞争力弱的根本原因。酿酒葡萄种植的机械化程度低、效率低、成本高, 影响了我国葡萄酒产业的竞争能力的提升</p>
+<ul>
+<li>产品质量明显提升, 但货架期还需延长</li>
+</ul>
+<p>产品品质提升快，个性化产品不断涌现，在国际大赛中屡获大奖，但是货架期质量不稳定，需要在栽培技术、酿造环节以及包装材料等方面进行研究和突破。</p>
+<ul>
+<li>重建筑、轻原料；</li>
+</ul>
+<p>重设备、轻管理葡萄酒行业投资长、见效慢；在资本驱动下，不尊重客观规律，重形象、轻管理，重生产、轻推广的现象比比皆是。目前普遍存在企业主要精力和财力投在建筑和设备上，往往忽视对基地的建设以及人才的培养。国内企业的设备普遍的处于国际领先和先进水平，但是与企业的管理水平、基地建设和人员的能力不匹配。大部分中小型企业的管理体系仍然不健全。</p>
+<ul>
+<li>人才缺乏</li>
+</ul>
+<p>目前行业缺乏优秀的管理人才、技术人员和营销人员。存在营销人员无法准确传递市场信息给酿酒师；酿酒师无法酿出有特点的产品，种植师无法提供质优价廉的原料，导致恶性循环；优秀管理人员的缺乏，加剧了上述的恶性循环。</p>
+<ul>
+<li>市场推广弱</li>
+</ul>
+<p>缺乏正确的市场定位和产品定位，没有明确的产品体系；产区及产品没有很好的表达方式，无法传递给消费者一个准确的概念；存在很明显的挟洋自重现象；部分企业市场开发和产品推广理念弱。</p>
+<ul>
+<li>葡萄酒行业文化建设严重缺位</li>
+</ul>
+<p>历史及客观原因造成了我国葡萄酒弱势，葡萄酒旧世界和新世界强势的局面，加上进口葡萄酒的市场推广和WSET为代表的葡萄酒课程的推广和文化渗透,使得我国没有建立国产葡萄酒文化体系和评价标准，在文化理念上几乎全盘接受西方的葡萄酒标准和文化。</p>
+<p>摘自：王琦:葡萄酒产业要直面六大问题<br>在中国知网查看：<a target="_blank" rel="noopener" href="http://kns.cnki.net//KXReader/Detail?TIMESTAMP=637011507717798750&amp;DBCODE=CJFD&amp;TABLEName=CJFDLAST2018&amp;FileName=ZGJU201805006&amp;RESULT=1&amp;SIGN=obcCn+LlF7nmbzT4JyZRH/qsz4Q=">http://kns.cnki.net//KXReader/Detail?TIMESTAMP=637011507717798750&amp;DBCODE=CJFD&amp;TABLEName=CJFDLAST2018&amp;FileName=ZGJU201805006&amp;RESULT=1&amp;SIGN=obcCn%2bLlF7nmbzT4JyZRH%2fqsz4Q%3d</a></p>
+<blockquote>
+<p>[1].王琦:葡萄酒产业要直面六大问题[J].中国酒,2018(05):40.</p>
+</blockquote>
+<h2 id="问题五：公司发展面临挑战"><a href="#问题五：公司发展面临挑战" class="headerlink" title="问题五：公司发展面临挑战"></a>问题五：公司发展面临挑战</h2><ul>
+<li>政策灵活，市场变化无常</li>
+<li>竞争激烈，再无暴利行业</li>
+<li>人才奇缺，人才是生产力</li>
+<li>科技迅猛发展带来的挑战</li>
+<li>商业运营模式带来的挑战<blockquote>
+<p>参考<a target="_blank" rel="noopener" href="https://www.sohu.com/a/202685428_774394">https://www.sohu.com/a/202685428_774394</a></p>
+</blockquote>
+</li>
+</ul>
+<h2 id="问题五：我国葡萄酒产业未来十年发展前景"><a href="#问题五：我国葡萄酒产业未来十年发展前景" class="headerlink" title="问题五：我国葡萄酒产业未来十年发展前景"></a>问题五：我国葡萄酒产业未来十年发展前景</h2><blockquote>
+<p>参考[1]武玉涛.我国葡萄酒的发展现状与未来[J].邯郸职业技术学院学报,2009,22(03):38-42.</p>
+</blockquote>
+<h3 id="我国葡萄酒的发展现状"><a href="#我国葡萄酒的发展现状" class="headerlink" title="我国葡萄酒的发展现状"></a>我国葡萄酒的发展现状</h3><p>目前我国的葡萄酒业有了很大的发展,尽管年产量在30万吨左右,但整体上有很大的提高。全国<br>大大小小的葡萄酒厂达到500家左右,万吨以上的10家,在国内占主导地位的是张裕、王朝、长城三大酒<br>厂。<br>各酒厂大都引进了现代酿酒工艺技术与设备,注重了原料基地的建设,采用了世界名种及栽培区域<br>化等等,使得酒的质量有了提高,这是中国葡萄酒一大进步。</p>
+<p>但我国酒精饮料生产3000万吨,其中啤酒<br>1800万吨,白酒800万吨,而葡萄酒只占酒精饮料的1%。与世界相比我们葡萄酒消费量水平很低,世界<br>人均消费6升,法国人均消费62.8升,有时高达100升,我国人均消费只有0.28升,说明我国葡萄酒市<br>场潜力很大。</p>
+<p>当今葡萄酒的价位较高,仅限于一定的高层次人消费,没有广大群众消费群体,其原因是<br>葡萄酒对应的消费者群体没有从基层开始,其价位又太高。</p>
+<h3 id="我国葡萄酒行业存在的隐患和问题"><a href="#我国葡萄酒行业存在的隐患和问题" class="headerlink" title="我国葡萄酒行业存在的隐患和问题"></a>我国葡萄酒行业存在的隐患和问题</h3><p>在近两年中我们欣慰地看到,中国的葡萄酒行业取得了相当的进展,并且实现了行业的初步整合,长城、张裕、王朝等一批强势品牌已经开始引领国内市场。同时,随着长城品牌整合的完成,中国葡萄酒品牌建设也取得了一定成就。以新天收购西域葡萄酒为标志,葡萄酒行业出现了产业集中的趋势。经过种种风波之后,中国葡萄酒行业也开始逐步走向规范。但成功与忧患从来都是如影相随,在葡萄酒行业蓬勃发展的背后,还隐藏着很多不为人知的隐患,这些隐患将成为其走向成功彼岸的暗礁。</p>
+<h3 id="加速我国葡萄酒行业发展所应做的努力以及前景展望"><a href="#加速我国葡萄酒行业发展所应做的努力以及前景展望" class="headerlink" title="加速我国葡萄酒行业发展所应做的努力以及前景展望"></a>加速我国葡萄酒行业发展所应做的努力以及前景展望</h3><p>略</p>
+<p>详情在中国知网查看：<a target="_blank" rel="noopener" href="http://kns.cnki.net//KXReader/Detail?TIMESTAMP=637011517842955000&amp;DBCODE=CJFQ&amp;TABLEName=CJFD2009&amp;FileName=HDDX200903011&amp;RESULT=1&amp;SIGN=yp+/1T9fiJ81WPNBRQWbxaeQxnU=">http://kns.cnki.net//KXReader/Detail?TIMESTAMP=637011517842955000&amp;DBCODE=CJFQ&amp;TABLEName=CJFD2009&amp;FileName=HDDX200903011&amp;RESULT=1&amp;SIGN=yp%2b%2f1T9fiJ81WPNBRQWbxaeQxnU%3d</a><br>本作品由中国知网负责全球范围内电子版制作与发行。版权所有，侵权必究。</p>
+<blockquote>
+<p>参考[2]叶正文,寇兆民.谈中国葡萄酒的发展现状[J].酿酒,2012,39(05):17-21</p>
+</blockquote>
+<h3 id="中国酿酒葡萄生产发展展望"><a href="#中国酿酒葡萄生产发展展望" class="headerlink" title="中国酿酒葡萄生产发展展望"></a>中国酿酒葡萄生产发展展望</h3><p>中国是世界上葡萄酒生产发展十分迅速的国家之一，随着政府对葡萄酒产业的重视和国民葡萄酒消费的不断增长，中国酿酒葡萄将呈现一个更加蓬勃发展的新局面。</p>
+<ol>
+<li>栽培面积不断增加，随着中国葡萄酒产业的发展，全国酿酒葡萄栽培面积将进一步增长，根据国家葡萄、葡萄酒发展规划，到 2010 年全国酿酒葡萄种植面积将达到 66.67 千公顷，到 2015 年将达到 100 千公顷，从而为中国葡萄酒酿造业<br>的发展提供可靠的保证。</li>
+<li>酿酒葡萄栽培进一步向优势区集中。根据国家优势农产品产业发展布局，今后十年内，酿酒葡萄重点向西部和环渤海湾地区两个优势生产区集中发展，2010 年这两个优势区内酿酒葡萄种植面积将占全国的 90％以上，尤其是生态环境优异的中国西部干旱、半干旱地区，将是今后中国优良酿酒葡萄和优质葡萄酒的重点发展区域。</li>
+<li>实现葡萄品种区域化。在今后的发展过程中，各个主要葡萄产区将达到品种良种化、良种区域化，以充分利用各地不同的生态资源，充分发挥优良品种的遗传潜势尤其是结合“酒庄酒”、“小酒堡”的发展，在一些特殊的小气候区域，发展一批有明显地方特色的酿酒葡萄品种，如小白玫瑰香（Muscatblanc）、阿登纳玫瑰（Muscatottonal）、白彼诺（Pinot blanc）、马尔斯兰（Marsalen）及威代尔（Vidal Blanc）等品种。使葡萄酒生产进一步多样化、特色化。</li>
+<li>进一步提高酿酒葡萄质量。以往一个阶段，酿酒葡萄生产过分重视提高产量，目前大家都已明确，过高的产量将显著影响葡萄的质量，从而影响葡萄酒的质量，限制产量提高质量已成为全国酿酒葡萄产区的共识，对此中国的葡萄科研单位已从品种选育、脱毒苗的生产、优质栽培、病虫害防治等方面进行多方面的综合研究，一系列新以提高葡萄质量为中心的栽培技术已在全国各产区迅速推广。中国酿酒葡萄的质量正在稳步提高</li>
+</ol>
+<p>在中国知网查看：<a target="_blank" rel="noopener" href="http://kns.cnki.net//KXReader/Detail?TIMESTAMP=637011516886861250&amp;DBCODE=CJFQ&amp;TABLEName=CJFD2012&amp;FileName=NJZZ201205008&amp;RESULT=1&amp;SIGN=DR2XGacaz4LLGatBe10DrGBLM5w=">http://kns.cnki.net//KXReader/Detail?TIMESTAMP=637011516886861250&amp;DBCODE=CJFQ&amp;TABLEName=CJFD2012&amp;FileName=NJZZ201205008&amp;RESULT=1&amp;SIGN=DR2XGacaz4LLGatBe10DrGBLM5w%3d</a><br>本作品由中国知网负责全球范围内电子版制作与发行。版权所有，侵权必究。</p>
+
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <hr>
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-09-26T10:46:17+08:00">
+  <a class='notlink'>
+    <i class="fas fa-clock" aria-hidden="true"></i>
+    <p>last updated at Sep 26, 2020</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2019/08/11/20190811putao/&title=葡萄酒问卷调查 | BIEBLOG&summary=葡萄酒企业片调查问卷回答的相关信息"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2019/08/11/20190811putao/&title=葡萄酒问卷调查 | BIEBLOG&summary=葡萄酒企业片调查问卷回答的相关信息"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2019/08/11/20190811putao/&title=葡萄酒问卷调查 | BIEBLOG&summary=葡萄酒企业片调查问卷回答的相关信息"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/weibo.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+            <div class="prev-next">
+                
+                    <section class="prev">
+                        <span class="art-item-left">
+                            <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;Previous</h6>
+                            <h4>
+                                <a href="/2019/08/24/20190824yichuang/" rel="prev" title="遗传算法">
+                                  
+                                      遗传算法
+                                  
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/tags/%E6%99%BA%E8%83%BD%E7%AE%97%E6%B3%95/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>智能算法</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+                
+                    <section class="next">
+                        <span class="art-item-right" aria-hidden="true">
+                            <h6>Next&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
+                            <h4>
+                                <a href="/2019/08/01/20190801chazhi/" rel="prev" title="MALTAB差值拟合">
+                                    
+                                        MALTAB差值拟合
+                                    
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/tags/%E6%8F%92%E5%80%BC/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>插值</a> <a class="tag" href="/tags/%E6%8B%9F%E5%90%88/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>拟合</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+            </div>
+        
+      </section>
+    </article>
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: '葡萄酒问卷调查',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class='l_side'>
+  
+    
+    
+      
+        
+          
+          
+            <section class='widget author'>
+  <div class='content pure'>
+    
+      <div class='avatar'>
+        <img class='avatar' src='/image/touxiang.jpg'/>
+      </div>
+    
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="/atom.xml"
+              class="social fas fa-rss flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="mailto:me@xaoxuu.com"
+              class="social fas fa-envelope flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://github.com/BIE5462"
+              class="social fab fa-github flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://music.163.com/#/user/home?id=627711889"
+              class="social fas fa-headphones-alt flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+          
+        
+      
+        
+          
+          
+            
+  <section class='widget toc-wrapper'>
+    
+<header class='pure'>
+  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;TOC</div>
+  
+    <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div>
+  
+</header>
+
+    <div class='content pure'>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%91%A1%E8%90%84%E9%85%92%E9%97%AE%E5%8D%B7"><span class="toc-text">葡萄酒问卷</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E4%B8%80%EF%BC%9A%E5%85%AC%E5%8F%B8%E4%B8%BB%E6%8E%A8%E5%93%81%E7%89%8C"><span class="toc-text">问题一：公司主推品牌</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%98%E5%AE%9D%E4%B8%8A%E7%9A%84%E8%91%A1%E8%90%84%E9%85%92%E4%BB%B7%E6%A0%BC%E4%BF%A1%E6%81%AF"><span class="toc-text">淘宝上的葡萄酒价格信息</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%EF%BC%9A-%E5%9B%BD%E5%86%85%E8%91%A1%E8%90%84%E9%85%92%E5%93%81%E7%89%8C%E4%BF%A1%E6%81%AF"><span class="toc-text">参考： 国内葡萄酒品牌信息</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%A0%E8%A3%95%E8%91%A1%E8%90%84%E9%85%92"><span class="toc-text">张裕葡萄酒</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E2%80%9C%E4%BC%A0%E5%A5%87%E5%93%81%E8%B4%A8%EF%BC%8C%E7%99%BE%E5%B9%B4%E5%BC%A0%E8%A3%95%E2%80%9D"><span class="toc-text">“传奇品质，百年张裕”</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%87%E5%8C%96%E5%BD%B1%E5%93%8D"><span class="toc-text">文化影响</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%95%BF%E5%9F%8E%E8%91%A1%E8%90%84%E9%85%92"><span class="toc-text">长城葡萄酒</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E2%80%9C%E5%9C%B0%E9%81%93%E5%A5%BD%E9%85%92%EF%BC%8C%E5%A4%A9%E8%B5%8B%E7%81%B5%E7%8A%80%E2%80%9D"><span class="toc-text">“地道好酒，天赋灵犀”</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%8E%8B%E6%9C%9D%E8%91%A1%E8%90%84%E9%85%92"><span class="toc-text">王朝葡萄酒</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E2%80%9C%E9%85%92%E7%9A%84%E7%8E%8B%E6%9C%9D%EF%BC%8C%E7%8E%8B%E6%9C%9D%E7%9A%84%E9%85%92%E2%80%9D"><span class="toc-text">“酒的王朝，王朝的酒”</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A8%81%E9%BE%99%E8%91%A1%E8%90%84%E9%85%92"><span class="toc-text">威龙葡萄酒</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E2%80%9C%E5%A8%81%E9%BE%99%E5%B9%B2%E7%BA%A2%E2%80%9D"><span class="toc-text">“威龙干红”</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B0%E5%A4%A9%E8%91%A1%E8%90%84%E9%85%92"><span class="toc-text">新天葡萄酒</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E2%80%9C%E8%91%A1%E8%90%84%E6%95%85%E4%B9%A1%EF%BC%8C%E5%9B%9B%E5%AD%A3%E9%98%B3%E5%85%89%E2%80%9D"><span class="toc-text">“葡萄故乡，四季阳光”</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BD%E9%99%85%E8%91%A1%E8%90%84%E9%85%92%E5%93%81%E7%89%8C"><span class="toc-text">国际葡萄酒品牌</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%97%E6%9B%BC%E5%B0%BC-%E5%BA%B7%E5%B8%9D%E9%85%92%E5%9B%AD"><span class="toc-text">罗曼尼-康帝酒园</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%8F%E7%BF%A0%E9%85%92%E5%BA%84"><span class="toc-text">柏翠酒庄</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%87%8C%E9%B9%8F%E9%85%92%E5%BA%84"><span class="toc-text">里鹏酒庄</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%89%E5%9B%BE%E9%85%92%E5%BA%84"><span class="toc-text">拉图酒庄</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%89%E8%8F%B2%E9%85%92%E5%BA%84"><span class="toc-text">拉菲酒庄</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E4%BA%8C%EF%BC%9A%E5%85%AC%E5%8F%B8%E4%B8%BB%E6%8E%A8%E4%BA%A7%E5%93%81%E7%B1%BB%E5%9E%8B"><span class="toc-text">问题二：公司主推产品类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%91%A1%E8%90%84%E9%85%92%E5%88%86%E7%B1%BB"><span class="toc-text">葡萄酒分类</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BA%A2%E8%91%A1%E8%90%84%E9%85%92%EF%BC%88Red-Wines%EF%BC%89"><span class="toc-text">红葡萄酒（Red Wines）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%99%BD%E8%91%A1%E8%90%84%E9%85%92%EF%BC%88White-Wines%EF%BC%89"><span class="toc-text">白葡萄酒（White Wines）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A1%83%E7%BA%A2%E8%91%A1%E8%90%84%E9%85%92%EF%BC%88Rose-Wines%EF%BC%89"><span class="toc-text">桃红葡萄酒（Rose Wines）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%99%E6%AD%A2%E8%91%A1%E8%90%84%E9%85%92%EF%BC%88Still-Wines%EF%BC%89"><span class="toc-text">静止葡萄酒（Still Wines）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B5%B7%E6%B3%A1%E9%85%92%EF%BC%88Sparkling-Wines%EF%BC%89"><span class="toc-text">起泡酒（Sparkling Wines）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%AB%98%E6%B3%A1%E8%91%A1%E8%90%84%E9%85%92%EF%BC%88Sparkling-Wines%EF%BC%89%EF%BC%9A"><span class="toc-text">高泡葡萄酒（Sparkling Wines）：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%8E%E6%B3%A1%E8%91%A1%E8%90%84%E9%85%92%EF%BC%88Semi-Sparkling-Wines%EF%BC%89%EF%BC%9A"><span class="toc-text">低泡葡萄酒（Semi-Sparkling Wines）：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E4%B8%89%EF%BC%9A%E8%91%A1%E8%90%84%E9%85%92%E5%B8%82%E5%9C%BA%E7%AD%89%E7%BA%A7"><span class="toc-text">问题三：葡萄酒市场等级</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E5%9B%9B%EF%BC%9A%E8%91%A1%E8%90%84%E9%85%92%E8%A1%8C%E4%B8%9A%E6%9C%80%E9%9C%80%E8%A6%81%E8%A7%A3%E5%86%B3%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-text">问题四：葡萄酒行业最需要解决的问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%8E%8B%E7%90%A6-%E8%91%A1%E8%90%84%E9%85%92%E4%BA%A7%E4%B8%9A%E8%A6%81%E7%9B%B4%E9%9D%A2%E5%85%AD%E5%A4%A7%E9%97%AE%E9%A2%98"><span class="toc-text">王琦:葡萄酒产业要直面六大问题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E4%BA%94%EF%BC%9A%E5%85%AC%E5%8F%B8%E5%8F%91%E5%B1%95%E9%9D%A2%E4%B8%B4%E6%8C%91%E6%88%98"><span class="toc-text">问题五：公司发展面临挑战</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E4%BA%94%EF%BC%9A%E6%88%91%E5%9B%BD%E8%91%A1%E8%90%84%E9%85%92%E4%BA%A7%E4%B8%9A%E6%9C%AA%E6%9D%A5%E5%8D%81%E5%B9%B4%E5%8F%91%E5%B1%95%E5%89%8D%E6%99%AF"><span class="toc-text">问题五：我国葡萄酒产业未来十年发展前景</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%88%91%E5%9B%BD%E8%91%A1%E8%90%84%E9%85%92%E7%9A%84%E5%8F%91%E5%B1%95%E7%8E%B0%E7%8A%B6"><span class="toc-text">我国葡萄酒的发展现状</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%88%91%E5%9B%BD%E8%91%A1%E8%90%84%E9%85%92%E8%A1%8C%E4%B8%9A%E5%AD%98%E5%9C%A8%E7%9A%84%E9%9A%90%E6%82%A3%E5%92%8C%E9%97%AE%E9%A2%98"><span class="toc-text">我国葡萄酒行业存在的隐患和问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A0%E9%80%9F%E6%88%91%E5%9B%BD%E8%91%A1%E8%90%84%E9%85%92%E8%A1%8C%E4%B8%9A%E5%8F%91%E5%B1%95%E6%89%80%E5%BA%94%E5%81%9A%E7%9A%84%E5%8A%AA%E5%8A%9B%E4%BB%A5%E5%8F%8A%E5%89%8D%E6%99%AF%E5%B1%95%E6%9C%9B"><span class="toc-text">加速我国葡萄酒行业发展所应做的努力以及前景展望</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%AD%E5%9B%BD%E9%85%BF%E9%85%92%E8%91%A1%E8%90%84%E7%94%9F%E4%BA%A7%E5%8F%91%E5%B1%95%E5%B1%95%E6%9C%9B"><span class="toc-text">中国酿酒葡萄生产发展展望</span></a></li></ol></li></ol></li></ol>
+    </div>
+  </section>
+
+
+          
+        
+      
+        
+          
+          
+            
+  <section class='widget category'>
+    
+<header class='pure'>
+  <div><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;文章分类</div>
+  
+    <a class="rightBtn"
+    
+      rel="nofollow"
+    
+    
+    href="/blog/categories/"
+    title="blog/categories/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content pure'>
+      <ul class="entry">
+        
+          <li><a class="flat-box" title="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/" href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"><div class='name'>人工智能</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/%E5%85%B6%E4%BB%96/" href="/categories/%E5%85%B6%E4%BB%96/"><div class='name'>其他</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/" href="/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/"><div class='name'>技术笔记</div><div class='badge'>(4)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/%E6%95%B0%E5%AD%A6/" href="/categories/%E6%95%B0%E5%AD%A6/"><div class='name'>数学</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/" href="/categories/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/"><div class='name'>数学建模</div><div class='badge'>(4)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/matlab/" href="/categories/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/matlab/"><div class='name'>matlab</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90/" href="/categories/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90/"><div class='name'>统计分析</div><div class='badge'>(2)</div></a></li>
+        
+      </ul>
+    </div>
+  </section>
+
+
+          
+        
+      
+        
+          
+          
+            
+  <section class='widget tagcloud'>
+    
+<header class='pure'>
+  <div><i class="fas fa-fire fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;文章标签</div>
+  
+    <a class="rightBtn"
+    
+      rel="nofollow"
+    
+    
+    href="/blog/tags/"
+    title="blog/tags/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content pure'>
+      <a href="/tags/git/" style="font-size: 19px; color: #777">git</a> <a href="/tags/latex/" style="font-size: 14px; color: #999">latex</a> <a href="/tags/matlab/" style="font-size: 14px; color: #999">matlab</a> <a href="/tags/%E6%8B%9F%E5%90%88/" style="font-size: 14px; color: #999">拟合</a> <a href="/tags/%E6%8F%92%E5%80%BC/" style="font-size: 14px; color: #999">插值</a> <a href="/tags/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/" style="font-size: 14px; color: #999">数学建模</a> <a href="/tags/%E6%99%BA%E8%83%BD%E7%AE%97%E6%B3%95/" style="font-size: 24px; color: #555">智能算法</a>
+    </div>
+  </section>
+
+
+          
+        
+      
+        
+          
+          
+            
+
+
+  <section class='widget music'>
+    
+<header class='pure'>
+  <div><i class="fas fa-compact-disc fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;最近在听</div>
+  
+    <a class="rightBtn"
+    
+      rel="external nofollow noopener noreferrer"
+    
+    
+      target="_blank"
+    
+    href="https://music.163.com/#/playlist?id=2962986911"
+    title="https://music.163.com/#/playlist?id=2962986911">
+    <i class="far fa-heart fa-fw"></i></a>
+  
+</header>
+
+    <div class='content pure'>
+      
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.css">
+  <div class="aplayer"
+    data-theme="#1BCDFC"
+    
+    
+    data-mode="random"
+    data-server="netease"
+    data-type="playlist"
+    data-id="2962986911"
+    data-volume="0.5">
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/meting@1.1.0/dist/Meting.min.js"></script>
+
+
+    </div>
+  </section>
+
+
+          
+        
+      
+    
+
+  
+</aside>
+
+<footer id="footer" class="clearfix">
+  
+  
+    <div class="social-wrapper">
+      
+        
+          <a href="/atom.xml"
+            class="social fas fa-rss flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="mailto:me@xaoxuu.com"
+            class="social fas fa-envelope flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="https://github.com/BIE5462"
+            class="social fab fa-github flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="https://music.163.com/#/user/home?id=627711889"
+            class="social fas fa-headphones-alt flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+    </div>
+  
+  <br>
+  <div><p>Blog content follows the <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
+</div>
+  <div>
+    Use
+    <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename">BIEBLOG</a>
+    as theme
+    
+      , 
+      total visits
+      <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
+      times
+    
+    . 
+  </div>
+</footer>
+<script>setLoadingBarProgress(80);</script>
+
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+
+  <script>
+    var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
+    var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
+    var ALGOLIA_API_KEY = "";
+    var ALGOLIA_APP_ID = "";
+    var ALGOLIA_INDEX_NAME = "";
+    var AZURE_SERVICE_NAME = "";
+    var AZURE_INDEX_NAME = "";
+    var AZURE_QUERY_KEY = "";
+    var BAIDU_API_ID = "";
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/"||"/";
+    if(!ROOT.endsWith('/'))ROOT += '/';
+  </script>
+
+<script src="//instant.page/1.2.2" type="module" integrity="sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU"></script>
+
+
+  <script async src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      const $reveal = $('.reveal');
+      if ($reveal.length === 0) return;
+      const sr = ScrollReveal({ distance: 0 });
+      sr.reveal('.reveal');
+    });
+  </script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+
+
+  <!-- fastclick -->
+  <script src="https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      FastClick.attach(document.body)
+    }, false)
+  </script>
+
+
+
+  
+  
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
+    <script type="text/javascript">
+      $(function(){
+        if ('.cover') {
+          $('.cover').backstretch(
+          ["/image/beijin01.jpg", "/image/beijin02.jpg", "/image/beijin03.jpg"],
+          {
+            duration: "7000",
+            fade: "6500"
+          });
+        } else {
+          $.backstretch(
+          ["/image/beijin01.jpg", "/image/beijin02.jpg", "/image/beijin03.jpg"],
+          {
+            duration: "7000",
+            fade: "6500"
+          });
+        }
+      });
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.5/js/app.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.5/js/search.js"></script>
+
+
+
+
+
+<!-- 复制 -->
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  let COPY_SUCCESS = "Copied";
+  let COPY_FAILURE = "Copy failed";
+  /*页面载入完成后，创建复制按钮*/
+  !function (e, t, a) {
+    /* code */
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '  <i class="fa fa-copy"></i><span>Copy</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+
+      clipboard.on('success', function(e) {
+        //您可以加入成功提示
+        console.info('Action:', e.action);
+        console.info('Text:', e.text);
+        console.info('Trigger:', e.trigger);
+        success_prompt(COPY_SUCCESS);
+        e.clearSelection();
+      });
+      clipboard.on('error', function(e) {
+        //您可以加入失败提示
+        console.error('Action:', e.action);
+        console.error('Trigger:', e.trigger);
+        fail_prompt(COPY_FAILURE);
+      });
+    }
+    initCopyCode();
+
+  }(window, document);
+
+  /**
+   * 弹出式提示框，默认1.5秒自动消失
+   * @param message 提示信息
+   * @param style 提示样式，有alert-success、alert-danger、alert-warning、alert-info
+   * @param time 消失时间
+   */
+  var prompt = function (message, style, time)
+  {
+      style = (style === undefined) ? 'alert-success' : style;
+      time = (time === undefined) ? 1500 : time*1000;
+      $('<div>')
+          .appendTo('body')
+          .addClass('alert ' + style)
+          .html(message)
+          .show()
+          .delay(time)
+          .fadeOut();
+  };
+
+  // 成功提示
+  var success_prompt = function(message, time)
+  {
+      prompt(message, 'alert-success', time);
+  };
+
+  // 失败提示
+  var fail_prompt = function(message, time)
+  {
+      prompt(message, 'alert-danger', time);
+  };
+
+  // 提醒
+  var warning_prompt = function(message, time)
+  {
+      prompt(message, 'alert-warning', time);
+  };
+
+  // 信息提示
+  var info_prompt = function(message, time)
+  {
+      prompt(message, 'alert-info', time);
+  };
+
+</script>
+
+
+<!-- fancybox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "";
+  $(".article-entry").find("fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+</body>
+</html>

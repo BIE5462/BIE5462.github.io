@@ -1,0 +1,1299 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  <title>数学建模统计分析 | BIEBLOG</title>
+  
+  <meta name="keywords" content="数据结构与算法,智能计算,最优化理论">
+  
+  
+  <meta name="description" content="我的学习之路">
+  
+
+  
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.6.3/css/all.min.css">
+  
+
+  
+
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.5/css/style.css">
+
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+  
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  
+  
+  <div class="cover-wrapper">
+    <cover class='cover post half'>
+      
+        
+  <h1 class='title'>BIEBOLG</h1>
+
+
+  <div class="m_search">
+    <form name="searchform" class="form u-search-form">
+      <input type="text" class="input u-search-input" placeholder="查找文章" />
+      <i class="icon fas fa-search fa-fw"></i>
+    </form>
+  </div>
+
+<div class='menu navgation'>
+  <ul class='h-list'>
+    
+      
+        <li>
+          <a class="nav home" href="/"
+            
+            
+            id="home">
+            <i class='fas fa-rss fa-fw'></i>&nbsp;全部文章
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="/category"
+            
+            
+            id="category">
+            <i class='fas fa-folder-open fa-fw'></i>&nbsp;文章分类
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="/tag"
+            
+            
+            id="tag">
+            <i class='fas fa-hashtag fa-fw'></i>&nbsp;文章标签
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="/about"
+            
+              rel="nofollow"
+            
+            
+            id="about">
+            <i class='fas fa-info-circle fa-fw'></i>&nbsp;关于本站
+          </a>
+        </li>
+      
+    
+  </ul>
+</div>
+
+      
+    </cover>
+    <header class="l_header pure">
+  <div id="loading-bar-wrapper">
+    <div id="loading-bar" class="pure"></div>
+  </div>
+
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+      <a class="logo flat-box" href='/' >
+        
+          BIEBLOG
+        
+      </a>
+			<div class='menu navgation'>
+				<ul class='h-list'>
+          
+  					
+  						<li>
+								<a class="nav flat-box" href="/"
+                  
+                  
+                  id="home">
+									<i class='fas fa-grin fa-fw'></i>&nbsp;主页
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/category"
+                  
+                    rel="nofollow"
+                  
+                  
+                  id="category">
+									<i class='fas fa-folder-open fa-fw'></i>&nbsp;分类
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/tag"
+                  
+                    rel="nofollow"
+                  
+                  
+                  id="tag">
+									<i class='fas fa-hashtag fa-fw'></i>&nbsp;标签
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/timeline"
+                  
+                    rel="nofollow"
+                  
+                  
+                  id="timeline">
+									<i class='fas fa-history fa-fw'></i>&nbsp;时间轴
+								</a>
+							</li>
+      			
+      		
+				</ul>
+			</div>
+
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="Search" />
+						<i class="icon fas fa-search fa-fw"></i>
+					</form>
+				</div>
+			
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a class="fas fa-search fa-fw" href='javascript:void(0)'></a></li>
+				
+				<li class='s-menu'><a class="fas fa-bars fa-fw" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+
+		<div class='nav-sub container container--flex'>
+			<a class="logo flat-box"></a>
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a class="flat-btn fas fa-comments fa-fw" href='javascript:void(0)'></a></li>
+        
+          <li class='s-toc'><a class="flat-btn fas fa-list fa-fw" href='javascript:void(0)'></a></li>
+        
+			</ul>
+		</div>
+	</div>
+</header>
+	<aside class="menu-phone">
+    <header>
+		<nav class="menu navgation">
+      <ul>
+        
+          
+            <li>
+							<a class="nav flat-box" href="/"
+                
+                
+                id="home">
+								<i class='fas fa-rss fa-fw'></i>&nbsp;全部文章
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/category"
+                
+                
+                id="category">
+								<i class='fas fa-folder-open fa-fw'></i>&nbsp;文章分类
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/tag"
+                
+                
+                id="tag">
+								<i class='fas fa-hashtag fa-fw'></i>&nbsp;文章标签
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/about"
+                
+                  rel="nofollow"
+                
+                
+                id="about">
+								<i class='fas fa-info-circle fa-fw'></i>&nbsp;关于本站
+							</a>
+            </li>
+          
+       
+      </ul>
+		</nav>
+    </header>
+	</aside>
+<script>setLoadingBarProgress(40);</script>
+
+  </div>
+
+
+  <div class="l_body">
+    <div class='body-wrapper'>
+      <div class='l_main'>
+  
+
+  
+    <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
+      
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  
+    <h1 class="title">
+      <a href="/2019/09/04/20190904tongji/">
+        数学建模统计分析
+      </a>
+    </h1>
+  
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    <a href="http://example.com" rel="nofollow">
+      
+        <i class="fas fa-user" aria-hidden="true"></i>
+      
+      <p>杨春波</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2019-09-04</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>数学建模&nbsp;/&nbsp;统计分析</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+  
+    <div class="new-meta-item browse busuanzi">
+      <a class='notlink'>
+        <i class="fas fa-eye" aria-hidden="true"></i>
+        <p>
+          <span id="busuanzi_value_page_pv">
+            <i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i>
+          </span>
+        </p>
+      </a>
+    </div>
+  
+
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          <p>数学建模统计分析知识笔记</p>
+<span id="more"></span>
+
+<h1 id="数学建模统计分析"><a href="#数学建模统计分析" class="headerlink" title="数学建模统计分析"></a>数学建模统计分析</h1><h2 id="一：回归分析"><a href="#一：回归分析" class="headerlink" title="一：回归分析"></a>一：回归分析</h2><ul>
+<li>相关分析与回归分析的区别与联系</li>
+</ul>
+<p>相关分析不区分自变量与因变量，只讨论变量之间的共同变化的强度和方向，使用的指标是相关系数；而回归分析区分自变量和因变量，自变量也被称为解释变量，因变量被称为结果变量，通过一定的函数关系式来表达它们之间的关系。可以这么说，相关分析是回归分析的基础，回归分析是相关分析的发展。</p>
+<ul>
+<li>回归分析</li>
+</ul>
+<p>回归分析就是分析变量之间隐藏的内在规律，并建立变量之间函数变化关系的一种分析方法，回归分析的目标就是建立由一个因变量和若干自变量构成的回归方程式，使变量之间的相互控制关系通过这个方程式描述出来。</p>
+<p>回归方程式不仅能够解释现在个案内部隐藏的规律，明确每个自变量对因变量的作用程度。而且，基于有效的回归方程，还能形成更有意义的数学方面的预测关系。因此，回归分析是一种分析因素变量对因变量作用强度的归因分析，它还是预测分析的重要基础。</p>
+<h3 id="线性回归"><a href="#线性回归" class="headerlink" title="线性回归"></a>线性回归</h3><h4 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h4><p>回归分析就是建立变量的数学模型，建立起衡量数据联系强度的指标，并通过指标检验其符合的程度。线性回归分析中，如果仅有一个自变量，可以建立一元线性模型。如果存在多个自变量，则需要建立多元线性回归模型。线性回归的过程就是把各个自变量和因变量的个案值带入到回归方程式当中，通过逐步迭代与拟合，最终找出回归方程式中的各个系数，构造出一个能够尽可能体现自变量与因变量关系的函数式。在一元线性回归中，回归方程的确立就是逐步确定唯一自变量的系数和常数，并使方程能够符合绝大多数个案的取值特点。在多元线性回归中，除了要确定各个自变量的系数和常数外，还要分析方程内的每个自变量是否是真正必须的，把回归方程中的非必需自变量剔除。</p>
+<h4 id="重要概念"><a href="#重要概念" class="headerlink" title="重要概念"></a>重要概念</h4><ul>
+<li><strong>线性回归方程</strong>：一次函数式，用于描述因变量与自变量之间的内在关系。根据自变量的个数，可以分为一元线性回归方程和多元线性回归方程。</li>
+<li><strong>观测值</strong>：参与回归分析的因变量的实际取值。对参与线性回归分析的多个个案来讲，它们在因变量上的取值，就是观测值。观测值是一个数据序列，也就是线性回归分析过程中的因变量。</li>
+<li><strong>回归值</strong>：把每个个案的自变量取值带入回归方程后，通过计算所获得的数值。在回归分析中，针对每个个案，都能获得一个回归值。因此，回归值也是一个数据序列，回归值的数量与个案数相同。在线性回归分析中，回归值也常常被称为预测值，或者期望值。</li>
+<li><strong>残差</strong>：残差是观测值与回归值的差。残差反映的是依据回归方程所获得的计算值与实际测量值的差距。在线性回归中，残差应该满足正态分布，而且全体个案的残差之和为0。</li>
+</ul>
+<h4 id="回归效果评价"><a href="#回归效果评价" class="headerlink" title="回归效果评价"></a>回归效果评价</h4><p>在回归分析的评价中，通常使用全部残差的平方之和表示残差的量度，而以全体回归值的平方之和表示回归的量度。通常有以下几个评价指标：</p>
+<ul>
+<li><strong>判定系数R方</strong></li>
+</ul>
+<p>判定系数R方的值在0~1之间，其值越接近1，表示残差的比例越低，即回归方程的拟合程度越高，回归值越能贴近观测值，更能体现观测数据的内在规律。在一般的应用中，R方大于0.6就表示回归方程有较好的质量。</p>
+<ul>
+<li><strong>F值</strong></li>
+</ul>
+<p>F值是回归分析中反映回归效果的重要指标，它以回归均方和与残差均方和的比值表示，即F&#x3D;回归均方和&#x2F;残差均方和，在一般的线性回归中，F值应该在3.86以上。</p>
+<ul>
+<li><strong>T值</strong></li>
+</ul>
+<p>T值是回归分析中反映每个自变量的作用力的重要指标。在回归分析时，每个自变量都有自己的T值，T值以相应自变量的偏回归系数与其标准误差的比值来表示。在一般的线性回归分析中，T的绝对值应该大于1.96。如果某个自变量的T值小于1.96，表示这个自变量对方程的影响力很小，应该尽可能把它从方程中剔除。</p>
+<ul>
+<li><strong>检验概率（Sig值）</strong></li>
+</ul>
+<p>回归方程的检验概率值共有两种类型：整体Sig值和针对每个自变量的Sig值。整体的Sig值反映了整个方程的影响力，而针对自变量的Sig值则反映了该自变量在回归方程中没有作用的可能性。只有Sig值小于0.05，才表示有影响力。</p>
+<h4 id="多元线性回归MATLAB实现"><a href="#多元线性回归MATLAB实现" class="headerlink" title="多元线性回归MATLAB实现"></a>多元线性回归MATLAB实现</h4><blockquote>
+<p>多元线性回归的命令是<code>regress</code></p>
+</blockquote>
+<p>（1）<code>b=regress( Y,  X ) </code>确定回归系数的点估计值</p>
+<p>其中，Y为n*1的矩阵；X为<code>（ones(n,1),x1,…,xm）</code>的矩阵；</p>
+<p>（2）<code>[b, bint,r,rint,stats]=regress(Y,X,alpha)</code> 求回归系数的点估计和区间估计，并检验回归模型</p>
+<ul>
+<li>b 回归系数</li>
+<li>bint 回归系数的区间估计</li>
+<li>r 残差</li>
+<li>rint 残差置信区间</li>
+<li>stats 用于检验回归模型的统计量，有四个数值：<strong>相关系数R2</strong>、<strong>F值</strong>、与F对应的概率p，误差方差。相关系数R2越接近1，说明回归方程越显著；F &gt; F1-α（k，n-k-1）时拒绝H0，F越大，说明回归方程越显著；与F对应的概率p 时拒绝H0，回归模型成立。p值在0.01-0.05之间，越小越好。</li>
+</ul>
+<p>（3）出残差以及其置信区间：<code>rcoplot(r,rint)</code>;</p>
+<h3 id="曲线回归"><a href="#曲线回归" class="headerlink" title="曲线回归"></a>曲线回归</h3><p>本质是线性相关关系的变量，可以选择恰当的曲线方程将变量进行转换，实现曲线直线化，从而将曲线方程转化为直线回归方程进行分析。曲线估计模块能够自动拟合线性模型、对数曲线模型、二次曲线模型、指数曲线模型等多种曲线模型，而输出的统计量包括模型的回归系数、复相关系数、调整的拟合指数及方差分析结果等。</p>
+<p>根据曲线的性质和特点可大致分为6类：指数函数曲线，对数，幂函数，双曲，S型和多项式曲线。<br>多项式曲线能逼近绝大部分的曲线：</p>
+<h4 id="多项式拟合指令polyfit"><a href="#多项式拟合指令polyfit" class="headerlink" title="多项式拟合指令polyfit"></a>多项式拟合指令polyfit</h4><p>**a&#x3D;polyfit(x,y,n)**用多项式求过已知点的表达式，其中x为源数据点对应的横坐标，可为行向量、矩阵，y为源数据点对应的纵坐标，可为行向量、矩阵，n为你要拟合的阶数，</p>
+<p>一阶直线拟合，二阶抛物线拟合，并非阶次越高越好，看拟合情况而定，a为m+1的行向量。</p>
+<p>polyfit函数的数学基础是最小二乘法曲线拟合原理，所得到的函数值在基点处的值与原来点的坐标偏差最小，常用于数据拟合，polyfit 做出来的值从左到右表示从高次到低次的多项式系数。</p>
+<p><code>polyfit(X,Y,N)</code>：多项式拟合，返回降幂排列的多项式系数。<br><code>polyval(P,XI)</code>：计算多项式的值。<br>  其中，</p>
+<ul>
+<li>X，Y是数据点的值；</li>
+<li>N是拟合的最高次幂；</li>
+<li>P是返回的多项式系数；</li>
+<li>Xi是要求的点的横坐标。</li>
+</ul>
+<p>例如，要对以下数据进行多项式拟合。数据如下：<br>x：1,2,3,4,5,6,7,8,9</p>
+<p>y：9,7,6,3,-1,2,7,20</p>
+<p>matlab代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">%% 多项式拟合指令</span><br><span class="line">x=[1 2 3 4 5 6 7 8 9];</span><br><span class="line">y=[9 7 6 3 -1 2 5 7 20];</span><br><span class="line">P=polyfit(x,y,3);</span><br><span class="line">xi=0:.2:10;</span><br></pre></td></tr></table></figure>
+<h3 id="非线性回归"><a href="#非线性回归" class="headerlink" title="非线性回归"></a>非线性回归</h3><h4 id="非线性回归与曲线回归的区别"><a href="#非线性回归与曲线回归的区别" class="headerlink" title="非线性回归与曲线回归的区别"></a>非线性回归与曲线回归的区别</h4><p>非线性回归是回归函数关于未知回归系数具有非线性结构的回归。非线性关系可以分为本质线性关系和本质非线性关系。可以通过变量装换转化为线性关系，并最终进行线性回归分析的叫本质线性关系(曲线回归)；而无法通过变量装换转化为线性关系，最终也无法进行线性回归分析的叫本质非线性关系。这里说的非线性回归就是本质非线性关系。</p>
+<p>曲线估计只能用于一个自变量和因变量相关关系的模型的分析，而非线性回归分析可以用来探讨因变量和一组自变量之间的非线性相关模型。线性回归模型要求变量之间必须是线性关系，曲线回归只能处理能够通过变量转换转化为线性关系的非线性问题，因此，这些方法都有一定的局限性。非线性回归可以估计因变量和自变量之间任意关系的模型，可以根据自身需要随意设定估计方程的具体形式。因此，非线性回归在实际应用中价值更大，应用范围更广。</p>
+<p>当无法使用普通最小二乘回归对连续响应变量和一个或多个预测变量之间的关系充分建模时，应使用常用的处理方法有回归函数的线性迭代法、分段回归法、迭代最小二乘法等。非线性回归分析的主要内容与线性回归分析相似。</p>
+<h4 id="非线性回归与线性回归比较"><a href="#非线性回归与线性回归比较" class="headerlink" title="非线性回归与线性回归比较"></a>非线性回归与线性回归比较</h4><h5 id="相似点"><a href="#相似点" class="headerlink" title="相似点"></a>相似点</h5><p>两种分析：</p>
+<ul>
+<li>都在数学上描述一个响应变量和一个或多个预测变量之间的关系。</li>
+<li>都可以为曲线关系建模。</li>
+<li>都可以使残差误差平方和 (SSE) 最小化。</li>
+<li>都同样假设可以使用残差图检查效果。</li>
+</ul>
+<h5 id="差值"><a href="#差值" class="headerlink" title="差值"></a>差值</h5><p>线性回归和非线性回归之间的根本差别，以及两种分析的命名依据，在于可接受何种形式的模型函数。特别是，线性回归要求线性参数，而非线性回归则不要求。当使用线性参数无法对关系充分建模时，请使用非线性回归而不是线性回归。</p>
+<p>线性回归函数的参数必须是线性的，这限制方程只能有一种基本形式。当模型中的各项之间是相加关系，并且每一项只包含一个与该项相乘的参数时，参数是线性的：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">响应 = 常量 + 参数 * 预测变量 + … + 参数 * 预测变量</span><br><span class="line">或者 y = βo + β1X1 + β2X2 + ... + βkXk</span><br></pre></td></tr></table></figure>
+<p>然而，非线性方程可以采取许多不同的形式。事实上，因为有无限多种可能性，您必须指定 Minitab 用于执行非线性回归的预期函数。以下示例说明了变异性（θ 代表参数）：</p>
+<ul>
+<li>y &#x3D; θX（凸曲线 2、1 个参数、1 个预测变量）</li>
+<li>y &#x3D; θ1 * X1&#x2F;(θ2+ X1)（Michaelis-Menten 方程、2 个参数、1 个预测变量）</li>
+<li>y &#x3D; θ1 - θ2 * (ln (X1 + θ3) - ln (X2))（Nernst 方程、3 个参数、2 个预测变量）</li>
+</ul>
+<p>是否选择预期函数通常取决于之前对系统中的响应曲线形状或物理和化学属性行为的了解。可能的非线性形状包括凹、凸、指数增长或衰减、S 形 (S) 和渐近曲线。您必须指定既具备您之前已了解的知识又满足非线性回归假设的函数。</p>
+<p>虽然可以十分灵活地指定许多不同的预期函数，但是可能需要付出很多精力才能确定可以为数据提供最佳拟合的函数。这通常需要额外的研究、专业领域知识和试错分析。另外，对于非线性方程，在确定每个预测变量对响应的影响时可能不如线性方程那样直观。<br>非线性回归使用不同于线性回归的过程来使残差误差平方和 (SSE) 最小化</p>
+<h3 id="非线性回归MATLAB实现"><a href="#非线性回归MATLAB实现" class="headerlink" title="非线性回归MATLAB实现"></a>非线性回归MATLAB实现</h3><blockquote>
+<p>beta&#x3D; nlinfit(x, y, model, beta0)</p>
+</blockquote>
+<ul>
+<li>x为自变量，可以是多个自变量</li>
+<li>y为因变量，只能由一个</li>
+<li>model是函数模型,事先用M文件定义的非线性函数</li>
+<li>beta0要求系数的初值</li>
+</ul>
+<p>例子：</p>
+<p>假定一个回归模型<code>y = beta1*x1^3 + beta2*x2^2 + beta3*log2(x3)</code></p>
+<p>其中<code>beta1</code>,<code> beta2</code>, <code>beta3</code>为想要通过回归得到的系数</p>
+<ul>
+<li><strong>Step1：建立回归模型</strong></li>
+</ul>
+<p>直接使用内联函数建立：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mymodel = inline(&#x27;beta(1)*x(:,1).^3 + beta(2)*x(:,2).^2 + beta(3)*log2(x(:,3)&#x27;,&#x27;beta&#x27;,&#x27;x&#x27;);</span><br></pre></td></tr></table></figure>
+<p>这里x(:1)是取x的第一列数据，相应的x(:,2)取第二列数据…</p>
+<p>beta(1),beta(2),beta(3)为所求系数</p>
+<ul>
+<li><strong>Step2: 回归</strong><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">x = [x1,x2,x3]; %自变量x1,x2,x3</span><br><span class="line">beta0= [a1,b1,c1,d1,e1,f1,m1,n1,z1]; %系数初始值</span><br><span class="line">beta = nlinfit(x,y,myfun,temp); %回归得到系数beta</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="聚类分析"><a href="#聚类分析" class="headerlink" title="聚类分析"></a>聚类分析</h2><h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>划分类别、等级和阶层的行为自发或不自发的存在于社会生活的各个角落。例如，可以根据家庭年收入情况将所有家庭划分为低收入到高收入的不同阶层；根据人们的工作性质，也可以将人们划分不同阶层；根据出生地和生活习惯，同样可以对人群进行分类。对事物分门别类依据的是不同事物身上共同的标签。</p>
+<p>通过一个指标、特征或标签就对所有的事物进行分类，这样的分类情况是非常简单和明确的。然而，如果分类需要考虑的标签是多个，事物在这些标签上的表现有好有坏，那么就需要用到聚类分析来达到我们的需求了。</p>
+<blockquote>
+<p>聚类分析指将物理或抽象对象的集合分组为由类似的对象组成的多个类的分析过程。它是一种重要的人类行为。</p>
+</blockquote>
+<blockquote>
+<p>聚类与分类的不同在于，聚类所要求划分的类是未知的。</p>
+</blockquote>
+<p>聚类是将数据分类到不同的类或者簇这样的一个过程，所以同一个簇中的对象有很大的相似性，而不同簇间的对象有很大的相异性。</p>
+<p>聚类分析是一种探索性的分析，在分类的过程中，人们不必事先给出一个分类的标准，聚类分析能够从样本数据出发，自动进行分类。聚类分析所使用方法的不同，常常会得到不同的结论。不同研究者对于同一组数据进行聚类分析，所得到的聚类数未必一致。</p>
+<h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>聚类分析是一种定量方法，从数据分析的角度看，它是对多个样本进行定量分析的多元统计分析方法，可以分为两种：</p>
+<ul>
+<li>对样本进行分类称为Q型聚类分析</li>
+<li>对指标进行分类称为R型聚类分析</li>
+</ul>
+<h4 id="聚类方法的区别"><a href="#聚类方法的区别" class="headerlink" title="聚类方法的区别"></a>聚类方法的区别</h4><ul>
+<li><p>划分聚类：给定一个n个对象的集合，划分方法构建数据的k 个分区，其中每个分区表示一个族（族）。大部分划分方法是基于距离的，给定要构建的k个分区数，划分方法首先创建一个初始划分，然后使用一种迭代的重定位技术将各个样本重定位，直到满足条件为止。</p>
+</li>
+<li><p>层次聚类：层次聚类可以分为凝聚和分裂的方法；凝聚也称自底向上法，开始便将每个对象单独为一个族，然后逐次合并相近的对象，直到所有组被合并为一个族或者达到迭代停止条件为止。分裂也称自顶向下，开始将所有样本当成一个族，然后迭代分解成更小的值。</p>
+</li>
+<li><p>基于密度的聚类：其主要思想是只要“邻域“中的密度（对象或数据点的数目）超过某个阀值，就继续增长给定的族。也就是说，对给定族中的每个数据点，在给定半径的邻域中必须包含最少数目的点。这样的主要好处就是过滤噪声，剔除离群点。</p>
+</li>
+<li><p>基于网格的聚类：它把对象空间量化为有限个单元，形成一个网格结构，所有的聚类操作都在这个网格结构中进行，这样使得处理的时间独立于数据对象的个数，而仅依赖于量化空间中每一维的单元数。</p>
+</li>
+</ul>
+<p>划分聚类是基于距离的，可以使用均值或者中心点等代表族中心，对中小规模的数据有效；而层次聚类是一种层次分解，不能纠正错误的合并或划分，但可以集成其他的技术；基于密度的聚类可以发现任意形状的族，族密度是每个点的“邻域“内必须具有最少个数的点，可以过滤离群点；基于网格的聚类使用一种多分辨率网格数据结构，能快速处理数据。</p>
+<h4 id="距离（样本相似性度量）"><a href="#距离（样本相似性度量）" class="headerlink" title="距离（样本相似性度量）"></a>距离（样本相似性度量）</h4><ul>
+<li>闵氏距离</li>
+</ul>
+<p>要用数量化的方法对事物进行分类，就要用数量化的方法来定义每个样本的相似程度，这个相似程度在数学上可以称之为距离，最常用的闵氏距离：</p>
+<p>$$d_{p}\left ( x,y \right )&#x3D;\sum_{k&#x3D;1}^{p} \right \left | x_{k} -y_{k}\right |^{1&#x2F;q}$$</p>
+<p>当q&#x3D;1时为绝对值距离,</p>
+<p>当q&#x3D;2时为欧几里得距离,</p>
+<p>q→+∞时为切比雪夫距离，</p>
+<ul>
+<li>马氏距离</li>
+<li>兰氏距离</li>
+</ul>
+<p>距离度量公式略</p>
+<h4 id="类与类间的相似性度量"><a href="#类与类间的相似性度量" class="headerlink" title="类与类间的相似性度量"></a>类与类间的相似性度量</h4><ul>
+<li>最短距离法</li>
+<li>最长距离法</li>
+<li>重心法</li>
+<li>类平均法</li>
+<li>离差平方和法</li>
+</ul>
+<h4 id="聚类方法"><a href="#聚类方法" class="headerlink" title="聚类方法"></a>聚类方法</h4><p>常用的三种聚类方法：层次聚类法、K-Mean聚类法和二阶聚类法。</p>
+<h5 id="层次聚类分析"><a href="#层次聚类分析" class="headerlink" title="层次聚类分析"></a>层次聚类分析</h5><p>层次聚类法是传统的聚类方法，它首先需要根据指标数据类型确定距离的基本定义和计算方式，随后按照距离的远近，将所有的事物（个案）一步一步的归成一类。这样聚类的结果显然存在嵌套，或者说不同类别间会有层次关系，因此被称为层次聚类法。层次聚类可用一张二维空间图来表示，称为树状图。</p>
+<p>层次聚类法的运算原理都是基于事物（个案）之间的距离，它的运算过程可以总结成下面两个步骤：</p>
+<ul>
+<li>在聚类开始前，假设有n个事物（个案），每个个案（事物）都自成一类，然后按照定义的距离公式计算个案之间的距离，这些距离可以整理成一个n*n的距离矩阵。将距离最近的两个个案合并为一类，那么总类别就减少为n-1个。</li>
+<li>重复上面的过程，计算出n-1个类别间的距离，形成新的距离矩阵，再将距离最接近的两个类别合并。重复以上过程，直至所有的个案都被归为一类为止。</li>
+</ul>
+<p>从以上层次聚类分析的运算过程可知：层次聚类可以对个案（事物）进行聚类。因为层次聚类提供的距离测量方法非常丰富，所以能够用于计算的个案（事物）的指标数据可以是连续型数据，也可以是分类型数据。它的缺点也非常明显，那就是计算量很大，当需要聚类的个案（事物）数量很大时，层次聚类的运算速度没有优势。</p>
+<h5 id="K-均值聚类"><a href="#K-均值聚类" class="headerlink" title="K-均值聚类"></a>K-均值聚类</h5><p>层次聚类的分析过程是非常细致的，需要计算所有事物（个案）两两之间的距离，所以聚类的效率不高。K-均值聚类可以在一定程度上解决这个问题。K-均值聚类在聚类之前就确定好了最终的类别数和类别坐标，整个分析过程使用迭代的方式进行。通过不断的迭代把事物（个案）在不同类别之间移动，直到找到距离最短的类别，然后将该事物归于此类。整个计算过程中不需要存储基本数据，因此不会出现嵌套结果，计算速度也非常快。</p>
+<h5 id="二阶聚类"><a href="#二阶聚类" class="headerlink" title="二阶聚类"></a>二阶聚类</h5><p>随着数据收集和存储设备的发展，海量数据的聚类分析已经称为迫切的需求，而上面介绍的两种聚类方法在速度和效率上还不能满足要求。首先是面对海量数据，过高的计算量会使上面两种方法不具实用价值；其次上面两种聚类方法不能处理复杂指标数据同时存在的情况，特别是连续型和离散型数据混合出现的情况。二阶聚类能够解决上面两种聚类方法不能处理的复杂情况。</p>
+<h3 id="MATLAB聚类实现"><a href="#MATLAB聚类实现" class="headerlink" title="MATLAB聚类实现"></a>MATLAB聚类实现</h3><h4 id="系统聚类函数"><a href="#系统聚类函数" class="headerlink" title="系统聚类函数"></a>系统聚类函数</h4><ul>
+<li><strong>pdistw</strong><blockquote>
+<p>计算数据集每对元素之间的距离<br>调用格式：</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Y=pdist(X),</span><br><span class="line">Y=pdist(X,&#x27;metric&#x27;),</span><br><span class="line">Y=pdist(X,&#x27;distfun&#x27;),</span><br><span class="line">Y=pdist(X,&#x27;minkowski&#x27;,p)</span><br></pre></td></tr></table></figure>
+<p>说明：<br>X是m*n的矩阵，<code>metric</code>是计算距离的方法选项：<br><code>metric=euclidean</code>表示欧式距离（缺省值）；<br><code>metric=seuclidean</code>表示标准的欧式距离；<br><code>metric=mahalanobis</code>表示马氏距离。</p>
+</li>
+</ul>
+<p><code>distfun</code>是自定义的距离函数，p是<code>minkowski</code>距离计算过程中的幂次，缺省值为2.<br>Y返回大小为<code>m(m-1)/2</code>的距离矩阵，距离排序顺序为(1,2),(1,3),…(m-1,m)，Y也称为相似矩阵，可用<code>squareform</code>将其转化为方阵。</p>
+<ul>
+<li><strong>linkage</strong><blockquote>
+<p>对元素进行分类，构成一个系统聚类树<br>调用格式：</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Z=linkage(Y),</span><br><span class="line">Z=linkage(Y,&#x27;method&#x27;)</span><br></pre></td></tr></table></figure>
+<p>说明：<br>Y是距离函数，Z是返回系统聚类树，method是采用的算法选项，</p>
+</li>
+</ul>
+<p>如下：<br><code>method=single</code>表示最短距离(缺省值)；<br><code>complete</code>表示最长距离；<code>median</code>表示中间距离法；<br><code>centroid</code>表示重心法；<code>average</code>表示类平均法；<br><code>ward</code> 表示离差平方和法（Ward法）。</p>
+<ul>
+<li><strong>cluster</strong></li>
+</ul>
+<p>确定怎样划分系统聚类树，得到不同的类，对应的函数为cluster.</p>
+<p>调用格式：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">T=cluster(Z,&#x27;cutoff&#x27;,c),</span><br><span class="line">T=cluster(Z,&#x27;maxclust&#x27;,n)</span><br></pre></td></tr></table></figure>
+<p>说明：<br>Z是系统聚类树，为(m-1)*3的矩阵，c是阈值，n是类的最大数目，</p>
+<p>maxclust是聚类的选项，cutoff是临界值，决定cluster函数怎样聚类。</p>
+<h4 id="一个简单的例子"><a href="#一个简单的例子" class="headerlink" title="一个简单的例子"></a>一个简单的例子</h4><p>利用系统聚类法对5个变量进行分类。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x1=[20,7],x2=[18,10],x3=[10,5],x4=[4,5],x5=[4,3]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">%Matlab运行程序：</span><br><span class="line">X=[20,7;18,10;10,5;4,5;4,3];</span><br><span class="line">Y=pdist(X);</span><br><span class="line">SF=squareform(Y);</span><br><span class="line">Z=linkage(Y，’single’);</span><br><span class="line">dendrogram(Z);%显示系统聚类树</span><br><span class="line">T=cluster(Z,&#x27;maxclust&#x27;,3)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>其他聚类方法参考数模教程</p>
+</blockquote>
+<h2 id="主成分分析"><a href="#主成分分析" class="headerlink" title="主成分分析"></a>主成分分析</h2><h3 id="主成分分析和因子分析的区别与联系"><a href="#主成分分析和因子分析的区别与联系" class="headerlink" title="主成分分析和因子分析的区别与联系"></a>主成分分析和因子分析的区别与联系</h3><p>随着硬件技术的发展，每年被记录和存储下来的数据是非常庞大的，如何从庞大的数据堆中筛选出目标数据并分析得到有用的结论是现今重要的领域—数据挖掘。为了能够充分有效的利用数据，化繁为简是一项必做的工作，希望将原来繁多的描述变量浓缩成少数几个新指标，同时尽可能多的保存旧变量的信息，这些分析过程被称为数据降维。主成分分析和因子分析是数据降维分析的主要手段。另一种化繁为简的手段是聚类。</p>
+<ul>
+<li>降维分析简单理解就是将描述事物的众多指标（变量）通过一定的手段浓缩成少数几个有代表性且互不相关的新变量。</li>
+<li>聚类分析的分析对象是个案，每个个案都会有各种描述其情况的指标，根据各种指标的情况，将个案进行归类。</li>
+</ul>
+<blockquote>
+<p>降维分析的其中两种主要方法：主成分分析和因子分析。</p>
+</blockquote>
+<h3 id="背景-1"><a href="#背景-1" class="headerlink" title="背景"></a>背景</h3><p>主成分分析法是数据挖掘中常用的一种降维算法,是Pearson在1901年提出的,再后来由hotelling在1933年加以发展提出的一种多变量的统计方法，其最主要的用途在于“降维”，通过析取主成分显出的最大的个别差异,也可以用来削减回归分析和聚类分析中变量的数目，与因子分析类似。<br>所谓降维，就是把具有相关性的变量数目减少，用较少的变量来取代原先变量。如果原始变量互相正交，即没有相关性，则主成分分析没有效果。</p>
+<p>在生物信息学的实际应用情况中，通常是得到了成百上千个基因的信息，这些基因相互之间会有影响，通过主成分分析后，得到有限的几个主成分就可以代表它们的基因了。也就是所谓的降维。</p>
+<h3 id="基本原理"><a href="#基本原理" class="headerlink" title="基本原理"></a>基本原理</h3><p>  假定有n个样本，每个样本共有p个变量，构成一个n×p阶的数据矩阵</p>
+<p>  当p较大时，在p维空间中考察问题比较麻烦。为了克服这一困难，就需要进行降维处理，即用较少的几个综合指标代替原来较多的变量指标，而且使这些较少的综合指标既能尽量多地反映原来较多变量指标所反映的信息，同时它们之间又是彼此独立的。</p>
+<p>———— 略</p>
+<p>参考课本</p>
+<h3 id="主成分分析步骤"><a href="#主成分分析步骤" class="headerlink" title="主成分分析步骤"></a>主成分分析步骤</h3><ol>
+<li><p>将原始数据标准化</p>
+</li>
+<li><p>求相关系数矩阵</p>
+</li>
+<li><p>求R的特征值与特征向量</p>
+</li>
+<li><p>计算主成分贡献率及累计贡献率</p>
+</li>
+<li><p>计算主成分荷载</p>
+</li>
+</ol>
+<ul>
+<li>归一化：将数据归结到某两个数之间。<br>计算公式：<br><code>y = (ymax - ymin)*(x - xmin)/(xmax - xmin) + ymin</code><br>Matlab实现方法：利用<code>mapminmax</code>函数，具体格式为<code>[y,ps] = mapminmax(x,ymin,ymax)</code>（矩阵中以行来归一化）。</li>
+<li>均值化：将数据中的每一个数除以其相应指标的平均值（数据矩阵中由于一般每一列描述一个特征，matlab处理时要按列处理）（这种方法可以说修正了常用的标准化会浪费部分数据的情况，可以替代标准化对数据进行预处理）。</li>
+<li>标准化：使数据均值为0方差为1，即将每一个数据减去所在列的均值后对数据矩阵每一列除以其对应的方差。</li>
+</ul>
+<p>详解参考</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_25680531/article/details/81453687">https://blog.csdn.net/qq_25680531/article/details/81453687</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_37788308/article/details/78115209">https://blog.csdn.net/m0_37788308/article/details/78115209</a></li>
+</ul>
+<h3 id="主成分分析SPSS"><a href="#主成分分析SPSS" class="headerlink" title="主成分分析SPSS"></a>主成分分析SPSS</h3><p>在SPSS中，主成分分析的功能其实被因子分析涵盖，但是在某些不需要具体解释主成分&#x2F;公因子现实含义（主成分分析的缺陷）的地方，主成分分析还是有速战速决优势的，因此常被用作某些分析的中间步骤，例如下面这两个用途：</p>
+<ul>
+<li><p>主成分评价：在进行包含多个指标的综合评价时，客观且全面是对综合评价结果的必然要求。可惜的是，多个评价指标之间往往存在信息重叠的情况，此外还会存在量纲（计量单位）不统一、权重很难确定等问题。主成分分析方法能够解决以上问题。</p>
+</li>
+<li><p>主成分回归：在线性回归模型中，自变量之间的多重共线性是个让人头痛的问题，它的存在导致拟合出来的线性回归模型结果不尽如人意。这时可以考虑将主成分分析得到的主成分代入到回归模型进行拟合。主成分既保留原来自变量的绝大部分信息，互相之间还是相互对立的，此时再用最小二乘法拟合回归模型，得到的回归系数就能解决“估计不稳定”的缺陷。</p>
+</li>
+</ul>
+<p>主成分分析常被用于经济领域和管理领域的国家经济实力，公司运营情况的综合排名。近来也被广泛应用于体育科学研究领域的综合素质评价。</p>
+<p>更多详细使用方法参考：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/IsKVd2xgb3U2CtWM9md1EA">https://mp.weixin.qq.com/s/IsKVd2xgb3U2CtWM9md1EA</a></li>
+<li><a target="_blank" rel="noopener" href="https://wenku.baidu.com/view/98217903640e52ea551810a6f524ccbff121ca2e?fromShare=1">https://wenku.baidu.com/view/98217903640e52ea551810a6f524ccbff121ca2e?fromShare=1</a></li>
+</ul>
+<h3 id="主成分分析MATLAB"><a href="#主成分分析MATLAB" class="headerlink" title="主成分分析MATLAB"></a>主成分分析MATLAB</h3><blockquote>
+<p>Matlab实现方法：使用zscore函数。</p>
+</blockquote>
+<ol>
+<li>用zscore函数对原始数据S进行标准化。</li>
+<li>用cov函数求出标准化后的数据的协方差。</li>
+<li>求出此协方差的特征向量与特征根（eig函数）。</li>
+<li>将产生的特征向量依据特征根大小从大到小进行排列（即将特征向量按列倒序）。</li>
+<li>依据需求取出倒序后的向量的前几列（一般根据特征根来算贡献率，使得累计贡献率大于85%），组成新的矩阵T</li>
+<li>做S*T得到分析后的新的数据。</li>
+<li>依据特征根算贡献率，并绘图。</li>
+<li>代码如下：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">X=load(&#x27;shuju.txt&#x27;)</span><br><span class="line">z=zscore(X)               %数据标准化</span><br><span class="line">M=cov(z)                  %协方差</span><br><span class="line">[V,D]=eig(M);             %求出协方差矩阵的特征向量、特征根</span><br><span class="line">d=diag(D);                %取出特征根矩阵列向量（提取出每一主成分的贡献率）</span><br><span class="line">eig1=sort(d,&#x27;descend&#x27;)      %将贡献率按从大到小元素排列</span><br><span class="line">v=fliplr(V)                %依照D重新排列特征向量</span><br><span class="line">S=0;</span><br><span class="line">i=0;</span><br><span class="line">while S/sum(eig1)&lt;0.85</span><br><span class="line">    i=i+1;</span><br><span class="line">    S=S+eig1(i);</span><br><span class="line">end                         %求出累积贡献率大于85%的主成分</span><br><span class="line">NEW=z*v(:,1:i)              %输出产生的新坐标下的数据</span><br><span class="line">W=100*eig1/sum(eig1)</span><br><span class="line">figure(1)</span><br><span class="line">pareto(W);                  %画出贡献率的直方图</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="主成分回归"><a href="#主成分回归" class="headerlink" title="主成分回归"></a>主成分回归</h3><p>主成分回归，是指回归分析的一种。当自变量存在复共线性刚，用于改进最小二乘回归的统计分析方法。霍特林1933年首先用主成分分析相关结构，1965年马西提出主成分回归。</p>
+<p>基本步骤：</p>
+<ul>
+<li>（1）将自变量转换为标准分；</li>
+<li>（2）求出这此标准分的主成分，去掉特征根很小的主成分；</li>
+<li>（3）用最小二乘法作因变量对保留的主成分的回归；</li>
+<li>（4）将回归方程中的主成分换成标准分的线性组合，得到由标准分给出的回归方程。</li>
+</ul>
+<p>主成分法是通过线性变换，将原来的多个指标组合成相互独立的少数几个能充分反映总体信息的指标，从而在不丢掉重要信息的前提下避开变量间共线性问题，便于进一步分析。在主成分分析中提取出的每个主成分都是原来多个指标的线性组合。</p>
+
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <hr>
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-09-26T10:46:17+08:00">
+  <a class='notlink'>
+    <i class="fas fa-clock" aria-hidden="true"></i>
+    <p>last updated at Sep 26, 2020</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i>&nbsp;<p>数学建模</p></a></div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2019/09/04/20190904tongji/&title=数学建模统计分析 | BIEBLOG&summary=数学建模统计分析知识笔记"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2019/09/04/20190904tongji/&title=数学建模统计分析 | BIEBLOG&summary=数学建模统计分析知识笔记"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2019/09/04/20190904tongji/&title=数学建模统计分析 | BIEBLOG&summary=数学建模统计分析知识笔记"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/weibo.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+            <div class="prev-next">
+                
+                    <section class="prev">
+                        <span class="art-item-left">
+                            <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;Previous</h6>
+                            <h4>
+                                <a href="/2019/09/05/20190904ODE/" rel="prev" title="常微分方程()">
+                                  
+                                      常微分方程()
+                                  
+                                </a>
+                            </h4>
+                            
+                        </span>
+                    </section>
+                
+                
+                    <section class="next">
+                        <span class="art-item-right" aria-hidden="true">
+                            <h6>Next&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
+                            <h4>
+                                <a href="/2019/08/24/20190824shenjing/" rel="prev" title="BP神经网络">
+                                    
+                                        BP神经网络
+                                    
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/tags/%E6%99%BA%E8%83%BD%E7%AE%97%E6%B3%95/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>智能算法</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+            </div>
+        
+      </section>
+    </article>
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+  <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "TeX",
+      availableFonts: ["STIX","TeX"],
+      linebreaks: { automatic:true },
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+      inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+      processEscapes: true,
+      ignoreClass: "tex2jax_ignore|dno",
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: { autoNumber: "AMS" },
+      noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+      Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+  });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += (all[i].SourceElement().parentNode.className ? ' ' : '') + 'has-jax';
+    }
+  });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+
+
+  <script>
+    window.subData = {
+      title: '数学建模统计分析',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class='l_side'>
+  
+    
+    
+      
+        
+          
+          
+            <section class='widget author'>
+  <div class='content pure'>
+    
+      <div class='avatar'>
+        <img class='avatar' src='/image/touxiang.jpg'/>
+      </div>
+    
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="/atom.xml"
+              class="social fas fa-rss flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="mailto:me@xaoxuu.com"
+              class="social fas fa-envelope flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://github.com/BIE5462"
+              class="social fab fa-github flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://music.163.com/#/user/home?id=627711889"
+              class="social fas fa-headphones-alt flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+          
+        
+      
+        
+          
+          
+            
+  <section class='widget toc-wrapper'>
+    
+<header class='pure'>
+  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;TOC</div>
+  
+    <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div>
+  
+</header>
+
+    <div class='content pure'>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90"><span class="toc-text">数学建模统计分析</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%EF%BC%9A%E5%9B%9E%E5%BD%92%E5%88%86%E6%9E%90"><span class="toc-text">一：回归分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92"><span class="toc-text">线性回归</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D"><span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%87%8D%E8%A6%81%E6%A6%82%E5%BF%B5"><span class="toc-text">重要概念</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%9E%E5%BD%92%E6%95%88%E6%9E%9C%E8%AF%84%E4%BB%B7"><span class="toc-text">回归效果评价</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%9A%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92MATLAB%E5%AE%9E%E7%8E%B0"><span class="toc-text">多元线性回归MATLAB实现</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9B%B2%E7%BA%BF%E5%9B%9E%E5%BD%92"><span class="toc-text">曲线回归</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%9A%E9%A1%B9%E5%BC%8F%E6%8B%9F%E5%90%88%E6%8C%87%E4%BB%A4polyfit"><span class="toc-text">多项式拟合指令polyfit</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%9E%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92"><span class="toc-text">非线性回归</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%9E%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%E4%B8%8E%E6%9B%B2%E7%BA%BF%E5%9B%9E%E5%BD%92%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-text">非线性回归与曲线回归的区别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%9E%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%E4%B8%8E%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%E6%AF%94%E8%BE%83"><span class="toc-text">非线性回归与线性回归比较</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%9B%B8%E4%BC%BC%E7%82%B9"><span class="toc-text">相似点</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%B7%AE%E5%80%BC"><span class="toc-text">差值</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%9E%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92MATLAB%E5%AE%9E%E7%8E%B0"><span class="toc-text">非线性回归MATLAB实现</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%81%9A%E7%B1%BB%E5%88%86%E6%9E%90"><span class="toc-text">聚类分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%83%8C%E6%99%AF"><span class="toc-text">背景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-text">概述</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%81%9A%E7%B1%BB%E6%96%B9%E6%B3%95%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-text">聚类方法的区别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B7%9D%E7%A6%BB%EF%BC%88%E6%A0%B7%E6%9C%AC%E7%9B%B8%E4%BC%BC%E6%80%A7%E5%BA%A6%E9%87%8F%EF%BC%89"><span class="toc-text">距离（样本相似性度量）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%B1%BB%E4%B8%8E%E7%B1%BB%E9%97%B4%E7%9A%84%E7%9B%B8%E4%BC%BC%E6%80%A7%E5%BA%A6%E9%87%8F"><span class="toc-text">类与类间的相似性度量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%81%9A%E7%B1%BB%E6%96%B9%E6%B3%95"><span class="toc-text">聚类方法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%B1%82%E6%AC%A1%E8%81%9A%E7%B1%BB%E5%88%86%E6%9E%90"><span class="toc-text">层次聚类分析</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#K-%E5%9D%87%E5%80%BC%E8%81%9A%E7%B1%BB"><span class="toc-text">K-均值聚类</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BA%8C%E9%98%B6%E8%81%9A%E7%B1%BB"><span class="toc-text">二阶聚类</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MATLAB%E8%81%9A%E7%B1%BB%E5%AE%9E%E7%8E%B0"><span class="toc-text">MATLAB聚类实现</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E8%81%9A%E7%B1%BB%E5%87%BD%E6%95%B0"><span class="toc-text">系统聚类函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E4%BE%8B%E5%AD%90"><span class="toc-text">一个简单的例子</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BB%E6%88%90%E5%88%86%E5%88%86%E6%9E%90"><span class="toc-text">主成分分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E6%88%90%E5%88%86%E5%88%86%E6%9E%90%E5%92%8C%E5%9B%A0%E5%AD%90%E5%88%86%E6%9E%90%E7%9A%84%E5%8C%BA%E5%88%AB%E4%B8%8E%E8%81%94%E7%B3%BB"><span class="toc-text">主成分分析和因子分析的区别与联系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%83%8C%E6%99%AF-1"><span class="toc-text">背景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86"><span class="toc-text">基本原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E6%88%90%E5%88%86%E5%88%86%E6%9E%90%E6%AD%A5%E9%AA%A4"><span class="toc-text">主成分分析步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E6%88%90%E5%88%86%E5%88%86%E6%9E%90SPSS"><span class="toc-text">主成分分析SPSS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E6%88%90%E5%88%86%E5%88%86%E6%9E%90MATLAB"><span class="toc-text">主成分分析MATLAB</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E6%88%90%E5%88%86%E5%9B%9E%E5%BD%92"><span class="toc-text">主成分回归</span></a></li></ol></li></ol></li></ol>
+    </div>
+  </section>
+
+
+          
+        
+      
+        
+          
+          
+            
+  <section class='widget category'>
+    
+<header class='pure'>
+  <div><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;文章分类</div>
+  
+    <a class="rightBtn"
+    
+      rel="nofollow"
+    
+    
+    href="/blog/categories/"
+    title="blog/categories/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content pure'>
+      <ul class="entry">
+        
+          <li><a class="flat-box" title="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/" href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"><div class='name'>人工智能</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/%E5%85%B6%E4%BB%96/" href="/categories/%E5%85%B6%E4%BB%96/"><div class='name'>其他</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/" href="/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/"><div class='name'>技术笔记</div><div class='badge'>(4)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/%E6%95%B0%E5%AD%A6/" href="/categories/%E6%95%B0%E5%AD%A6/"><div class='name'>数学</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/" href="/categories/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/"><div class='name'>数学建模</div><div class='badge'>(4)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/matlab/" href="/categories/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/matlab/"><div class='name'>matlab</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90/" href="/categories/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90/"><div class='name'>统计分析</div><div class='badge'>(2)</div></a></li>
+        
+      </ul>
+    </div>
+  </section>
+
+
+          
+        
+      
+        
+          
+          
+            
+  <section class='widget tagcloud'>
+    
+<header class='pure'>
+  <div><i class="fas fa-fire fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;文章标签</div>
+  
+    <a class="rightBtn"
+    
+      rel="nofollow"
+    
+    
+    href="/blog/tags/"
+    title="blog/tags/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content pure'>
+      <a href="/tags/git/" style="font-size: 19px; color: #777">git</a> <a href="/tags/latex/" style="font-size: 14px; color: #999">latex</a> <a href="/tags/matlab/" style="font-size: 14px; color: #999">matlab</a> <a href="/tags/%E6%8B%9F%E5%90%88/" style="font-size: 14px; color: #999">拟合</a> <a href="/tags/%E6%8F%92%E5%80%BC/" style="font-size: 14px; color: #999">插值</a> <a href="/tags/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/" style="font-size: 14px; color: #999">数学建模</a> <a href="/tags/%E6%99%BA%E8%83%BD%E7%AE%97%E6%B3%95/" style="font-size: 24px; color: #555">智能算法</a>
+    </div>
+  </section>
+
+
+          
+        
+      
+        
+          
+          
+            
+
+
+  <section class='widget music'>
+    
+<header class='pure'>
+  <div><i class="fas fa-compact-disc fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;最近在听</div>
+  
+    <a class="rightBtn"
+    
+      rel="external nofollow noopener noreferrer"
+    
+    
+      target="_blank"
+    
+    href="https://music.163.com/#/playlist?id=2962986911"
+    title="https://music.163.com/#/playlist?id=2962986911">
+    <i class="far fa-heart fa-fw"></i></a>
+  
+</header>
+
+    <div class='content pure'>
+      
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.css">
+  <div class="aplayer"
+    data-theme="#1BCDFC"
+    
+    
+    data-mode="random"
+    data-server="netease"
+    data-type="playlist"
+    data-id="2962986911"
+    data-volume="0.5">
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/meting@1.1.0/dist/Meting.min.js"></script>
+
+
+    </div>
+  </section>
+
+
+          
+        
+      
+    
+
+  
+</aside>
+
+<footer id="footer" class="clearfix">
+  
+  
+    <div class="social-wrapper">
+      
+        
+          <a href="/atom.xml"
+            class="social fas fa-rss flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="mailto:me@xaoxuu.com"
+            class="social fas fa-envelope flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="https://github.com/BIE5462"
+            class="social fab fa-github flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="https://music.163.com/#/user/home?id=627711889"
+            class="social fas fa-headphones-alt flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+    </div>
+  
+  <br>
+  <div><p>Blog content follows the <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
+</div>
+  <div>
+    Use
+    <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename">BIEBLOG</a>
+    as theme
+    
+      , 
+      total visits
+      <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
+      times
+    
+    . 
+  </div>
+</footer>
+<script>setLoadingBarProgress(80);</script>
+
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+
+  <script>
+    var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
+    var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
+    var ALGOLIA_API_KEY = "";
+    var ALGOLIA_APP_ID = "";
+    var ALGOLIA_INDEX_NAME = "";
+    var AZURE_SERVICE_NAME = "";
+    var AZURE_INDEX_NAME = "";
+    var AZURE_QUERY_KEY = "";
+    var BAIDU_API_ID = "";
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/"||"/";
+    if(!ROOT.endsWith('/'))ROOT += '/';
+  </script>
+
+<script src="//instant.page/1.2.2" type="module" integrity="sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU"></script>
+
+
+  <script async src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      const $reveal = $('.reveal');
+      if ($reveal.length === 0) return;
+      const sr = ScrollReveal({ distance: 0 });
+      sr.reveal('.reveal');
+    });
+  </script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+
+
+  <!-- fastclick -->
+  <script src="https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      FastClick.attach(document.body)
+    }, false)
+  </script>
+
+
+
+  
+  
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
+    <script type="text/javascript">
+      $(function(){
+        if ('.cover') {
+          $('.cover').backstretch(
+          ["/image/beijin01.jpg", "/image/beijin02.jpg", "/image/beijin03.jpg"],
+          {
+            duration: "7000",
+            fade: "6500"
+          });
+        } else {
+          $.backstretch(
+          ["/image/beijin01.jpg", "/image/beijin02.jpg", "/image/beijin03.jpg"],
+          {
+            duration: "7000",
+            fade: "6500"
+          });
+        }
+      });
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.5/js/app.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.5/js/search.js"></script>
+
+
+
+
+
+<!-- 复制 -->
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  let COPY_SUCCESS = "Copied";
+  let COPY_FAILURE = "Copy failed";
+  /*页面载入完成后，创建复制按钮*/
+  !function (e, t, a) {
+    /* code */
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '  <i class="fa fa-copy"></i><span>Copy</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+
+      clipboard.on('success', function(e) {
+        //您可以加入成功提示
+        console.info('Action:', e.action);
+        console.info('Text:', e.text);
+        console.info('Trigger:', e.trigger);
+        success_prompt(COPY_SUCCESS);
+        e.clearSelection();
+      });
+      clipboard.on('error', function(e) {
+        //您可以加入失败提示
+        console.error('Action:', e.action);
+        console.error('Trigger:', e.trigger);
+        fail_prompt(COPY_FAILURE);
+      });
+    }
+    initCopyCode();
+
+  }(window, document);
+
+  /**
+   * 弹出式提示框，默认1.5秒自动消失
+   * @param message 提示信息
+   * @param style 提示样式，有alert-success、alert-danger、alert-warning、alert-info
+   * @param time 消失时间
+   */
+  var prompt = function (message, style, time)
+  {
+      style = (style === undefined) ? 'alert-success' : style;
+      time = (time === undefined) ? 1500 : time*1000;
+      $('<div>')
+          .appendTo('body')
+          .addClass('alert ' + style)
+          .html(message)
+          .show()
+          .delay(time)
+          .fadeOut();
+  };
+
+  // 成功提示
+  var success_prompt = function(message, time)
+  {
+      prompt(message, 'alert-success', time);
+  };
+
+  // 失败提示
+  var fail_prompt = function(message, time)
+  {
+      prompt(message, 'alert-danger', time);
+  };
+
+  // 提醒
+  var warning_prompt = function(message, time)
+  {
+      prompt(message, 'alert-warning', time);
+  };
+
+  // 信息提示
+  var info_prompt = function(message, time)
+  {
+      prompt(message, 'alert-info', time);
+  };
+
+</script>
+
+
+<!-- fancybox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "";
+  $(".article-entry").find("fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+</body>
+</html>

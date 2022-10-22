@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  <title>MALTAB差值拟合 | BIEBLOG</title>
+  
+  <meta name="keywords" content="数据结构与算法,智能计算,最优化理论">
+  
+  
+  <meta name="description" content="我的学习之路">
+  
+
+  
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.6.3/css/all.min.css">
+  
+
+  
+
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.5/css/style.css">
+
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+  
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  
+  
+  <div class="cover-wrapper">
+    <cover class='cover post half'>
+      
+        
+  <h1 class='title'>BIEBOLG</h1>
+
+
+  <div class="m_search">
+    <form name="searchform" class="form u-search-form">
+      <input type="text" class="input u-search-input" placeholder="查找文章" />
+      <i class="icon fas fa-search fa-fw"></i>
+    </form>
+  </div>
+
+<div class='menu navgation'>
+  <ul class='h-list'>
+    
+      
+        <li>
+          <a class="nav home" href="/"
+            
+            
+            id="home">
+            <i class='fas fa-rss fa-fw'></i>&nbsp;全部文章
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="/category"
+            
+            
+            id="category">
+            <i class='fas fa-folder-open fa-fw'></i>&nbsp;文章分类
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="/tag"
+            
+            
+            id="tag">
+            <i class='fas fa-hashtag fa-fw'></i>&nbsp;文章标签
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="/about"
+            
+              rel="nofollow"
+            
+            
+            id="about">
+            <i class='fas fa-info-circle fa-fw'></i>&nbsp;关于本站
+          </a>
+        </li>
+      
+    
+  </ul>
+</div>
+
+      
+    </cover>
+    <header class="l_header pure">
+  <div id="loading-bar-wrapper">
+    <div id="loading-bar" class="pure"></div>
+  </div>
+
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+      <a class="logo flat-box" href='/' >
+        
+          BIEBLOG
+        
+      </a>
+			<div class='menu navgation'>
+				<ul class='h-list'>
+          
+  					
+  						<li>
+								<a class="nav flat-box" href="/"
+                  
+                  
+                  id="home">
+									<i class='fas fa-grin fa-fw'></i>&nbsp;主页
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/category"
+                  
+                    rel="nofollow"
+                  
+                  
+                  id="category">
+									<i class='fas fa-folder-open fa-fw'></i>&nbsp;分类
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/tag"
+                  
+                    rel="nofollow"
+                  
+                  
+                  id="tag">
+									<i class='fas fa-hashtag fa-fw'></i>&nbsp;标签
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/timeline"
+                  
+                    rel="nofollow"
+                  
+                  
+                  id="timeline">
+									<i class='fas fa-history fa-fw'></i>&nbsp;时间轴
+								</a>
+							</li>
+      			
+      		
+				</ul>
+			</div>
+
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="Search" />
+						<i class="icon fas fa-search fa-fw"></i>
+					</form>
+				</div>
+			
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a class="fas fa-search fa-fw" href='javascript:void(0)'></a></li>
+				
+				<li class='s-menu'><a class="fas fa-bars fa-fw" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+
+		<div class='nav-sub container container--flex'>
+			<a class="logo flat-box"></a>
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a class="flat-btn fas fa-comments fa-fw" href='javascript:void(0)'></a></li>
+        
+          <li class='s-toc'><a class="flat-btn fas fa-list fa-fw" href='javascript:void(0)'></a></li>
+        
+			</ul>
+		</div>
+	</div>
+</header>
+	<aside class="menu-phone">
+    <header>
+		<nav class="menu navgation">
+      <ul>
+        
+          
+            <li>
+							<a class="nav flat-box" href="/"
+                
+                
+                id="home">
+								<i class='fas fa-rss fa-fw'></i>&nbsp;全部文章
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/category"
+                
+                
+                id="category">
+								<i class='fas fa-folder-open fa-fw'></i>&nbsp;文章分类
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/tag"
+                
+                
+                id="tag">
+								<i class='fas fa-hashtag fa-fw'></i>&nbsp;文章标签
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/about"
+                
+                  rel="nofollow"
+                
+                
+                id="about">
+								<i class='fas fa-info-circle fa-fw'></i>&nbsp;关于本站
+							</a>
+            </li>
+          
+       
+      </ul>
+		</nav>
+    </header>
+	</aside>
+<script>setLoadingBarProgress(40);</script>
+
+  </div>
+
+
+  <div class="l_body">
+    <div class='body-wrapper'>
+      <div class='l_main'>
+  
+
+  
+    <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
+      
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  
+    <h1 class="title">
+      <a href="/2019/08/01/20190801chazhi/">
+        MALTAB差值拟合
+      </a>
+    </h1>
+  
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    <a href="http://example.com" rel="nofollow">
+      
+        <i class="fas fa-user" aria-hidden="true"></i>
+      
+      <p>杨春波</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2019-08-01</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/matlab/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>数学建模&nbsp;/&nbsp;matlab</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+  
+    <div class="new-meta-item browse busuanzi">
+      <a class='notlink'>
+        <i class="fas fa-eye" aria-hidden="true"></i>
+        <p>
+          <span id="busuanzi_value_page_pv">
+            <i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i>
+          </span>
+        </p>
+      </a>
+    </div>
+  
+
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          <blockquote>
+<p>插值是在一组已知数据点的范围内添加新数据点的技术。您可以使用插值来填充缺失的数据、对现有数据进行平滑处理以及进行预测等。<br>曲线拟合也叫曲线逼近，与插值函数有些区别，其只要求拟合的曲线能合理地反映数据的基本趋势，并不要求曲线一定通过数据点。</p>
+</blockquote>
+<span id="more"></span>
+<h1 id="二：MALTAB差值拟合"><a href="#二：MALTAB差值拟合" class="headerlink" title="二：MALTAB差值拟合"></a>二：MALTAB差值拟合</h1><h2 id="回归、插值、逼近、拟合"><a href="#回归、插值、逼近、拟合" class="headerlink" title="回归、插值、逼近、拟合"></a>回归、插值、逼近、拟合</h2><ol>
+<li>回归一般指线性回归，是求最小二乘解的过程。在求回归前，已经假设所有型值点同时满足某一曲线方程，计算只要求出该方程的系数</li>
+<li>多项式插值：用一个多项式来近似代替数据列表函数，并要求多项式通过列表函数中给定的数据点。（插值曲线要经过型值点。）</li>
+<li>多项式逼近：为复杂函数寻找近似替代多项式函数，其误差在某种度量意义下最小。（逼近只要求曲线接近型值点，符合型值点趋势。）</li>
+<li>多项式拟合：在插值问题中考虑给定数据点的误差，只要求在用多项式近似代替列表函数时，其误差在某种度量意义下最小。</li>
+</ol>
+<ul>
+<li>表列函数：给定n+1个不同的数据点（x0,y0）,(x1,y1)…,(xn,yn)，称由这组数据表示的函数为表列函数。</li>
+<li>逼近函数：求一函数，使得按某一标准，这一函数y&#x3D;f（x）能最好地反映这一组数据即逼近这一表列函数，这一函数y&#x3D;f（x）称为逼近函数</li>
+<li>插值函数：根据不同的标准，可以给出各种各样的函数，如使要求的函数y&#x3D;f（x）在以上的n+1个数据点出的函数值与相应数据点的纵坐标相等，即yi&#x3D;f（x1）（i&#x3D;0，1，2….n） 这种函数逼近问题称为插值问题，称函数y&#x3D;f（x）为数据点的插值函数，xi称为插值点。</li>
+</ul>
+<p><strong>插值和拟合都是函数逼近或者数值逼近的重要组成部分</strong></p>
+<p>他们的共同点都是通过已知一些离散点集M上的约束，求取一个定义 在连续集合S(M包含于S)的未知连续函数，从而达到获取整体规律的目的，即通过”窥几斑”来达到”知全豹”。<br>简单的讲，所谓拟合是指已知某函数的若干离散函数值{f1,f2,…,fn}，通 过调整该函数中若干待定系数f(λ1, λ2,…,λ3), 使得该函数与已知点集的 差别(最小二乘意义)最小。如果待定函数是线性，就叫线性拟合或者线性回归(主要在统计中)，否则叫作非线性拟合或者非线性回归。</p>
+<p>表达式也可以是分段函数，这种情况下叫作样条拟合。而插值是指已知某函数的在若干离散点上的函数值或者导数信息，通过求解该函数中待定形式的插值函数以及待定系数，使得该函数在给定离散点上满足约束。插值函数又叫作基函数，如果该基函数定义在整个定义域上，叫作全域基，否则叫作分域基。如果约束条件中只有函数值的约束，叫作Lagrange插值，否则叫作Hermite插值。</p>
+<p>从几何意义上将，拟合是给定了空间中的一些点，找到一个已知形式未知参数的连续曲面来最大限度地逼近这些点；而插值是找到一个(或几个分片光滑的)连续曲面来穿过这些点。</p>
+<h2 id="多项式拟合"><a href="#多项式拟合" class="headerlink" title="多项式拟合"></a>多项式拟合</h2><p>曲线拟合也叫曲线逼近，与插值函数有些区别，其只要求拟合的曲线能合理地反映数据的基本趋势，并不要求曲线一定通过数据点。曲线拟合有几种不同的判别准则，如使偏差的绝对值之和最小、使偏差的最大绝对值最小和使偏差的平方和最小（即最小二乘法）。常用的方法是最后一种。</p>
+<p>将数据点按多项式的形式进行拟合，使用最小二乘法，可以确定多项式的系数。多项式拟合有指令语句和图形窗口两种方法</p>
+<h3 id="多项式拟合指令polyfit"><a href="#多项式拟合指令polyfit" class="headerlink" title="多项式拟合指令polyfit"></a>多项式拟合指令polyfit</h3><p>**a&#x3D;polyfit(x,y,n)**用多项式求过已知点的表达式，其中x为源数据点对应的横坐标，可为行向量、矩阵，y为源数据点对应的纵坐标，可为行向量、矩阵，n为你要拟合的阶数，</p>
+<p>一阶直线拟合，二阶抛物线拟合，并非阶次越高越好，看拟合情况而定，a为m+1的行向量。</p>
+<p>polyfit函数的数学基础是最小二乘法曲线拟合原理，所得到的函数值在基点处的值与原来点的坐标偏差最小，常用于数据拟合，polyfit 做出来的值从左到右表示从高次到低次的多项式系数。</p>
+<p><code>polyfit(X,Y,N)</code>：多项式拟合，返回降幂排列的多项式系数。<br><code>polyval(P,XI)</code>：计算多项式的值。<br>  其中，</p>
+<ul>
+<li>X，Y是数据点的值；</li>
+<li>N是拟合的最高次幂；</li>
+<li>P是返回的多项式系数；</li>
+<li>Xi是要求的点的横坐标。</li>
+</ul>
+<p>例如，要对以下数据进行多项式拟合。数据如下：<br>x：1,2,3,4,5,6,7,8,9</p>
+<p>y：9,7,6,3,-1,2,7,20</p>
+<p>matlab代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">%% 多项式拟合指令</span><br><span class="line">x=[1 2 3 4 5 6 7 8 9];</span><br><span class="line">y=[9 7 6 3 -1 2 5 7 20];</span><br><span class="line">P=polyfit(x,y,3);</span><br><span class="line">xi=0:.2:10;</span><br></pre></td></tr></table></figure>
+<h3 id="线性拟合函数：regress"><a href="#线性拟合函数：regress" class="headerlink" title="线性拟合函数：regress()"></a>线性拟合函数：regress()</h3><p>略</p>
+<h2 id="经典插值方法"><a href="#经典插值方法" class="headerlink" title="经典插值方法"></a>经典插值方法</h2><p>插值是在一组已知数据点的范围内添加新数据点的技术。您可以使用插值来填充缺失的数据、对现有数据进行平滑处理以及进行预测等。MATLAB® 中的插值技术可分为适用于网格上的数据点和散点数据点。</p>
+<h3 id="拉格朗日插值"><a href="#拉格朗日插值" class="headerlink" title="拉格朗日插值"></a>拉格朗日插值</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">function y=lagrange(x0,y0,x)</span><br><span class="line">%拉格朗日插值函数</span><br><span class="line">%n 个节点数据以数组 x0, y0 输入(注意 Matlat 的数组下标从1开始),</span><br><span class="line">%m 个插值点以数组 x 输入,输出数组 y 为 m 个插值</span><br><span class="line">n=length(x0);m=length(x);</span><br><span class="line">for i=1:m</span><br><span class="line">z=x(i);</span><br><span class="line">s=0.0;</span><br><span class="line">for k=1:n</span><br><span class="line">      p=1.0;</span><br><span class="line">      for j=1:n</span><br><span class="line">           if j~=k</span><br><span class="line">              p=p*(z-x0(j))/(x0(k)-x0(j));</span><br><span class="line">           end</span><br><span class="line">      end</span><br><span class="line">      s=p*y0(k)+s;</span><br><span class="line">end</span><br><span class="line">y(i)=s;</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+<p>应用实例：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">x0=1:1:20;</span><br><span class="line">y0=x0.^2-20*x0-5;</span><br><span class="line">x=1:0.1:20;</span><br><span class="line">z=lagrange(x0,y0,x);</span><br><span class="line">plot(x,z,&#x27;:&#x27;,x0,y0,&#x27;ko&#x27;);</span><br></pre></td></tr></table></figure>
+<h3 id="分段线性插值"><a href="#分段线性插值" class="headerlink" title="分段线性插值"></a>分段线性插值</h3><p> MATLAB现成的插值函数为<code>interp1</code>，其调用格式为：</p>
+<p>  <code> yi= interp1(x,y,xi,&#39;method&#39;)</code><br>其中x，y为插值点，yi为在被插值点xi处的插值结果；x,y为向量，<br>‘method’表示采用的插值方法，<br>包括：</p>
+<ul>
+<li>‘method’：是最近项插值;</li>
+<li>‘linear’：线性插值;（默认）</li>
+<li>‘spline’：逐段3次样条插值; (下面的三次样条插值会用到)</li>
+<li>‘cubic’：保凹凸性3次插值</li>
+<li>‘pchip’：分段三次Hermite 插值。</li>
+</ul>
+<p>例如：在一天24小时内，从零点开始每间隔2小时测得的环境温度数据分别为<br>            12，9，9，1，0，18 ，24，28，27，25，20，18，15，13，<br>    推测中午12点（即13点）时的温度．</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">x=0:2:24;</span><br><span class="line">y=[12,9,9,10,18,24,28,27,25,20,18,15,13];</span><br><span class="line">x1=0:0.5:24;</span><br><span class="line">y1=interp1(x,y,x1,&#x27;linear&#x27;);</span><br><span class="line">plot(x,y,&#x27;bo&#x27;,x1,y1,&#x27;r:&#x27;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="二维数据内插值"><a href="#二维数据内插值" class="headerlink" title="二维数据内插值"></a>二维数据内插值</h3><p> MATLAB现成的插值函数为<code>interp2</code>（表格查找)调用格式为</p>
+<p><strong>(1)ZI &#x3D; interp2(X,Y,Z,XI,YI)</strong></p>
+<p> 返回矩阵ZI，其元素包含对应于参量XI 与YI（可以是向量、或同型矩阵） 的元素， 即<code>Zi(i,j) ←[Xi(i,j),yi(i,j)]</code>。用户可以输入行向量和列向量Xi 与Yi，此时，输出向量Zi 与矩阵meshgrid(xi,yi)是同型的。同时取决于由输入矩阵X、Y 与Z 确定的二维函数Z&#x3D;f(X,Y)。参量X与Y必须是单调的，且相同的划分格式，就像由命令meshgrid 生成的一样。若Xi与Yi 中有在X与Y范围之外的点则相应地返回nan（Not a Number）。</p>
+<p> <strong>(2)ZI &#x3D; interp2(Z,XI,YI)</strong><br> 缺省地，X&#x3D;1:n、Y&#x3D;1:m，其中[m,n]&#x3D;size(Z)。再按第一种情形进行计算。</p>
+<p> (<strong>3)ZI &#x3D; interp2(Z,n</strong>)</p>
+<p> 作n 次递归计算，在Z 的每两个元素之间插入它们的二维插值，这样，Z 的阶数将不断增加。interp2(Z)等价于interp2(z,1)。(4)ZI &#x3D; interp2(X,Y,Z,XI,YI,method)用指定的算法method 计算二维插值：</p>
+<ul>
+<li>’linear’：双线性插值算法（缺省算法）；</li>
+<li>’nearest’：最临近插值；’spline’：</li>
+<li>三次样条插值；’cubic’：</li>
+<li>双三次插值。</li>
+</ul>
+<p> 例3：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;[X,Y] = meshgrid(-3:.25:3);</span><br><span class="line">&gt;&gt;Z = peaks(X,Y);</span><br><span class="line">&gt;&gt;[XI,YI] = meshgrid(-3:.125:3);</span><br><span class="line">&gt;&gt;ZZ = interp2(X,Y,Z,XI,YI);</span><br><span class="line">&gt;&gt;surfl(X,Y,Z);hold on;</span><br><span class="line">&gt;&gt;surfl(XI,YI,ZZ+15)</span><br><span class="line">&gt;&gt;axis([-3 3 -3 3 -5 20]);shading flat</span><br><span class="line">&gt;&gt;hold off</span><br></pre></td></tr></table></figure>
+<p>例4：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;years = 1950:10:1990;</span><br><span class="line">&gt;&gt;service = 10:10:30;</span><br><span class="line">&gt;&gt;wage = [150.697 199.592 187.625</span><br><span class="line">179.323 195.072 250.287</span><br><span class="line">203.212 179.092 322.767</span><br><span class="line">226.505 153.706 426.730</span><br><span class="line">249.633 120.281 598.243];</span><br><span class="line">&gt;&gt;w = interp2(service,years,wage,15,1975)</span><br></pre></td></tr></table></figure>
+<p>插值结果为：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">w =</span><br><span class="line">190.6288</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="三次样条数据插值"><a href="#三次样条数据插值" class="headerlink" title="三次样条数据插值"></a>三次样条数据插值</h3><p>格式</p>
+<p><strong>(1)yy &#x3D; spline(x,y,xx)</strong></p>
+<p>对于给定的离散的测量数据x,y（称为断点），要寻找一个三项多项式y&#x3D;p(x) ，以逼近每对数据(x,y)点间的曲线。过两点(xi, yi) 和(xi+1, yi+1) 只能确定一条直线，而通过一点的三次多项式曲线有无穷多条。为使通过中间断点的三次多项式曲线具有唯一性，要增加两个条件（因为三次多项式有4 个系数）：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">- a．三次多项式在点(xi, yi) 处有： p&amp;cent;i(xi) = p&amp;cent;i(xi) ；</span><br><span class="line">- b．三次多项式在点(xi+1, yi+1) 处有： p&amp;cent;i(xi+1) = pi&amp;cent;(xi+1) ；</span><br><span class="line">- c．p(x)在点(xi, yi) 处的斜率是连续的（为了使三次多项式具有良好的解析性，加上的条件）；</span><br><span class="line">- d．p(x)在点(xi, yi) 处的曲率是连续的；对于第一个和最后一个多项式，人为地规定如下条件：</span><br><span class="line">①． p&amp;cent;1&amp;cent;(x) = p&amp;cent;2&amp;cent;(x)</span><br><span class="line">②． p&amp;cent;n&amp;cent;(x) = p&amp;cent;n&amp;cent;-1(x)</span><br><span class="line">上述两个条件称为非结点(not-a-knot)条件。</span><br></pre></td></tr></table></figure>
+<p>该命令用三次样条插值计算出由向量x 与y 确定的一元函数y&#x3D;f(x)在点xx 处的值。若参量y 是一矩阵，则以y 的每一列和x 配对，再分别计算由它们确定的函数在点xx 处的值。则yy 是一阶数为length(xx)*size(y,2)的矩阵。</p>
+<p><strong>(2)pp &#x3D; spline(x,y)</strong></p>
+<p>返回由向量x 与y 确定的分段样条多项式的系数矩阵pp，它可用于命令ppval、unmkpp 的计算。<br>例6<br>对离散地分布在y&#x3D;exp(x)sin(x)函数曲线上的数据点进行样条插值计算：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">x = [0 2 4 5 8 12 12.8 17.2 19.9 20]; y = exp(x).*sin(x);</span><br><span class="line">xx = 0:.25:20;</span><br><span class="line">yy = spline(x,y,xx);</span><br><span class="line">plot(x,y,&#x27;o&#x27;,xx,yy)</span><br></pre></td></tr></table></figure>
+<h3 id="埃米尔特插值"><a href="#埃米尔特插值" class="headerlink" title="埃米尔特插值"></a>埃米尔特插值</h3><p>如果要求插值函数不仅在节点处与函数同值，而且要求它与函数有相同的一阶、二阶甚至高阶导数值，这就是埃尔米特插值问题。</p>
+<p>已知f（x）的n+1个节点的函数值f（xi）以及导数值f&#96;（xi），可得一个至多n+1次的多项式H（x），即hermite插值多项式。新建以下这个函数：</p>
+<figure class="highlight plaintext"><figcaption><span>y </span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">%埃尔米特插值多项式</span><br><span class="line">%x0为点横坐标</span><br><span class="line">%y0为函数值</span><br><span class="line">%y1为导数值</span><br><span class="line">%m个插值点用数组x输入</span><br><span class="line">n=length(x0);m=length(x);</span><br><span class="line">for k=1:m</span><br><span class="line">    yy=0.0;</span><br><span class="line">    for i=1:n</span><br><span class="line">     h=1.0;</span><br><span class="line">     a=0.0;</span><br><span class="line">      for j=1:n</span><br><span class="line">         if j~=i</span><br><span class="line">           h=h*((x(k)-x0(j))/(x0(i)-x0(j)))^2;</span><br><span class="line">           a=1/(x0(i)-x0(j))+a;</span><br><span class="line">         end</span><br><span class="line">      end</span><br><span class="line">      yy=yy+h*((x0(i)-x(k))*(2*a*y0(i)-y1(i))+y0(i));</span><br><span class="line">end</span><br><span class="line">y(k)=yy;</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+<p>更多插值方法参考<a target="_blank" rel="noopener" href="https://blog.csdn.net/lucky51222/article/details/42082779">https://blog.csdn.net/lucky51222/article/details/42082779</a></p>
+
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <hr>
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-09-26T10:46:17+08:00">
+  <a class='notlink'>
+    <i class="fas fa-clock" aria-hidden="true"></i>
+    <p>last updated at Sep 26, 2020</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E6%8F%92%E5%80%BC/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i>&nbsp;<p>插值</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E6%8B%9F%E5%90%88/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i>&nbsp;<p>拟合</p></a></div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2019/08/01/20190801chazhi/&title=MALTAB差值拟合 | BIEBLOG&summary=
+插值是在一组已知数据点的范围内添加新数据点的技术。您可以使用插值来填充缺失的数据、对现有数据进行平滑处理以及进行预测等。曲线拟合也叫曲线逼近，与插值函数有些区别，其只要求拟合的曲线能合理地反映数据的基本趋势，并不要求曲线一定通过数据点。
+"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2019/08/01/20190801chazhi/&title=MALTAB差值拟合 | BIEBLOG&summary=
+插值是在一组已知数据点的范围内添加新数据点的技术。您可以使用插值来填充缺失的数据、对现有数据进行平滑处理以及进行预测等。曲线拟合也叫曲线逼近，与插值函数有些区别，其只要求拟合的曲线能合理地反映数据的基本趋势，并不要求曲线一定通过数据点。
+"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2019/08/01/20190801chazhi/&title=MALTAB差值拟合 | BIEBLOG&summary=
+插值是在一组已知数据点的范围内添加新数据点的技术。您可以使用插值来填充缺失的数据、对现有数据进行平滑处理以及进行预测等。曲线拟合也叫曲线逼近，与插值函数有些区别，其只要求拟合的曲线能合理地反映数据的基本趋势，并不要求曲线一定通过数据点。
+"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/weibo.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+            <div class="prev-next">
+                
+                    <section class="prev">
+                        <span class="art-item-left">
+                            <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;Previous</h6>
+                            <h4>
+                                <a href="/2019/08/11/20190811putao/" rel="prev" title="葡萄酒问卷调查">
+                                  
+                                      葡萄酒问卷调查
+                                  
+                                </a>
+                            </h4>
+                            
+                        </span>
+                    </section>
+                
+                
+                    <section class="next">
+                        <span class="art-item-right" aria-hidden="true">
+                            <h6>Next&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
+                            <h4>
+                                <a href="/2019/08/01/20190725matlab1/" rel="prev" title="matlab基础">
+                                    
+                                        matlab基础
+                                    
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/tags/matlab/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>matlab</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+            </div>
+        
+      </section>
+    </article>
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: 'MALTAB差值拟合',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class='l_side'>
+  
+    
+    
+      
+        
+          
+          
+            <section class='widget author'>
+  <div class='content pure'>
+    
+      <div class='avatar'>
+        <img class='avatar' src='/image/touxiang.jpg'/>
+      </div>
+    
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="/atom.xml"
+              class="social fas fa-rss flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="mailto:me@xaoxuu.com"
+              class="social fas fa-envelope flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://github.com/BIE5462"
+              class="social fab fa-github flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://music.163.com/#/user/home?id=627711889"
+              class="social fas fa-headphones-alt flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+          
+        
+      
+        
+          
+          
+            
+  <section class='widget toc-wrapper'>
+    
+<header class='pure'>
+  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;TOC</div>
+  
+    <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div>
+  
+</header>
+
+    <div class='content pure'>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%EF%BC%9AMALTAB%E5%B7%AE%E5%80%BC%E6%8B%9F%E5%90%88"><span class="toc-text">二：MALTAB差值拟合</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9E%E5%BD%92%E3%80%81%E6%8F%92%E5%80%BC%E3%80%81%E9%80%BC%E8%BF%91%E3%80%81%E6%8B%9F%E5%90%88"><span class="toc-text">回归、插值、逼近、拟合</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%9A%E9%A1%B9%E5%BC%8F%E6%8B%9F%E5%90%88"><span class="toc-text">多项式拟合</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E9%A1%B9%E5%BC%8F%E6%8B%9F%E5%90%88%E6%8C%87%E4%BB%A4polyfit"><span class="toc-text">多项式拟合指令polyfit</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BA%BF%E6%80%A7%E6%8B%9F%E5%90%88%E5%87%BD%E6%95%B0%EF%BC%9Aregress"><span class="toc-text">线性拟合函数：regress()</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%8F%E5%85%B8%E6%8F%92%E5%80%BC%E6%96%B9%E6%B3%95"><span class="toc-text">经典插值方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E6%8F%92%E5%80%BC"><span class="toc-text">拉格朗日插值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E6%AE%B5%E7%BA%BF%E6%80%A7%E6%8F%92%E5%80%BC"><span class="toc-text">分段线性插值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E7%BB%B4%E6%95%B0%E6%8D%AE%E5%86%85%E6%8F%92%E5%80%BC"><span class="toc-text">二维数据内插值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E6%AC%A1%E6%A0%B7%E6%9D%A1%E6%95%B0%E6%8D%AE%E6%8F%92%E5%80%BC"><span class="toc-text">三次样条数据插值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%83%E7%B1%B3%E5%B0%94%E7%89%B9%E6%8F%92%E5%80%BC"><span class="toc-text">埃米尔特插值</span></a></li></ol></li></ol></li></ol>
+    </div>
+  </section>
+
+
+          
+        
+      
+        
+          
+          
+            
+  <section class='widget category'>
+    
+<header class='pure'>
+  <div><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;文章分类</div>
+  
+    <a class="rightBtn"
+    
+      rel="nofollow"
+    
+    
+    href="/blog/categories/"
+    title="blog/categories/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content pure'>
+      <ul class="entry">
+        
+          <li><a class="flat-box" title="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/" href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"><div class='name'>人工智能</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/%E5%85%B6%E4%BB%96/" href="/categories/%E5%85%B6%E4%BB%96/"><div class='name'>其他</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/" href="/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/"><div class='name'>技术笔记</div><div class='badge'>(4)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/%E6%95%B0%E5%AD%A6/" href="/categories/%E6%95%B0%E5%AD%A6/"><div class='name'>数学</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/" href="/categories/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/"><div class='name'>数学建模</div><div class='badge'>(4)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/matlab/" href="/categories/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/matlab/"><div class='name'>matlab</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90/" href="/categories/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90/"><div class='name'>统计分析</div><div class='badge'>(2)</div></a></li>
+        
+      </ul>
+    </div>
+  </section>
+
+
+          
+        
+      
+        
+          
+          
+            
+  <section class='widget tagcloud'>
+    
+<header class='pure'>
+  <div><i class="fas fa-fire fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;文章标签</div>
+  
+    <a class="rightBtn"
+    
+      rel="nofollow"
+    
+    
+    href="/blog/tags/"
+    title="blog/tags/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content pure'>
+      <a href="/tags/git/" style="font-size: 19px; color: #777">git</a> <a href="/tags/latex/" style="font-size: 14px; color: #999">latex</a> <a href="/tags/matlab/" style="font-size: 14px; color: #999">matlab</a> <a href="/tags/%E6%8B%9F%E5%90%88/" style="font-size: 14px; color: #999">拟合</a> <a href="/tags/%E6%8F%92%E5%80%BC/" style="font-size: 14px; color: #999">插值</a> <a href="/tags/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/" style="font-size: 14px; color: #999">数学建模</a> <a href="/tags/%E6%99%BA%E8%83%BD%E7%AE%97%E6%B3%95/" style="font-size: 24px; color: #555">智能算法</a>
+    </div>
+  </section>
+
+
+          
+        
+      
+        
+          
+          
+            
+
+
+  <section class='widget music'>
+    
+<header class='pure'>
+  <div><i class="fas fa-compact-disc fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;最近在听</div>
+  
+    <a class="rightBtn"
+    
+      rel="external nofollow noopener noreferrer"
+    
+    
+      target="_blank"
+    
+    href="https://music.163.com/#/playlist?id=2962986911"
+    title="https://music.163.com/#/playlist?id=2962986911">
+    <i class="far fa-heart fa-fw"></i></a>
+  
+</header>
+
+    <div class='content pure'>
+      
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.css">
+  <div class="aplayer"
+    data-theme="#1BCDFC"
+    
+    
+    data-mode="random"
+    data-server="netease"
+    data-type="playlist"
+    data-id="2962986911"
+    data-volume="0.5">
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/meting@1.1.0/dist/Meting.min.js"></script>
+
+
+    </div>
+  </section>
+
+
+          
+        
+      
+    
+
+  
+</aside>
+
+<footer id="footer" class="clearfix">
+  
+  
+    <div class="social-wrapper">
+      
+        
+          <a href="/atom.xml"
+            class="social fas fa-rss flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="mailto:me@xaoxuu.com"
+            class="social fas fa-envelope flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="https://github.com/BIE5462"
+            class="social fab fa-github flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="https://music.163.com/#/user/home?id=627711889"
+            class="social fas fa-headphones-alt flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+    </div>
+  
+  <br>
+  <div><p>Blog content follows the <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
+</div>
+  <div>
+    Use
+    <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename">BIEBLOG</a>
+    as theme
+    
+      , 
+      total visits
+      <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
+      times
+    
+    . 
+  </div>
+</footer>
+<script>setLoadingBarProgress(80);</script>
+
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+
+  <script>
+    var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
+    var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
+    var ALGOLIA_API_KEY = "";
+    var ALGOLIA_APP_ID = "";
+    var ALGOLIA_INDEX_NAME = "";
+    var AZURE_SERVICE_NAME = "";
+    var AZURE_INDEX_NAME = "";
+    var AZURE_QUERY_KEY = "";
+    var BAIDU_API_ID = "";
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/"||"/";
+    if(!ROOT.endsWith('/'))ROOT += '/';
+  </script>
+
+<script src="//instant.page/1.2.2" type="module" integrity="sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU"></script>
+
+
+  <script async src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      const $reveal = $('.reveal');
+      if ($reveal.length === 0) return;
+      const sr = ScrollReveal({ distance: 0 });
+      sr.reveal('.reveal');
+    });
+  </script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+
+
+  <!-- fastclick -->
+  <script src="https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      FastClick.attach(document.body)
+    }, false)
+  </script>
+
+
+
+  
+  
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
+    <script type="text/javascript">
+      $(function(){
+        if ('.cover') {
+          $('.cover').backstretch(
+          ["/image/beijin01.jpg", "/image/beijin02.jpg", "/image/beijin03.jpg"],
+          {
+            duration: "7000",
+            fade: "6500"
+          });
+        } else {
+          $.backstretch(
+          ["/image/beijin01.jpg", "/image/beijin02.jpg", "/image/beijin03.jpg"],
+          {
+            duration: "7000",
+            fade: "6500"
+          });
+        }
+      });
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.5/js/app.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.5/js/search.js"></script>
+
+
+
+
+
+<!-- 复制 -->
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  let COPY_SUCCESS = "Copied";
+  let COPY_FAILURE = "Copy failed";
+  /*页面载入完成后，创建复制按钮*/
+  !function (e, t, a) {
+    /* code */
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '  <i class="fa fa-copy"></i><span>Copy</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+
+      clipboard.on('success', function(e) {
+        //您可以加入成功提示
+        console.info('Action:', e.action);
+        console.info('Text:', e.text);
+        console.info('Trigger:', e.trigger);
+        success_prompt(COPY_SUCCESS);
+        e.clearSelection();
+      });
+      clipboard.on('error', function(e) {
+        //您可以加入失败提示
+        console.error('Action:', e.action);
+        console.error('Trigger:', e.trigger);
+        fail_prompt(COPY_FAILURE);
+      });
+    }
+    initCopyCode();
+
+  }(window, document);
+
+  /**
+   * 弹出式提示框，默认1.5秒自动消失
+   * @param message 提示信息
+   * @param style 提示样式，有alert-success、alert-danger、alert-warning、alert-info
+   * @param time 消失时间
+   */
+  var prompt = function (message, style, time)
+  {
+      style = (style === undefined) ? 'alert-success' : style;
+      time = (time === undefined) ? 1500 : time*1000;
+      $('<div>')
+          .appendTo('body')
+          .addClass('alert ' + style)
+          .html(message)
+          .show()
+          .delay(time)
+          .fadeOut();
+  };
+
+  // 成功提示
+  var success_prompt = function(message, time)
+  {
+      prompt(message, 'alert-success', time);
+  };
+
+  // 失败提示
+  var fail_prompt = function(message, time)
+  {
+      prompt(message, 'alert-danger', time);
+  };
+
+  // 提醒
+  var warning_prompt = function(message, time)
+  {
+      prompt(message, 'alert-warning', time);
+  };
+
+  // 信息提示
+  var info_prompt = function(message, time)
+  {
+      prompt(message, 'alert-info', time);
+  };
+
+</script>
+
+
+<!-- fancybox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "";
+  $(".article-entry").find("fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+</body>
+</html>
