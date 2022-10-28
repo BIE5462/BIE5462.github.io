@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  <title>timeline | BIEBLOG</title>
+  <title>LeetCode-贪心算法 | BIEBLOG</title>
   
   <meta name="keywords" content="数据结构与算法,智能计算,最优化理论">
   
@@ -50,7 +50,7 @@
   
   
   <div class="cover-wrapper">
-    <cover class='cover page half'>
+    <cover class='cover post half'>
       
         
   <h1 class='title'>BIEBOLG</h1>
@@ -260,7 +260,7 @@
   
 
   
-    <article id="page" class="post white-box article-type-page" itemscope itemprop="blogPost">
+    <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
       
 
 
@@ -272,8 +272,8 @@
         
   
     <h1 class="title">
-      <a href="/timeline/index.html">
-        timeline
+      <a href="/2022/10/28/221028leetcode/">
+        LeetCode-贪心算法
       </a>
     </h1>
   
@@ -302,7 +302,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2020-09-25</p>
+    <p>2022-10-28</p>
   </a>
 </div>
 
@@ -310,6 +310,14 @@
         
           
             
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/LeetCode/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>LeetCode&nbsp;/&nbsp;贪心算法</p>
+    </a>
+  </div>
+
 
           
         
@@ -346,9 +354,152 @@
 
       <section class="article typo">
         <div class="article-entry" itemprop="articleBody">
-          <h2 id="未完成"><a href="#未完成" class="headerlink" title="未完成"></a>未完成</h2>
+          <blockquote>
+<p>贪心算法或贪心思想采用贪心的策略，保证每次操作都是局部最优的，从而使最<br>后得到的结果是全局最优的。</p>
+</blockquote>
+<span id="more"></span>
+
+<h1 id="贪心算法"><a href="#贪心算法" class="headerlink" title="贪心算法"></a>贪心算法</h1><h2 id="455-分配饼干"><a href="#455-分配饼干" class="headerlink" title="455. 分配饼干"></a>455. 分配饼干</h2><blockquote>
+<p>假设你是一位很棒的家长，想要给你的孩子们一些小饼干。但是，每个孩子最多只能给一块饼干。</p>
+</blockquote>
+<blockquote>
+<p>对每个孩子 i，都有一个胃口值 g[i]，这是能让孩子们满足胃口的饼干的最小尺寸；并且每块饼干 j，都有一个尺寸 s[j] 。如果 s[j] &gt;&#x3D; g[i]，我们可以将这个饼干 j 分配给孩子 i ，这个孩子会得到满足。你的目标是尽可能满足越多数量的孩子，并输出这个最大数值.</p>
+</blockquote>
+<h3 id="贪心思想"><a href="#贪心思想" class="headerlink" title="贪心思想"></a>贪心思想</h3><p>优先考虑胃口值最小的孩子，满足胃口值最小孩子后才考虑其他人</p>
+<h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><ol>
+<li><p>双排序，while循环</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public int findContentChildren(int[] g, int[] s) &#123;</span><br><span class="line">        Arrays.sort(g);</span><br><span class="line">        Arrays.sort(s);</span><br><span class="line">        int cookies=0,child=0;</span><br><span class="line">        while(child&lt;g.length&amp;&amp;cookies&lt;s.length)&#123;</span><br><span class="line">            if(g[child]&lt;=s[cookies])&#123;</span><br><span class="line">            child++; </span><br><span class="line">            cookies++;   </span><br><span class="line">            &#125;</span><br><span class="line">            else&#123;</span><br><span class="line">                cookies++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    return child;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>双排序for循环</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public int findContentChildren(int[] g, int[] s) &#123;</span><br><span class="line">        Arrays.sort(g);</span><br><span class="line">        Arrays.sort(s);</span><br><span class="line">        int m = g.length, n = s.length;</span><br><span class="line">        int count = 0;</span><br><span class="line">        for (int i = 0, j = 0; i &lt; m &amp;&amp; j &lt; n; i++, j++) &#123;</span><br><span class="line">            while (j &lt; n &amp;&amp; g[i] &gt; s[j]) &#123;</span><br><span class="line">                j++;</span><br><span class="line">            &#125;</span><br><span class="line">            if (j &lt; n) &#123;</span><br><span class="line">                count++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return count;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>for 和whlie的区别</p>
+<ol>
+<li>知道执行次数的时候一般用for，条件循环时一般用while</li>
+<li>对执行中的某些次数进行操作用while</li>
+<li>循环处理的过程中就要将循环变量增加时，则使用while循环比较方便。</li>
+</ol>
+</li>
+</ol>
+<h2 id="135-分发糖果"><a href="#135-分发糖果" class="headerlink" title="135.分发糖果"></a>135.分发糖果</h2><blockquote>
+<p>n 个孩子站成一排。给你一个整数数组 ratings 表示每个孩子的评分。<br>你需要按照以下要求，给这些孩子分发糖果：</p>
+<ul>
+<li>每个孩子至少分配到 1 个糖果。</li>
+<li>相邻两个孩子评分更高的孩子会获得更多的糖果。</li>
+</ul>
+<p>请你给每个孩子分发糖果，计算并返回需要准备的 最少糖果数目 。</p>
+</blockquote>
+<h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public int candy(int[] ratings) &#123;</span><br><span class="line">        int n=ratings.length;</span><br><span class="line">        int []candy=new int[n];</span><br><span class="line">        for(int i =0;i&lt;n;i++)&#123;</span><br><span class="line">            if(i&gt;0&amp;&amp;ratings[i]&gt;ratings[i-1])&#123;</span><br><span class="line">                candy[i]=candy[i-1]+1;</span><br><span class="line">            &#125;</span><br><span class="line">            else&#123;</span><br><span class="line">                candy[i]=1;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        for(int i =n-1;i&gt;=0;i--)&#123;</span><br><span class="line">            if(i&lt;n-1&amp;&amp;ratings[i]&gt;ratings[i+1])&#123;</span><br><span class="line">                if(candy[i]&lt;=candy[i+1])&#123;</span><br><span class="line">                    candy[i]=candy[i+1]+1;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        int count=0;</span><br><span class="line">        for(int i:candy)&#123;</span><br><span class="line">            System.out.print(i);</span><br><span class="line">            count+=i;</span><br><span class="line">        &#125;</span><br><span class="line">        return count;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
         </div>
         
+          
+
+
+  <section class='meta' id="footer-meta">
+    <hr>
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2022-10-28T20:33:18+08:00">
+  <a class='notlink'>
+    <i class="fas fa-clock" aria-hidden="true"></i>
+    <p>last updated at Oct 28, 2022</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i>&nbsp;<p>贪心算法</p></a></div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2022/10/28/221028leetcode/&title=LeetCode-贪心算法 | BIEBLOG&summary=
+贪心算法或贪心思想采用贪心的策略，保证每次操作都是局部最优的，从而使最后得到的结果是全局最优的。
+"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2022/10/28/221028leetcode/&title=LeetCode-贪心算法 | BIEBLOG&summary=
+贪心算法或贪心思想采用贪心的策略，保证每次操作都是局部最优的，从而使最后得到的结果是全局最优的。
+"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2022/10/28/221028leetcode/&title=LeetCode-贪心算法 | BIEBLOG&summary=
+贪心算法或贪心思想采用贪心的策略，保证每次操作都是局部最优的，从而使最后得到的结果是全局最优的。
+"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/weibo.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+            <div class="prev-next">
+                
+                
+                    <section class="next">
+                        <span class="art-item-right" aria-hidden="true">
+                            <h6>Next&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
+                            <h4>
+                                <a href="/2020/09/25/20190719hexo/" rel="prev" title="hexo博客部署1234">
+                                    
+                                        hexo博客部署1234
+                                    
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/tags/blog/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>blog</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+            </div>
         
       </section>
     </article>
@@ -370,6 +521,13 @@
 <!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
 
 
+
+  <script>
+    window.subData = {
+      title: 'LeetCode-贪心算法',
+      tools: true
+    }
+  </script>
 
 
 </div>
@@ -436,6 +594,20 @@
           
           
             
+  <section class='widget toc-wrapper'>
+    
+<header class='pure'>
+  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;TOC</div>
+  
+    <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div>
+  
+</header>
+
+    <div class='content pure'>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95"><span class="toc-text">贪心算法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#455-%E5%88%86%E9%85%8D%E9%A5%BC%E5%B9%B2"><span class="toc-text">455. 分配饼干</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B4%AA%E5%BF%83%E6%80%9D%E6%83%B3"><span class="toc-text">贪心思想</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="toc-text">代码实现</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#135-%E5%88%86%E5%8F%91%E7%B3%96%E6%9E%9C"><span class="toc-text">135.分发糖果</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF"><span class="toc-text">解题思路</span></a></li></ol></li></ol></li></ol>
+    </div>
+  </section>
+
 
           
         
