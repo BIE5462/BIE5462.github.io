@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  <title>常微分方程() | BIEBLOG</title>
+  <title>LeetCode-贪心算法 | BIEBLOG</title>
   
   <meta name="keywords" content="数据结构与算法,智能计算,最优化理论">
   
@@ -272,8 +272,8 @@
         
   
     <h1 class="title">
-      <a href="/2019/09/05/20190904ODE/">
-        常微分方程()
+      <a href="/2022/10/28/leetcode/221028leetcode/">
+        LeetCode-贪心算法
       </a>
     </h1>
   
@@ -302,7 +302,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2019-09-05</p>
+    <p>2022-10-28</p>
   </a>
 </div>
 
@@ -312,9 +312,9 @@
             
   
   <div class='new-meta-item category'>
-    <a href='/categories/%E4%B8%93%E4%B8%9A%E7%9F%A5%E8%AF%86/' rel="nofollow">
+    <a href='/categories/LeetCode/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/' rel="nofollow">
       <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>专业知识</p>
+      <p>LeetCode&nbsp;/&nbsp;贪心算法</p>
     </a>
   </div>
 
@@ -354,98 +354,86 @@
 
       <section class="article typo">
         <div class="article-entry" itemprop="articleBody">
-          <p>基本概念</p>
+          <blockquote>
+<p>贪心算法或贪心思想采用贪心的策略，保证每次操作都是局部最优的，从而使最<br>后得到的结果是全局最优的。</p>
+</blockquote>
 <span id="more"></span>
 
-<h1 id="常微分方程基本概念"><a href="#常微分方程基本概念" class="headerlink" title="常微分方程基本概念"></a>常微分方程基本概念</h1><h2 id="常微分方程和偏微分方程"><a href="#常微分方程和偏微分方程" class="headerlink" title="常微分方程和偏微分方程"></a>常微分方程和偏微分方程</h2><h3 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h3><ul>
-<li>微分方程</li>
-</ul>
-<p>联系着<strong>自变量</strong>、<strong>未知函数</strong>及其<strong>导数</strong>的关系式</p>
-<ul>
-<li>常微分方程</li>
-</ul>
-<p>自变量的个数只有一个</p>
-<ul>
-<li>偏微分方程</li>
-</ul>
-<p>自变量的个数有两个及以上</p>
-<h3 id="方程例子："><a href="#方程例子：" class="headerlink" title="方程例子："></a>方程例子：</h3><p>$$\frac{d^{2}y}{dt^{2}}+b\frac{dy}{dt}+cy&#x3D;f\left ( t\right )$$<br>$$(\frac{dy}{dt})^{2}+t\frac{dy}{dt}+y&#x3D;0$$<br>y是未知函数，t为自变量</p>
-<h3 id="方程阶数"><a href="#方程阶数" class="headerlink" title="方程阶数"></a>方程阶数</h3><p>未知函数<strong>最高阶导数</strong>的阶数称为微分方程的阶数</p>
-<h3 id="一般形式"><a href="#一般形式" class="headerlink" title="一般形式"></a>一般形式</h3><p>$$ F(x,y,\frac{dy}{dx},…\frac{d^{n}y}{dx^{n}})&#x3D;0$$</p>
-<ul>
-<li>$F(x,y,\frac{dy}{dx},…\frac{d^{n}y}{dx^{n}})$<br>是<br>$x,y,\frac{dy}{dx},…\frac{d^{n}y}{dx^{n}}$<br>的已知函数，</li>
-<li>y是未知函数，x是自变量</li>
-</ul>
-<h3 id="线性和非线性"><a href="#线性和非线性" class="headerlink" title="线性和非线性"></a>线性和非线性</h3><blockquote>
-<p>未知函数y和它的各阶导数对全体而言是一次的<br>方程左端为未知函数y和它的各阶导数组成的有理整式</p>
-</blockquote>
-<h4 id="一次有理整式"><a href="#一次有理整式" class="headerlink" title="一次有理整式"></a>一次有理整式</h4><ul>
-<li>有理整式</li>
-</ul>
-<p>可以认为有理整式即是多项式，对<strong>变数字母</strong>与<strong>数</strong>仅限于有限次加、减、乘、乘方运算的代数式，即除式不含变数字母的有理式称为有理整式。</p>
-<ul>
-<li>超越函数：</li>
-</ul>
-<p>与代数函数相反，是指那些不满足任何以多项式方程的函数，即函数不满足以变量自身的多项式为系数的多项式方程。如<strong>三角函数</strong>、<strong>对数函数</strong>，<strong>反三角函数</strong>，<strong>指数函数</strong>等就属于超越函数。</p>
-<blockquote>
-<p>未知函数y的项中含有超越函数的常微分方程是非线性的。</p>
+<h1 id="贪心算法"><a href="#贪心算法" class="headerlink" title="贪心算法"></a>贪心算法</h1><h2 id="455-分配饼干"><a href="#455-分配饼干" class="headerlink" title="455. 分配饼干"></a>455. 分配饼干</h2><blockquote>
+<p>假设你是一位很棒的家长，想要给你的孩子们一些小饼干。但是，每个孩子最多只能给一块饼干。</p>
 </blockquote>
 <blockquote>
-<p>$\frac{d^{2}y}{dt^{2}}+\frac{g}{l}sin(y)&#x3D;0$二阶微分方程是非线性的</p>
+<p>对每个孩子 i，都有一个胃口值 g[i]，这是能让孩子们满足胃口的饼干的最小尺寸；并且每块饼干 j，都有一个尺寸 s[j] 。如果 s[j] &gt;&#x3D; g[i]，我们可以将这个饼干 j 分配给孩子 i ，这个孩子会得到满足。你的目标是尽可能满足越多数量的孩子，并输出这个最大数值.</p>
+</blockquote>
+<h3 id="贪心思想"><a href="#贪心思想" class="headerlink" title="贪心思想"></a>贪心思想</h3><p>优先考虑胃口值最小的孩子，满足胃口值最小孩子后才考虑其他人</p>
+<h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><p><strong>1. 双排序，while循环</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public int findContentChildren(int[] g, int[] s) &#123;</span><br><span class="line">        Arrays.sort(g);</span><br><span class="line">        Arrays.sort(s);</span><br><span class="line">        int cookies=0,child=0;</span><br><span class="line">        while(child&lt;g.length&amp;&amp;cookies&lt;s.length)&#123;</span><br><span class="line">            if(g[child]&lt;=s[cookies])&#123;</span><br><span class="line">            child++; </span><br><span class="line">            cookies++;   </span><br><span class="line">            &#125;</span><br><span class="line">            else&#123;</span><br><span class="line">                cookies++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    return child;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>2. 双排序for循环</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public int findContentChildren(int[] g, int[] s) &#123;</span><br><span class="line">        Arrays.sort(g);</span><br><span class="line">        Arrays.sort(s);</span><br><span class="line">        int m = g.length, n = s.length;</span><br><span class="line">        int count = 0;</span><br><span class="line">        for (int i = 0, j = 0; i &lt; m &amp;&amp; j &lt; n; i++, j++) &#123;</span><br><span class="line">            while (j &lt; n &amp;&amp; g[i] &gt; s[j]) &#123;</span><br><span class="line">                j++;</span><br><span class="line">            &#125;</span><br><span class="line">            if (j &lt; n) &#123;</span><br><span class="line">                count++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return count;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>3. for 和whlie的区别</strong></p>
+<ol>
+<li>知道执行次数的时候一般用for，条件循环时一般用while</li>
+<li>对执行中的某些次数进行操作用while</li>
+<li>循环处理的过程中就要将循环变量增加时，则使用while循环比较方便。</li>
+</ol>
+<h2 id="135-分发糖果"><a href="#135-分发糖果" class="headerlink" title="135.分发糖果"></a>135.分发糖果</h2><blockquote>
+<p>n 个孩子站成一排。给你一个整数数组 ratings 表示每个孩子的评分。<br>你需要按照以下要求，给这些孩子分发糖果：</p>
+<ul>
+<li>每个孩子至少分配到 1 个糖果。</li>
+<li>相邻两个孩子评分更高的孩子会获得更多的糖果。</li>
+</ul>
+<p>请你给每个孩子分发糖果，计算并返回需要准备的 最少糖果数目 。</p>
+</blockquote>
+<h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><ul>
+<li>把所有孩子的糖果数初始化为1；先从左往右遍历一遍，如果右边孩子的评分比左边的高，则右边孩子的糖果数更新为左边孩子的糖果数加1；</li>
+<li>再从右往左遍历一遍，如果左边孩子的评分比右边的高，且左边孩子当前的糖果数不大于右边孩子的糖果数，则左边孩子的糖果数更新为右边孩子的糖果数加1</li>
+</ul>
+<h3 id="代码实现-1"><a href="#代码实现-1" class="headerlink" title="代码实现"></a>代码实现</h3><p><strong>1. 两次遍历</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public int candy(int[] ratings) &#123;</span><br><span class="line">        int n=ratings.length;</span><br><span class="line">        int []candy=new int[n];</span><br><span class="line">        for(int i =0;i&lt;n;i++)&#123;</span><br><span class="line">            if(i&gt;0&amp;&amp;ratings[i]&gt;ratings[i-1])&#123;</span><br><span class="line">                candy[i]=candy[i-1]+1;</span><br><span class="line">            &#125;</span><br><span class="line">            else&#123;</span><br><span class="line">                candy[i]=1;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        for(int i =n-1;i&gt;=0;i--)&#123;</span><br><span class="line">            if(i&lt;n-1&amp;&amp;ratings[i]&gt;ratings[i+1])&#123;</span><br><span class="line">                if(candy[i]&lt;=candy[i+1])&#123;</span><br><span class="line">                    candy[i]=candy[i+1]+1;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        int count=0;</span><br><span class="line">        for(int i:candy)&#123;</span><br><span class="line">            System.out.print(i);</span><br><span class="line">            count+=i;</span><br><span class="line">        &#125;</span><br><span class="line">        return count;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>2.常数空间遍历</strong></p>
+<ul>
+<li><p>如果当前同学比上一个同学评分高，说明我们就在最近的递增序列中，直接分配给该同学 $\textit{pre} + 1$ 个糖果即可。</p>
+</li>
+<li><p>否则我们就在一个递减序列中，我们直接分配给当前同学一个糖果，并把该同学所在的递减序列中所有的同学都再多分配一个糖果，以保证糖果数量还是满足条件。</p>
+</li>
+</ul>
+<p>待补充<br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/candy/solution/fen-fa-tang-guo-by-leetcode-solution-f01p/">https://leetcode.cn/problems/candy/solution/fen-fa-tang-guo-by-leetcode-solution-f01p/</a></p>
+<h2 id="435无重叠区间"><a href="#435无重叠区间" class="headerlink" title="435无重叠区间"></a>435无重叠区间</h2><blockquote>
+<p>给定一个区间的集合 <code>intervals</code> ，其中 <code>intervals[i] = [starti, endi]</code> 。返回 需要移除区间的最小数量，使剩余区间互不重叠 。</p>
+</blockquote>
+<h3 id="贪心解法"><a href="#贪心解法" class="headerlink" title="贪心解法"></a>贪心解法</h3><p><strong>1. 思路</strong></p>
+<pre><code>优先保留结尾小且不相交的区间。
+</code></pre>
+<p><strong>2. 代码实现</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public int eraseOverlapIntervals(int[][] intervals) &#123;</span><br><span class="line">    if (intervals.length == 0) &#123;</span><br><span class="line">        return 0;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    Arrays.sort(intervals, new Comparator&lt;int[]&gt;() &#123;</span><br><span class="line">        public int compare(int[] interval1, int[] interval2) &#123;</span><br><span class="line">            return interval1[1] - interval2[1];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    int n = intervals.length;</span><br><span class="line">    int right = intervals[0][1];</span><br><span class="line">    int ans = 1;</span><br><span class="line">    for (int i = 1; i &lt; n; ++i) &#123;</span><br><span class="line">        if (intervals[i][0] &gt;= right) &#123;</span><br><span class="line">            ++ans;</span><br><span class="line">            right = intervals[i][1];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return n - ans;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>待补充：</p>
+<ol>
+<li><p>查看<code>Arrays.sort</code>源码了解进阶用法</p>
+</li>
+<li><p>动态规划解法</p>
+</li>
+</ol>
+<h2 id="605种花问题"><a href="#605种花问题" class="headerlink" title="605种花问题"></a>605种花问题</h2><blockquote>
+<p>假设有一个很长的花坛，一部分地块种植了花，另一部分却没有。可是，花不能种植在相邻的地块上，它们会争夺水源，两者都会死去。</p>
 </blockquote>
 <blockquote>
-<p>$x^{2}\frac{dy}{dt}+(x-1)y+sin(x)&#x3D;0$一阶微分方程是非线性的</p>
+<p>给你一个整数数组  flowerbed 表示花坛，由若干 0 和 1 组成，其中 0 表示没种植花，1 表示种植了花。另有一个数 n ，能否在不打破种植规则的情况下种入 n 朵花？能则返回 true ，不能则返回 false。</p>
 </blockquote>
-<h4 id="一般n阶线性微分方程形式"><a href="#一般n阶线性微分方程形式" class="headerlink" title="一般n阶线性微分方程形式"></a>一般n阶线性微分方程形式</h4><p>$$\frac{d^{n}y}{dx^{n}}+a_{1}(x)\frac{d^{n-1}y}{dx^{n-1}}+…+a_{n-1}(x)\frac{dy}{dx}+a_{n}(x)y&#x3D;f(x)$$</p>
-<h3 id="解和隐式解"><a href="#解和隐式解" class="headerlink" title="解和隐式解"></a>解和隐式解</h3><ul>
-<li>解</li>
-</ul>
-<p><strong>函数</strong>代入方程后，使方程变为恒等式，则此函数为方程的解</p>
+<h2 id="贪心"><a href="#贪心" class="headerlink" title="贪心"></a>贪心</h2><p>从左往右，能种则种</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">//垃圾代码</span><br><span class="line">class Solution &#123;</span><br><span class="line">    public boolean canPlaceFlowers(int[] flowerbed, int n) &#123;</span><br><span class="line">        if(flowerbed.length==1)&#123;</span><br><span class="line">            if(flowerbed[0]==0)</span><br><span class="line">            n--;</span><br><span class="line">        &#125;</span><br><span class="line">        else&#123;</span><br><span class="line">        for(int i=0;i&lt;flowerbed.length;i++)&#123;</span><br><span class="line">            if(i==0)&#123;</span><br><span class="line">                if(flowerbed[i+1]==0&amp;&amp;flowerbed[i]==0)&#123;</span><br><span class="line">                    flowerbed[i]=1;n--;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            else if(i==flowerbed.length-1&amp;&amp;flowerbed[i]==0)&#123;</span><br><span class="line">                if(flowerbed[i-1]==0)&#123;</span><br><span class="line">                    flowerbed[i]=1;n--;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            else if(i!=0&amp;&amp;i!=flowerbed.length-1)&#123;</span><br><span class="line">                //System.out.print(i);</span><br><span class="line">                if(flowerbed[i-1]==0&amp;&amp;flowerbed[i+1]==0&amp;&amp;flowerbed[i]==0)&#123;</span><br><span class="line">                    flowerbed[i]=1;n--;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;&#125;</span><br><span class="line">        &#125;</span><br><span class="line">        if(n&lt;=0)return true;</span><br><span class="line">        else return false;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="数学归纳法"><a href="#数学归纳法" class="headerlink" title="数学归纳法"></a>数学归纳法</h2><p>统计连续的0的区间，分别有多少个连续的0即可。对于每一段0区间，都可以根据公式直接算出可以种几朵花。</p>
+<p>公式可以通过数学归纳法推出来，很简单：<br>1）对于中间的0区间：</p>
 <ul>
-<li>隐式解</li>
+<li>1~2个0：可种0朵；</li>
+<li>3~4个：可种1朵；</li>
+<li>5~6个：可种2朵；</li>
+<li>…</li>
+<li>count个：可种 (count-1)&#x2F;2 朵</li>
 </ul>
-<p>函数关系式决定的函数为方程的解（不确定函数）,也称为积分</p>
-<p>$$\Phi(x,y)&#x3D;0$$</p>
-<ul>
-<li>解和隐式解统称为方程的解</li>
-</ul>
-<h3 id="通解和待解"><a href="#通解和待解" class="headerlink" title="通解和待解"></a>通解和待解</h3><ul>
-<li>通解</li>
-</ul>
-<p>含有n个独立的任意常数的解</p>
-<p>$$ y&#x3D;\Phi(x,c_{1},c_{2}…c_{n})$$</p>
-<ul>
-<li><p>解对常数的独立性</p>
-</li>
-<li><p>隐式通解</p>
-</li>
-</ul>
-<p>待补充</p>
-<ul>
-<li>定解条件</li>
-</ul>
-<p><strong>初值条件</strong>和<strong>边值条件</strong></p>
-<p>初值问题：柯西问题<br>待补充</p>
-<ul>
-<li>特解</li>
-</ul>
-<p>满足初值条件的解称为微分方程的特解</p>
-<p>初值条件不同特解不同</p>
-<p>特解可以通过初值条件的限制，从通解中确定任意常数值得到</p>
-<h3 id="积分曲线和方向场"><a href="#积分曲线和方向场" class="headerlink" title="积分曲线和方向场"></a>积分曲线和方向场</h3><ul>
-<li>积分曲线</li>
-</ul>
-<p>一阶微分方程<br>$\frac{dy}{dx}&#x3D;f(x,y)$<br>的解<br>$y&#x3D;\varphi (x)$<br>表示XOY平面内的一条曲线，称为积分曲线</p>
-<ul>
-<li><p>特解为过一点(x,y)的积分曲线</p>
-</li>
-<li><p>积分曲线上过每一点的切线斜率<br> $\frac{dy}{dx}$<br> 为方程右端f(x,y)在该处的值</p>
-</li>
-<li><p>向量场（方向场）</p>
-</li>
-</ul>
-<p>用于近似解法，逼近解</p>
-<h3 id="微分方程组"><a href="#微分方程组" class="headerlink" title="微分方程组"></a>微分方程组</h3><h3 id="驻定与非驻定"><a href="#驻定与非驻定" class="headerlink" title="驻定与非驻定"></a>驻定与非驻定</h3><h2 id=""><a href="#" class="headerlink" title=""></a></h2>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">public static boolean canPlaceFlowers(int[] flowerbed, int n) &#123;</span><br><span class="line">        if (flowerbed == null || flowerbed.length == 0) return n == 0;</span><br><span class="line"></span><br><span class="line">        int countOfZero = 1; // 当前全0区段中连续0的数量，刚开始预设1个0，因为开头花坛的最左边没有花，可以认为存在一个虚无的0</span><br><span class="line">        int canPlace = 0; // 可以种的花的数量</span><br><span class="line">        for (int bed : flowerbed) &#123;</span><br><span class="line">            if (bed == 0) &#123; // 遇到0，连续0的数量+1</span><br><span class="line">                countOfZero++;</span><br><span class="line">            &#125; else &#123; // 遇到1，结算上一段连续的0区间，看能种下几盆花：(countOfZero-1)/2</span><br><span class="line">                canPlace += (countOfZero-1)/2;</span><br><span class="line">                if (canPlace &gt;= n) return true;</span><br><span class="line">                countOfZero = 0; // 0的数量清零，开始统计下一个全0分区</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        // 最后一段0区还未结算：</span><br><span class="line">        countOfZero++; // 最后再预设1个0，因为最后花坛的最右边没有花，可以认为存在一个虚无的0</span><br><span class="line">        canPlace += (countOfZero-1)/2;</span><br><span class="line"></span><br><span class="line">        return canPlace &gt;= n;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id=""><a href="#" class="headerlink" title=""></a></h2>
         </div>
         
           
@@ -456,10 +444,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2022-10-28T20:56:45+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2022-10-29T15:50:23+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>last updated at Oct 28, 2022</p>
+    <p>last updated at Oct 29, 2022</p>
   </a>
 </div>
 
@@ -467,6 +455,9 @@
       
         
           
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i>&nbsp;<p>贪心算法</p></a></div>
+
 
         
       
@@ -478,7 +469,9 @@
       
         <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2019/09/05/20190904ODE/&title=常微分方程() | BIEBLOG&summary=基本概念"
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2022/10/28/leetcode/221028leetcode/&title=LeetCode-贪心算法 | BIEBLOG&summary=
+贪心算法或贪心思想采用贪心的策略，保证每次操作都是局部最优的，从而使最后得到的结果是全局最优的。
+"
           
           >
           
@@ -490,7 +483,9 @@
       
         <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2019/09/05/20190904ODE/&title=常微分方程() | BIEBLOG&summary=基本概念"
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2022/10/28/leetcode/221028leetcode/&title=LeetCode-贪心算法 | BIEBLOG&summary=
+贪心算法或贪心思想采用贪心的策略，保证每次操作都是局部最优的，从而使最后得到的结果是全局最优的。
+"
           
           >
           
@@ -502,7 +497,9 @@
       
         <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2019/09/05/20190904ODE/&title=常微分方程() | BIEBLOG&summary=基本概念"
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2022/10/28/leetcode/221028leetcode/&title=LeetCode-贪心算法 | BIEBLOG&summary=
+贪心算法或贪心思想采用贪心的策略，保证每次操作都是局部最优的，从而使最后得到的结果是全局最优的。
+"
           
           >
           
@@ -526,40 +523,21 @@
         
             <div class="prev-next">
                 
-                    <section class="prev">
-                        <span class="art-item-left">
-                            <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;Previous</h6>
+                
+                    <section class="next">
+                        <span class="art-item-right" aria-hidden="true">
+                            <h6>Next&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
                             <h4>
-                                <a href="/2020/09/25/20190719hexo/" rel="prev" title="hexo博客部署1234">
-                                  
-                                      hexo博客部署1234
-                                  
+                                <a href="/2020/09/25/jishu/20190719hexo/" rel="prev" title="hexo博客部署">
+                                    
+                                        hexo博客部署
+                                    
                                 </a>
                             </h4>
                             
                                 
                                 <h6 class="tags">
                                     <a class="tag" href="/tags/blog/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>blog</a>
-                                </h6>
-                            
-                        </span>
-                    </section>
-                
-                
-                    <section class="next">
-                        <span class="art-item-right" aria-hidden="true">
-                            <h6>Next&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
-                            <h4>
-                                <a href="/2019/09/04/20190904tongji/" rel="prev" title="数学建模统计分析">
-                                    
-                                        数学建模统计分析
-                                    
-                                </a>
-                            </h4>
-                            
-                                
-                                <h6 class="tags">
-                                    <a class="tag" href="/tags/%E7%BB%9F%E8%AE%A1/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>统计</a>
                                 </h6>
                             
                         </span>
@@ -586,49 +564,11 @@
 
 <!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
 
-  <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    "HTML-CSS": {
-      preferredFont: "TeX",
-      availableFonts: ["STIX","TeX"],
-      linebreaks: { automatic:true },
-      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
-    },
-    tex2jax: {
-      inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
-      processEscapes: true,
-      ignoreClass: "tex2jax_ignore|dno",
-      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    },
-    TeX: {
-      equationNumbers: { autoNumber: "AMS" },
-      noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
-      Macros: { href: "{}" }
-    },
-    messageStyle: "none"
-  });
-</script>
-<!-- 给MathJax元素添加has-jax class -->
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-      all[i].SourceElement().parentNode.className += (all[i].SourceElement().parentNode.className ? ' ' : '') + 'has-jax';
-    }
-  });
-</script>
-<!-- 通过连接CDN加载MathJax的js代码 -->
-<script type="text/javascript" async
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>
-
-
 
 
   <script>
     window.subData = {
-      title: '常微分方程()',
+      title: 'LeetCode-贪心算法',
       tools: true
     }
   </script>
@@ -708,7 +648,7 @@
 </header>
 
     <div class='content pure'>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-text">常微分方程基本概念</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E5%92%8C%E5%81%8F%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B"><span class="toc-text">常微分方程和偏微分方程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8C%BA%E5%88%AB"><span class="toc-text">区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E7%A8%8B%E4%BE%8B%E5%AD%90%EF%BC%9A"><span class="toc-text">方程例子：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E7%A8%8B%E9%98%B6%E6%95%B0"><span class="toc-text">方程阶数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E8%88%AC%E5%BD%A2%E5%BC%8F"><span class="toc-text">一般形式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BA%BF%E6%80%A7%E5%92%8C%E9%9D%9E%E7%BA%BF%E6%80%A7"><span class="toc-text">线性和非线性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%80%E6%AC%A1%E6%9C%89%E7%90%86%E6%95%B4%E5%BC%8F"><span class="toc-text">一次有理整式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%80%E8%88%ACn%E9%98%B6%E7%BA%BF%E6%80%A7%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E5%BD%A2%E5%BC%8F"><span class="toc-text">一般n阶线性微分方程形式</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E5%92%8C%E9%9A%90%E5%BC%8F%E8%A7%A3"><span class="toc-text">解和隐式解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%9A%E8%A7%A3%E5%92%8C%E5%BE%85%E8%A7%A3"><span class="toc-text">通解和待解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A7%AF%E5%88%86%E6%9B%B2%E7%BA%BF%E5%92%8C%E6%96%B9%E5%90%91%E5%9C%BA"><span class="toc-text">积分曲线和方向场</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E7%BB%84"><span class="toc-text">微分方程组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A9%BB%E5%AE%9A%E4%B8%8E%E9%9D%9E%E9%A9%BB%E5%AE%9A"><span class="toc-text">驻定与非驻定</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text"></span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95"><span class="toc-text">贪心算法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#455-%E5%88%86%E9%85%8D%E9%A5%BC%E5%B9%B2"><span class="toc-text">455. 分配饼干</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B4%AA%E5%BF%83%E6%80%9D%E6%83%B3"><span class="toc-text">贪心思想</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="toc-text">代码实现</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#135-%E5%88%86%E5%8F%91%E7%B3%96%E6%9E%9C"><span class="toc-text">135.分发糖果</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF"><span class="toc-text">解题思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0-1"><span class="toc-text">代码实现</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#435%E6%97%A0%E9%87%8D%E5%8F%A0%E5%8C%BA%E9%97%B4"><span class="toc-text">435无重叠区间</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B4%AA%E5%BF%83%E8%A7%A3%E6%B3%95"><span class="toc-text">贪心解法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#605%E7%A7%8D%E8%8A%B1%E9%97%AE%E9%A2%98"><span class="toc-text">605种花问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B4%AA%E5%BF%83"><span class="toc-text">贪心</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E5%AD%A6%E5%BD%92%E7%BA%B3%E6%B3%95"><span class="toc-text">数学归纳法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text"></span></a></li></ol></li></ol>
     </div>
   </section>
 
