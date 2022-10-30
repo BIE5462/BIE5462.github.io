@@ -212,6 +212,115 @@
       
         
   <h2 class="title">
+    <a href="/2019/07/18/jishu/20190718md/">
+      从Markdown到Latex
+    </a>
+  </h2>
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    <a href="http://example.com" rel="nofollow">
+      
+        <i class="fas fa-user" aria-hidden="true"></i>
+      
+      <p>杨春波</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2019-07-18</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>技术笔记</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      <blockquote>
+<p>Markdown是目前互联网上最流行的写作语言，它使用一些简单的符号来标记文本格式，其简洁的语法、优美的格式以及强大的软件支持深受广大网友的喜爱。</p>
+</blockquote>
+<blockquote>
+<p>Latex是一种基于TeX的排版系统,常用于科技论文的排版。其优点在于模板化的排版和对数学公式、符号的完美支持。可用于数学建模论文写作。</p>
+</blockquote>
+      
+        <div class="readmore">
+          <a href="/2019/07/18/jishu/20190718md/" class="flat-box">
+            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
+            Read More
+          </a>
+        </div>
+      
+    </div>
+    
+      <div class="full-width auto-padding tags">
+        
+          <a href="/tags/blog/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>blog</a>
+        
+      </div>
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post reveal ">
+  
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  <h2 class="title">
     <a href="/2019/07/18/jishu/20190718blog/">
       博客之路
     </a>
@@ -314,6 +423,44 @@
     <!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
     
     
+      <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "TeX",
+      availableFonts: ["STIX","TeX"],
+      linebreaks: { automatic:true },
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+      inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+      processEscapes: true,
+      ignoreClass: "tex2jax_ignore|dno",
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: { autoNumber: "AMS" },
+      noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+      Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+  });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += (all[i].SourceElement().parentNode.className ? ' ' : '') + 'has-jax';
+    }
+  });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+    
 
   
 
@@ -409,7 +556,9 @@
     <div class='content pure'>
       <ul class="entry">
         
-          <li><a class="flat-box" title="/categories/LeetCode/" href="/categories/LeetCode/"><div class='name'>LeetCode</div><div class='badge'>(1)</div></a></li>
+          <li><a class="flat-box" title="/categories/LeetCode/" href="/categories/LeetCode/"><div class='name'>LeetCode</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/LeetCode/%E5%8F%8C%E6%8C%87%E9%92%88/" href="/categories/LeetCode/%E5%8F%8C%E6%8C%87%E9%92%88/"><div class='name'>双指针</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box child" title="/categories/LeetCode/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/" href="/categories/LeetCode/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/"><div class='name'>贪心算法</div><div class='badge'>(1)</div></a></li>
         
@@ -452,7 +601,7 @@
 </header>
 
     <div class='content pure'>
-      <a href="/tags/blog/" style="font-size: 24px; color: #555">blog</a> <a href="/tags/matlab/" style="font-size: 14px; color: #999">matlab</a> <a href="/tags/%E4%B8%93%E4%B8%9A%E7%9F%A5%E8%AF%86/" style="font-size: 14px; color: #999">专业知识</a> <a href="/tags/%E6%99%BA%E8%83%BD%E7%AE%97%E6%B3%95/" style="font-size: 24px; color: #555">智能算法</a> <a href="/tags/%E7%BB%9F%E8%AE%A1/" style="font-size: 14px; color: #999">统计</a> <a href="/tags/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/" style="font-size: 14px; color: #999">贪心算法</a>
+      <a href="/tags/blog/" style="font-size: 24px; color: #555">blog</a> <a href="/tags/matlab/" style="font-size: 14px; color: #999">matlab</a> <a href="/tags/%E4%B8%93%E4%B8%9A%E7%9F%A5%E8%AF%86/" style="font-size: 14px; color: #999">专业知识</a> <a href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/" style="font-size: 14px; color: #999">双指针</a> <a href="/tags/%E6%99%BA%E8%83%BD%E7%AE%97%E6%B3%95/" style="font-size: 24px; color: #555">智能算法</a> <a href="/tags/%E7%BB%9F%E8%AE%A1/" style="font-size: 14px; color: #999">统计</a> <a href="/tags/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/" style="font-size: 14px; color: #999">贪心算法</a>
     </div>
   </section>
 

@@ -267,6 +267,21 @@
 	          </div>
 	      
 	          <div class="archive-item archive-post mark">
+	            <a href="/2022/10/30/leetcode/221030zhizhen2/">
+	              <time>10-30</time>
+	              <span class="title">
+	                
+	                  LeetCode-双指针
+	                
+	                
+	                
+									
+									
+	              </span>
+	            </a>
+	          </div>
+	      
+	          <div class="archive-item archive-post mark">
 	            <a href="/2022/10/28/leetcode/221028leetcode/">
 	              <time>10-28</time>
 	              <span class="title">
@@ -535,7 +550,9 @@
     <div class='content pure'>
       <ul class="entry">
         
-          <li><a class="flat-box" title="/categories/LeetCode/" href="/categories/LeetCode/"><div class='name'>LeetCode</div><div class='badge'>(1)</div></a></li>
+          <li><a class="flat-box" title="/categories/LeetCode/" href="/categories/LeetCode/"><div class='name'>LeetCode</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/LeetCode/%E5%8F%8C%E6%8C%87%E9%92%88/" href="/categories/LeetCode/%E5%8F%8C%E6%8C%87%E9%92%88/"><div class='name'>双指针</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box child" title="/categories/LeetCode/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/" href="/categories/LeetCode/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/"><div class='name'>贪心算法</div><div class='badge'>(1)</div></a></li>
         
@@ -578,7 +595,7 @@
 </header>
 
     <div class='content pure'>
-      <a href="/tags/blog/" style="font-size: 24px; color: #555">blog</a> <a href="/tags/matlab/" style="font-size: 14px; color: #999">matlab</a> <a href="/tags/%E4%B8%93%E4%B8%9A%E7%9F%A5%E8%AF%86/" style="font-size: 14px; color: #999">专业知识</a> <a href="/tags/%E6%99%BA%E8%83%BD%E7%AE%97%E6%B3%95/" style="font-size: 24px; color: #555">智能算法</a> <a href="/tags/%E7%BB%9F%E8%AE%A1/" style="font-size: 14px; color: #999">统计</a> <a href="/tags/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/" style="font-size: 14px; color: #999">贪心算法</a>
+      <a href="/tags/blog/" style="font-size: 24px; color: #555">blog</a> <a href="/tags/matlab/" style="font-size: 14px; color: #999">matlab</a> <a href="/tags/%E4%B8%93%E4%B8%9A%E7%9F%A5%E8%AF%86/" style="font-size: 14px; color: #999">专业知识</a> <a href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/" style="font-size: 14px; color: #999">双指针</a> <a href="/tags/%E6%99%BA%E8%83%BD%E7%AE%97%E6%B3%95/" style="font-size: 24px; color: #555">智能算法</a> <a href="/tags/%E7%BB%9F%E8%AE%A1/" style="font-size: 14px; color: #999">统计</a> <a href="/tags/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/" style="font-size: 14px; color: #999">贪心算法</a>
     </div>
   </section>
 
@@ -701,6 +718,44 @@
 
 	<!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
 	
+
+	
+	    <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "TeX",
+      availableFonts: ["STIX","TeX"],
+      linebreaks: { automatic:true },
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+      inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+      processEscapes: true,
+      ignoreClass: "tex2jax_ignore|dno",
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: { autoNumber: "AMS" },
+      noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+      Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+  });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += (all[i].SourceElement().parentNode.className ? ' ' : '') + 'has-jax';
+    }
+  });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
 
 	
 

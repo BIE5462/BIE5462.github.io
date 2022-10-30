@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  <title>博客之路 | BIEBLOG</title>
+  <title>LeetCode-双指针 | BIEBLOG</title>
   
   <meta name="keywords" content="数据结构与算法,智能计算,最优化理论">
   
@@ -272,8 +272,8 @@
         
   
     <h1 class="title">
-      <a href="/2019/07/18/jishu/20190718blog/">
-        博客之路
+      <a href="/2022/10/30/leetcode/221030zhizhen2/">
+        LeetCode-双指针
       </a>
     </h1>
   
@@ -302,7 +302,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2019-07-18</p>
+    <p>2022-10-30</p>
   </a>
 </div>
 
@@ -310,6 +310,14 @@
         
           
             
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/LeetCode/%E5%8F%8C%E6%8C%87%E9%92%88/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>LeetCode&nbsp;/&nbsp;双指针</p>
+    </a>
+  </div>
+
 
           
         
@@ -346,14 +354,47 @@
 
       <section class="article typo">
         <div class="article-entry" itemprop="articleBody">
-          <h2 id="为什么要写博客？"><a href="#为什么要写博客？" class="headerlink" title="为什么要写博客？"></a>为什么要写博客？</h2><span id="more"></span>
+          <blockquote>
+<p>双指针主要用于遍历数组，两个指针指向不同的元素，从而协同完成任务。也可以延伸到多<br>个数组的多个指针。</p>
+</blockquote>
+<span id="more"></span>
+<h2 id="167-两数之和-II-输入有序数组"><a href="#167-两数之和-II-输入有序数组" class="headerlink" title="167. 两数之和 II - 输入有序数组"></a>167. 两数之和 II - 输入有序数组</h2><blockquote>
+<p>在一个增序的整数数组里找到两个数，使它们的和为给定值。已知有且只有一对解。</p>
+</blockquote>
+<blockquote>
+<p>给你一个下标从 1 开始的整数数组 numbers ，该数组已按 非递减顺序排列  ，请你从数组中找出满足相加之和等于目标数 target 的两个数。如果设这两个数分别是 numbers[index1] 和 numbers[index2] ，则 1 &lt;&#x3D; index1 &lt; index2 &lt;&#x3D; numbers.length 。</p>
+</blockquote>
+<blockquote>
+<p>以长度为 2 的整数数组 [index1, index2] 的形式返回这两个整数的下标 index1 和 index2。<br>你可以假设每个输入 只对应唯一的答案 ，而且你 不可以 重复使用相同的元素。</p>
+</blockquote>
+<h3 id="暴力求解"><a href="#暴力求解" class="headerlink" title="暴力求解"></a>暴力求解</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public int[] twoSum(int[] numbers, int target) &#123;</span><br><span class="line">        int n=numbers.length;</span><br><span class="line">        int [] ans=new int[2];</span><br><span class="line">        for(int i =0;i&lt;n-1;i++)&#123;</span><br><span class="line">            b=i+1;</span><br><span class="line">            while(b&lt;n-1&amp;&amp;numbers[i]+numbers[b]&lt;target)&#123;</span><br><span class="line">                b++;</span><br><span class="line">            &#125;</span><br><span class="line">            if(numbers[i]+numbers[b]==target)&#123;</span><br><span class="line">                ans[0]=i+1;</span><br><span class="line">                ans[1]=b+1;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="双指针"><a href="#双指针" class="headerlink" title="双指针"></a>双指针</h2><p><strong>1. 思路</strong><br>    因为数组已经排好序，我们可以采用方向相反的双指针来寻找这两个数字，一个初始指向最小的元素，即数组最左边，向右遍历；一个初始指向最大的元素，即数组最右边，向左遍历。<br>    如果两个指针指向元素的和等于给定值，那么它们就是我们要的结果。如果两个指针指向元素的和小于给定值，我们把左边的指针右移一位，使得当前的和增加一点。如果两个指针指向元素的和大于给定值，我们把右边的指针左移一位，使得当前的和减少一点。<br><strong>2. 代码</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public int[] twoSum(int[] numbers, int target) &#123;</span><br><span class="line">        int low = 0, high = numbers.length - 1;</span><br><span class="line">        while (low &lt; high) &#123;</span><br><span class="line">            int sum = numbers[low] + numbers[high];</span><br><span class="line">            if (sum == target) &#123;</span><br><span class="line">                return new int[]&#123;low + 1, high + 1&#125;;</span><br><span class="line">            &#125; else if (sum &lt; target) &#123;</span><br><span class="line">                ++low;</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                --high;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return new int[]&#123;-1, -1&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h3><p>先固定第一个数，然后寻找第二个数，第二个数等于目标值减去第一个数的差。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public int[] twoSum(int[] numbers, int target) &#123;</span><br><span class="line">        for (int i = 0; i &lt; numbers.length; ++i) &#123;</span><br><span class="line">            int low = i + 1, high = numbers.length - 1;</span><br><span class="line">            while (low &lt;= high) &#123;</span><br><span class="line">                int mid = (high - low) / 2 + low;</span><br><span class="line">                if (numbers[mid] == target - numbers[i]) &#123;</span><br><span class="line">                    return new int[]&#123;i + 1, mid + 1&#125;;</span><br><span class="line">                &#125; else if (numbers[mid] &gt; target - numbers[i]) &#123;</span><br><span class="line">                    high = mid - 1;</span><br><span class="line">                &#125; else &#123;</span><br><span class="line">                    low = mid + 1;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return new int[]&#123;-1, -1&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="88-合并两个有序数组"><a href="#88-合并两个有序数组" class="headerlink" title="88. 合并两个有序数组"></a>88. 合并两个有序数组</h2><blockquote>
+<p>给你两个按 非递减顺序 排列的整数数组 nums1 和 nums2，另有两个整数 m 和 n ，分别表示 nums1 和 nums2 中的元素数目。<br>请你 合并 nums2 到 nums1 中，使合并后的数组同样按 非递减顺序 排列。</p>
+</blockquote>
+<p><strong>- 双指针逆序合并</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public void merge(int[] nums1, int m, int[] nums2, int n) &#123;</span><br><span class="line">            int p=m-1;</span><br><span class="line">            int q=n-1;</span><br><span class="line">            int i=m+n-1;</span><br><span class="line">            while(p&gt;=0&amp;&amp;q&gt;=0)&#123;</span><br><span class="line">                if(nums1[p]&gt;nums2[q])&#123;</span><br><span class="line">                    nums1[i--]=nums1[p--];</span><br><span class="line">                &#125;</span><br><span class="line">                else&#123;</span><br><span class="line">                    nums1[i--]=nums2[q--];</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            while(p&gt;=0)&#123;</span><br><span class="line">                nums1[i--]=nums1[p--];</span><br><span class="line">            &#125;</span><br><span class="line">            while(q&gt;=0)&#123;</span><br><span class="line">                nums1[i--]=nums2[q--];</span><br><span class="line">            &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="142-环形链表-II"><a href="#142-环形链表-II" class="headerlink" title="142. 环形链表 II"></a>142. 环形链表 II</h2><blockquote>
+<p>给定一个链表的头节点  head ，返回链表开始入环的第一个节点。 如果链表无环，则返回 null。</p>
+</blockquote>
+<blockquote>
+<p>如果链表中有某个节点，可以通过连续跟踪 next 指针再次到达，则链表中存在环。 为了表示给定链表中的环，评测系统内部使用整数 pos 来表示链表尾连接到链表中的位置（索引从 0 开始）。如果 pos 是 -1，则在该链表中没有环。注意：pos 不作为参数进行传递，仅仅是为了标识链表的实际情况。</p>
+</blockquote>
+<h3 id="快慢指针"><a href="#快慢指针" class="headerlink" title="快慢指针"></a>快慢指针</h3><p>给定两个指针，分别命名为slow 和fast，起始位置在链表的开头。每次fast 前进两步，slow 前进一步。如果fast可以走到尽头，那么说明没有环路；如果fast 可以无限走下去，那么说明一定有环路，且一定存在一个时刻slow 和fast 相遇。当slow 和fast 第一次相遇时，我们将fast 重新移动到链表开头，并让slow 和fast 每次都前进一步。当slow 和fast 第二次相遇时，相遇的节点即为环路的开始点。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">slow * 2 = fast;</span><br><span class="line">slow = a + b;</span><br><span class="line">fast = a + b + c + b = a + 2*b + c;</span><br><span class="line">(a + b)*2 = a + 2*b + c;</span><br><span class="line">a = c;</span><br></pre></td></tr></table></figure>
 
-<h3 id="1-加深对知识和技术的理解"><a href="#1-加深对知识和技术的理解" class="headerlink" title="1.加深对知识和技术的理解"></a>1.加深对知识和技术的理解</h3><p>书写是为了更多的思考，每天写博客,可以加深对知识点和技术点的理解。在我们学习和工作中,经常会对某个技术点运用的不熟悉。如果用博客的形式写出来, 就可以在这个过程中查阅相关的资料并进行整理，逐渐解决自己的疑问，加深对知识的理解。</p>
-<h3 id="2-自己日后用到"><a href="#2-自己日后用到" class="headerlink" title="2.自己日后用到"></a>2.自己日后用到</h3><p>博客相当于笔记本,把自己最需要的重要的知识都记录下来。平时可以多翻阅学习，等哪天在遇到同样的问题,我们也可以方便的寻找答案。</p>
-<h3 id="3-见证自己的成长"><a href="#3-见证自己的成长" class="headerlink" title="3.见证自己的成长"></a>3.见证自己的成长</h3><p>写博客能督促自己的学习，翻阅自己以前写的博客，很容易找到自己的成长轨迹，知道自己的进步与不足。在经过长时间的积累后，自己写的博客一定能让自己有些成就感。</p>
-<h2 id="写什么内容"><a href="#写什么内容" class="headerlink" title="写什么内容"></a>写什么内容</h2><h3 id="1-数据结构与算法学习记录"><a href="#1-数据结构与算法学习记录" class="headerlink" title="1.数据结构与算法学习记录"></a>1.数据结构与算法学习记录</h3><h3 id="2-LeetCode刷题笔记"><a href="#2-LeetCode刷题笔记" class="headerlink" title="2.LeetCode刷题笔记"></a>2.LeetCode刷题笔记</h3><h3 id="3-前后端与大数据技术"><a href="#3-前后端与大数据技术" class="headerlink" title="3.前后端与大数据技术"></a>3.前后端与大数据技术</h3><h2 id="联系作者"><a href="#联系作者" class="headerlink" title="联系作者"></a>联系作者</h2><p>微信：BIE1808106258</p>
-<p>邮箱：<a href="mailto:&#x31;&#56;&#x30;&#x38;&#49;&#x30;&#54;&#50;&#x35;&#x38;&#64;&#x71;&#113;&#46;&#99;&#x6f;&#x6d;">&#x31;&#56;&#x30;&#x38;&#49;&#x30;&#54;&#50;&#x35;&#x38;&#64;&#x71;&#113;&#46;&#99;&#x6f;&#x6d;</a></p>
+<p>在理解理解<br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/linked-list-cycle-ii/solution/huan-xing-lian-biao-ii-by-leetcode-solution/">https://leetcode.cn/problems/linked-list-cycle-ii/solution/huan-xing-lian-biao-ii-by-leetcode-solution/</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">public class Solution &#123;</span><br><span class="line">    public ListNode detectCycle(ListNode head) &#123;</span><br><span class="line">        if (head == null) &#123;</span><br><span class="line">            return null;</span><br><span class="line">        &#125;</span><br><span class="line">        ListNode slow = head, fast = head;</span><br><span class="line">        while (fast != null) &#123;</span><br><span class="line">            slow = slow.next;</span><br><span class="line">            if (fast.next != null) &#123;</span><br><span class="line">                fast = fast.next.next;</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                return null;</span><br><span class="line">            &#125;</span><br><span class="line">            if (fast == slow) &#123;</span><br><span class="line">                ListNode ptr = head;</span><br><span class="line">                while (ptr != slow) &#123;</span><br><span class="line">                    ptr = ptr.next;</span><br><span class="line">                    slow = slow.next;</span><br><span class="line">                &#125;</span><br><span class="line">                return ptr;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return null;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
+<h2 id="76-最小覆盖子串"><a href="#76-最小覆盖子串" class="headerlink" title="76. 最小覆盖子串"></a>76. 最小覆盖子串</h2><blockquote>
+<p>给你一个字符串 s 、一个字符串 t 。返回 s 中涵盖 t 所有字符的最小子串。如果 s 中不存在涵盖 t 所有字符的子串，则返回空字符串 “”</p>
+</blockquote>
+<h3 id="滑动窗口"><a href="#滑动窗口" class="headerlink" title="滑动窗口"></a>滑动窗口</h3><p>预备知识：哈希表</p>
+<p>太长了不想看待补充</p>
+<h2 id="633-平方数之和"><a href="#633-平方数之和" class="headerlink" title="633. 平方数之和"></a>633. 平方数之和</h2><h2 id="680-验证回文串-II"><a href="#680-验证回文串-II" class="headerlink" title="680. 验证回文串 II"></a>680. 验证回文串 II</h2><h2 id="524-通过删除字母匹配到字典里最长单词"><a href="#524-通过删除字母匹配到字典里最长单词" class="headerlink" title="524. 通过删除字母匹配到字典里最长单词"></a>524. 通过删除字母匹配到字典里最长单词</h2><h2 id="340-Longest-Substring-with-At-Most-K-Distinct-Characters-Hard"><a href="#340-Longest-Substring-with-At-Most-K-Distinct-Characters-Hard" class="headerlink" title="340.Longest Substring with At Most K Distinct Characters (Hard)"></a>340.Longest Substring with At Most K Distinct Characters (Hard)</h2>
         </div>
         
           
@@ -364,10 +405,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2022-10-28T21:02:38+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2022-10-30T19:51:31+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>last updated at Oct 28, 2022</p>
+    <p>last updated at Oct 30, 2022</p>
   </a>
 </div>
 
@@ -375,6 +416,9 @@
       
         
           
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i>&nbsp;<p>双指针</p></a></div>
+
 
         
       
@@ -386,7 +430,9 @@
       
         <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2019/07/18/jishu/20190718blog/&title=博客之路 | BIEBLOG&summary=为什么要写博客？"
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2022/10/30/leetcode/221030zhizhen2/&title=LeetCode-双指针 | BIEBLOG&summary=
+双指针主要用于遍历数组，两个指针指向不同的元素，从而协同完成任务。也可以延伸到多个数组的多个指针。
+"
           
           >
           
@@ -398,7 +444,9 @@
       
         <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2019/07/18/jishu/20190718blog/&title=博客之路 | BIEBLOG&summary=为什么要写博客？"
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2022/10/30/leetcode/221030zhizhen2/&title=LeetCode-双指针 | BIEBLOG&summary=
+双指针主要用于遍历数组，两个指针指向不同的元素，从而协同完成任务。也可以延伸到多个数组的多个指针。
+"
           
           >
           
@@ -410,7 +458,9 @@
       
         <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2019/07/18/jishu/20190718blog/&title=博客之路 | BIEBLOG&summary=为什么要写博客？"
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2022/10/30/leetcode/221030zhizhen2/&title=LeetCode-双指针 | BIEBLOG&summary=
+双指针主要用于遍历数组，两个指针指向不同的元素，从而协同完成任务。也可以延伸到多个数组的多个指针。
+"
           
           >
           
@@ -434,25 +484,25 @@
         
             <div class="prev-next">
                 
-                    <section class="prev">
-                        <span class="art-item-left">
-                            <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;Previous</h6>
+                
+                    <section class="next">
+                        <span class="art-item-right" aria-hidden="true">
+                            <h6>Next&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
                             <h4>
-                                <a href="/2019/07/18/jishu/20190718md/" rel="prev" title="从Markdown到Latex">
-                                  
-                                      从Markdown到Latex
-                                  
+                                <a href="/2022/10/28/leetcode/221028leetcode/" rel="prev" title="LeetCode-贪心算法">
+                                    
+                                        LeetCode-贪心算法
+                                    
                                 </a>
                             </h4>
                             
                                 
                                 <h6 class="tags">
-                                    <a class="tag" href="/tags/blog/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>blog</a>
+                                    <a class="tag" href="/tags/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>贪心算法</a>
                                 </h6>
                             
                         </span>
                     </section>
-                
                 
             </div>
         
@@ -479,7 +529,7 @@
 
   <script>
     window.subData = {
-      title: '博客之路',
+      title: 'LeetCode-双指针',
       tools: true
     }
   </script>
@@ -559,7 +609,7 @@
 </header>
 
     <div class='content pure'>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%86%99%E5%8D%9A%E5%AE%A2%EF%BC%9F"><span class="toc-text">为什么要写博客？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%8A%A0%E6%B7%B1%E5%AF%B9%E7%9F%A5%E8%AF%86%E5%92%8C%E6%8A%80%E6%9C%AF%E7%9A%84%E7%90%86%E8%A7%A3"><span class="toc-text">1.加深对知识和技术的理解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E8%87%AA%E5%B7%B1%E6%97%A5%E5%90%8E%E7%94%A8%E5%88%B0"><span class="toc-text">2.自己日后用到</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E8%A7%81%E8%AF%81%E8%87%AA%E5%B7%B1%E7%9A%84%E6%88%90%E9%95%BF"><span class="toc-text">3.见证自己的成长</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%99%E4%BB%80%E4%B9%88%E5%86%85%E5%AE%B9"><span class="toc-text">写什么内容</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95"><span class="toc-text">1.数据结构与算法学习记录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-LeetCode%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0"><span class="toc-text">2.LeetCode刷题笔记</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%89%8D%E5%90%8E%E7%AB%AF%E4%B8%8E%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%8A%80%E6%9C%AF"><span class="toc-text">3.前后端与大数据技术</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%81%94%E7%B3%BB%E4%BD%9C%E8%80%85"><span class="toc-text">联系作者</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#167-%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C-II-%E8%BE%93%E5%85%A5%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84"><span class="toc-text">167. 两数之和 II - 输入有序数组</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9A%B4%E5%8A%9B%E6%B1%82%E8%A7%A3"><span class="toc-text">暴力求解</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%8C%E6%8C%87%E9%92%88"><span class="toc-text">双指针</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE"><span class="toc-text">二分查找</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#88-%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84"><span class="toc-text">88. 合并两个有序数组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#142-%E7%8E%AF%E5%BD%A2%E9%93%BE%E8%A1%A8-II"><span class="toc-text">142. 环形链表 II</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BF%AB%E6%85%A2%E6%8C%87%E9%92%88"><span class="toc-text">快慢指针</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#76-%E6%9C%80%E5%B0%8F%E8%A6%86%E7%9B%96%E5%AD%90%E4%B8%B2"><span class="toc-text">76. 最小覆盖子串</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3"><span class="toc-text">滑动窗口</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#633-%E5%B9%B3%E6%96%B9%E6%95%B0%E4%B9%8B%E5%92%8C"><span class="toc-text">633. 平方数之和</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#680-%E9%AA%8C%E8%AF%81%E5%9B%9E%E6%96%87%E4%B8%B2-II"><span class="toc-text">680. 验证回文串 II</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#524-%E9%80%9A%E8%BF%87%E5%88%A0%E9%99%A4%E5%AD%97%E6%AF%8D%E5%8C%B9%E9%85%8D%E5%88%B0%E5%AD%97%E5%85%B8%E9%87%8C%E6%9C%80%E9%95%BF%E5%8D%95%E8%AF%8D"><span class="toc-text">524. 通过删除字母匹配到字典里最长单词</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#340-Longest-Substring-with-At-Most-K-Distinct-Characters-Hard"><span class="toc-text">340.Longest Substring with At Most K Distinct Characters (Hard)</span></a></li></ol>
     </div>
   </section>
 
