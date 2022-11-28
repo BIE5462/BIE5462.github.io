@@ -386,10 +386,12 @@
 <li>在悲观的情况下，上层根据最坏的情况对其问题进行优化。</li>
 </ul>
 <p><strong>3. 下层问题$\Psi $映射形式</strong><br>在一般定义形式中替换：<br>$$<br>\Psi(x_u)&#x3D;\underset{x_l}{\operatorname{argmin}}{f(x_u, x_l): g_j(x_u, x_l) \leq 0, j&#x3D;1, \ldots, J},<br>$$对任意上层变量，直接从$\Psi $映射中得到下层变量,一个两层问题可以简化为一个单层约束问题</p>
+<blockquote>
 <ul>
 <li>完全优化一部分的下层变量，用这个部分变量局部逼近$\Psi $映射</li>
 <li>只能用于$\Psi $映射是单值得时候，即不能直接用于下层多目标问题</li>
 </ul>
+</blockquote>
 <p><strong>4. 下层问题$\varphi $映射形式</strong><br>$$<br>\varphi(x_u)&#x3D;\underset{x_l}{\operatorname{argmin}}{f(x_u, x_l): g_j(x_u, x_l) \leq 0, j&#x3D;1, \ldots, J},<br>$$任何给定的上层决策向量直接得到下层的最优函数值，可以解决下层多目标问题，但是将上下级变量同时放到约束里面，不一定比$\Psi $映射好。</p>
 <h3 id="Psi-映射和-varphi-的估计"><a href="#Psi-映射和-varphi-的估计" class="headerlink" title="$\Psi $映射和$\varphi $的估计"></a>$\Psi $映射和$\varphi $的估计</h3><p><strong>1. 计算方法</strong></p>
 <p>最小二乘法二次逼近</p>
@@ -397,13 +399,19 @@
 <h2 id="BLEAQ2算法"><a href="#BLEAQ2算法" class="headerlink" title="BLEAQ2算法"></a>BLEAQ2算法</h2><h3 id="算法流程"><a href="#算法流程" class="headerlink" title="算法流程"></a>算法流程</h3><p><strong>1. 初始化</strong></p>
 <ul>
 <li>随机生成上层种群$x_u^{(1)},…,x_u^{(N)}$。对每个$x_u^{(j)}$，使用$\Psi $映射得到下层最优解$x_l^{(j)}$，存入集合$P&#x3D;(x_u^{(j)},x_l^{(j)})，j&#x3D;1…N$.</li>
-<li>在集合$P$中将成功获得下层最优解的向量标记为1，存入存档$A$，(可能有不成功的).</li>
-<li>根据上层函数和约束为所有$P$中的成员分配适应度</li>
+<li>在集合$P$中将成功获得下层最优解的向量标记为1，存入存档$A$</li>
+<li>根据上层函数和约束为所有$P$中的成员计算适应度<blockquote>
+<p>$\Psi $映射对下层求解成功的进行标记，是所有都标记吗，有求解不成功的吗</p>
+</blockquote>
+</li>
 </ul>
 <p><strong>2. 复制</strong></p>
 <ul>
 <li>父代选择：从群体P中随机选择2μ个成员，根据上层的适应性进行选择，产生μ个父代，存入集合${P_{par}}$.</li>
-<li>子代生成：从集合${P_{par}}$中使用遗传算子生成λ个子代，存入集合${P_{off}}$</li>
+<li>子代生成：从集合${P_{par}}$中使用遗传算子生成λ个子代，存入集合${P_{off}}$<blockquote>
+<p>仅针对上层变量进行父代选择和遗传算子的使用，生成上层变量的子代$x_u$</p>
+</blockquote>
+</li>
 </ul>
 <p><strong>3. 后代更新</strong><br>对于上一步产生的每个子代$(x_u^{(j)},x_l^{(j)}) \in {P_{off}}$，使用以下策略之一更新下级决策变量$x_l^{(j)}$，然后更新种群</p>
 <ul>
@@ -436,7 +444,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2022-11-28T16:47:32+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2022-11-28T22:41:04+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
     <p>last updated at Nov 28, 2022</p>
