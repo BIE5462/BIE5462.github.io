@@ -376,8 +376,7 @@
 <blockquote>
 <p>问题：为什么要用两个映射，优缺点，本质区别是什么？</p>
 </blockquote>
-<h3 id="双层规划的定义"><a href="#双层规划的定义" class="headerlink" title="双层规划的定义"></a>双层规划的定义</h3><p><strong>1. 一般定义的形式</strong></p>
-<p>$$<br> \min _{x_u, x_l} F\left(x_u, x_l\right) \<br> \text { subject to }\<br> x_l \in \underset{x_l}{\operatorname{argmin}}\left{f\left(x_u, x_l\right): g_j\left(x_u, x_l\right) \leq 0, j&#x3D;1, \ldots, J\right} \<br> G_k\left(x_u, x_l\right) \leq 0, k&#x3D;1, \ldots, K<br>$$</p>
+<h3 id="双层规划的定义"><a href="#双层规划的定义" class="headerlink" title="双层规划的定义"></a>双层规划的定义</h3><p><strong>1. 一般定义的形式</strong><br>$$<br>\begin{aligned}<br>&amp;\min _{x_u, x_l} F(x_u, x_l) \\<br>&amp;\text { subject to } \\<br>&amp;x_l \in \underset{x_l}{\operatorname{argmin}}{f(x_u, x_l): g_j(x_u, x_l) \leq 0, j&#x3D;1, \ldots, J} \\<br>&amp;G_k(x_u, x_l) \leq 0, k&#x3D;1, \ldots, K<br>\end{aligned}<br>$$</p>
 <p><strong>2. 乐观解与悲观解</strong></p>
 <p>只要对任何给定的上一级变量存在一个较低一级问题的最优解。然而，对于某些上层变量有多个下层最优解的情况，必须清楚从众多下层最优解中，哪一个被认为是跟随者的响应。</p>
 <p>从乐观或悲观的角度优化多目标两层问题。</p>
@@ -385,12 +384,12 @@
 <li>在最乐观的情况下，假设较低的层次选择对上一层次有利的最优解。</li>
 <li>在悲观的情况下，上层根据最坏的情况对其问题进行优化。</li>
 </ul>
-<p><strong>3. 下层问题$\Psi $映射形式</strong><br>在一般定义形式中替换：<br>$$<br>\Psi\left(x_u\right)&#x3D;\underset{x_l}{\operatorname{argmin}}\left{f\left(x_u, x_l\right): g_j\left(x_u, x_l\right) \leq 0, j&#x3D;1, \ldots, J\right},<br>$$对任意上层变量，直接从$\Psi $映射中得到下层变量,一个两层问题可以简化为一个单层约束问题</p>
+<p><strong>3. 下层问题$\Psi $映射形式</strong><br>在一般定义形式中替换：<br>$$<br>\Psi(x_u)&#x3D;\underset{x_l}{\operatorname{argmin}}{f(x_u, x_l): g_j(x_u, x_l) \leq 0, j&#x3D;1, \ldots, J},<br>$$对任意上层变量，直接从$\Psi $映射中得到下层变量,一个两层问题可以简化为一个单层约束问题</p>
 <ul>
 <li>完全优化一部分的下层变量，用这个部分变量局部逼近$\Psi $映射</li>
 <li>只能用于$\Psi $映射是单值得时候，即不能直接用于下层多目标问题</li>
 </ul>
-<p><strong>4. 下层问题$\varphi $映射形式</strong><br>$$<br>\varphi\left(x_u\right)&#x3D;\underset{x_l}{\operatorname{argmin}}\left{f\left(x_u, x_l\right): g_j\left(x_u, x_l\right) \leq 0, j&#x3D;1, \ldots, J\right},<br>$$任何给定的上层决策向量直接得到下层的最优函数值，可以解决下层多目标问题，但是将上下级变量同时放到约束里面，不一定比$\Psi $映射好。</p>
+<p><strong>4. 下层问题$\varphi $映射形式</strong><br>$$<br>\varphi(x_u)&#x3D;\underset{x_l}{\operatorname{argmin}}{f(x_u, x_l): g_j(x_u, x_l) \leq 0, j&#x3D;1, \ldots, J},<br>$$任何给定的上层决策向量直接得到下层的最优函数值，可以解决下层多目标问题，但是将上下级变量同时放到约束里面，不一定比$\Psi $映射好。</p>
 <h3 id="Psi-映射和-varphi-的估计"><a href="#Psi-映射和-varphi-的估计" class="headerlink" title="$\Psi $映射和$\varphi $的估计"></a>$\Psi $映射和$\varphi $的估计</h3><p><strong>1. 计算方法</strong></p>
 <p>最小二乘法二次回归</p>
 <p><strong>2. 两个映射对比</strong></p>
@@ -405,7 +404,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2022-11-28T12:05:44+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2022-11-28T13:12:29+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
     <p>last updated at Nov 28, 2022</p>
