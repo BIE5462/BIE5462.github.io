@@ -359,7 +359,8 @@
 <h2 id="简单排序"><a href="#简单排序" class="headerlink" title="简单排序"></a>简单排序</h2><h3 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">// 选择排序</span><br><span class="line">public static void selectsort(int[] arr) &#123;</span><br><span class="line">    if (arr == null || arr.length &lt; 2) &#123;</span><br><span class="line">        return;</span><br><span class="line">    &#125;</span><br><span class="line">    for (int i = 0; i &lt; arr.length; i++) &#123;</span><br><span class="line">        int min = arr[i];</span><br><span class="line">        for (int j = i + 1; j &lt; arr.length; j++) &#123;</span><br><span class="line">            if (arr[j] &lt; min)</span><br><span class="line">                swap(arr, i, j);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public static void bubblesort(int[] arr) &#123;</span><br><span class="line">    if (arr == null || arr.length &lt; 2) &#123;</span><br><span class="line">        return;</span><br><span class="line">    &#125;</span><br><span class="line">    for (int i = arr.length - 1; i &gt;= 0; i--) &#123;</span><br><span class="line">        for (int j = 0; j &lt; i; j++) &#123;</span><br><span class="line">            if (arr[j] &gt; arr[j + 1])</span><br><span class="line">                swap(arr, j, j + 1);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">public static void insertsort(int[] arr) &#123;</span><br><span class="line">    if (arr == null || arr.length &lt; 2) &#123;</span><br><span class="line">        return;</span><br><span class="line">    &#125;</span><br><span class="line">    for (int i = 1; i &lt; arr.length; i++) &#123;</span><br><span class="line">        if (arr[i] &lt; arr[i - 1]) &#123;</span><br><span class="line">            for (int j = i; j &gt; 0; j--) &#123;</span><br><span class="line">                if (arr[j - 1] &gt; arr[j]) &#123;</span><br><span class="line">                    swap(arr, j - 1, j);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="进阶排序"><a href="#进阶排序" class="headerlink" title="进阶排序"></a>进阶排序</h2><h3 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="进阶排序"><a href="#进阶排序" class="headerlink" title="进阶排序"></a>进阶排序</h2><h3 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h3><p>待补充</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
         </div>
         
           
@@ -370,10 +371,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2022-11-26T15:43:45+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2022-11-28T13:24:44+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>last updated at Nov 26, 2022</p>
+    <p>last updated at Nov 28, 2022</p>
   </a>
 </div>
 
@@ -467,9 +468,9 @@
                         <span class="art-item-right" aria-hidden="true">
                             <h6>Next&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
                             <h4>
-                                <a href="/2022/10/30/leetcode/221030erfen/" rel="prev" title="二分法">
+                                <a href="/2022/10/30/leetcode/221030erfen/" rel="prev" title="LeetCode二分法">
                                     
-                                        二分法
+                                        LeetCode二分法
                                     
                                 </a>
                             </h4>
