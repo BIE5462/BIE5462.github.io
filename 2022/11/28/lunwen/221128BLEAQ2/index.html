@@ -374,7 +374,7 @@
 </li>
 </ul>
 <blockquote>
-<p>疑问：为什么要用两个映射，优缺点，本质区别是什么？</p>
+<p>问题：为什么要用两个映射，优缺点，本质区别是什么？</p>
 </blockquote>
 <h3 id="双层规划的定义"><a href="#双层规划的定义" class="headerlink" title="双层规划的定义"></a>双层规划的定义</h3><p><strong>1. 一般定义的形式</strong></p>
 <p>$$<br>\begin{aligned}<br>&amp; \min _{x_u, x_l} F\left(x_u, x_l\right) \<br>&amp;\text { subject to } \<br>&amp;x_l \in \underset{x_l}{\operatorname{argmin}}\left{f\left(x_u, x_l\right): g_j\left(x_u, x_l\right) \leq 0, j&#x3D;1, \ldots, J\right} \<br>&amp;G_k\left(x_u, x_l\right) \leq 0, k&#x3D;1, \ldots, K<br>\end{aligned}<br>$$</p>
@@ -405,7 +405,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2022-11-28T10:24:37+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2022-11-28T11:56:51+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
     <p>last updated at Nov 28, 2022</p>
@@ -533,6 +533,44 @@
 
 
 <!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+  <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "TeX",
+      availableFonts: ["STIX","TeX"],
+      linebreaks: { automatic:true },
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+      inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+      processEscapes: true,
+      ignoreClass: "tex2jax_ignore|dno",
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: { autoNumber: "AMS" },
+      noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+      Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+  });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += (all[i].SourceElement().parentNode.className ? ' ' : '') + 'has-jax';
+    }
+  });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
 
 
 
