@@ -396,12 +396,20 @@
 <h3 id="Psi-映射和-varphi-的估计"><a href="#Psi-映射和-varphi-的估计" class="headerlink" title="$\Psi $映射和$\varphi $的估计"></a>$\Psi $映射和$\varphi $的估计</h3><p><strong>1. 计算方法</strong></p>
 <p>最小二乘法二次逼近</p>
 <p><strong>2. 两个映射对比</strong></p>
+<ul>
+<li>$\varphi $映射分别针对上一级和下一级变量来解决，$\Psi $映射直接从下层变量解决，更加直接简单</li>
+<li>$\Psi $映射包含更少的约束，但不能解决下层多值映射的情况</li>
+<li>$\Psi $映射提供了完全忽略下层函数和约束的优势。</li>
+</ul>
+<h3 id="顺序二次规划SQP"><a href="#顺序二次规划SQP" class="headerlink" title="顺序二次规划SQP"></a>顺序二次规划SQP</h3><blockquote>
+<p>顺序二次规划(SQP)用于求解下层问题，在初始化时或某些必要环节求解下层解，求解出的下层解用于$\varphi $映射或者$\Psi $映射进行简化运算</p>
+</blockquote>
 <h2 id="BLEAQ2算法"><a href="#BLEAQ2算法" class="headerlink" title="BLEAQ2算法"></a>BLEAQ2算法</h2><h3 id="算法流程"><a href="#算法流程" class="headerlink" title="算法流程"></a>算法流程</h3><p><strong>1. 初始化</strong></p>
 <ul>
-<li>随机生成上层种群$x_u^{(1)},…,x_u^{(N)}$。对每个$x_u^{(j)}$，使用$\Psi $映射得到下层最优解$x_l^{(j)}$，存入集合$P&#x3D;(x_u^{(j)},x_l^{(j)})，j&#x3D;1…N$.</li>
+<li>随机生成上层种群$x_u^{(1)},…,x_u^{(N)}$。对每个$x_u^{(j)}$，使用SQP等完全优化方法下层最优解$x_l^{(j)}$，存入集合$P&#x3D;(x_u^{(j)},x_l^{(j)})，j&#x3D;1…N$.</li>
 <li>在集合$P$中将成功获得下层最优解的向量标记为1，存入存档$A$</li>
 <li>根据上层函数和约束为所有$P$中的成员计算适应度<blockquote>
-<p>$\Psi $映射对下层求解成功的进行标记，是所有都标记吗，有求解不成功的吗</p>
+<p>6.1可知初始化上层变量后，下层变量的计算没有使用$\Psi $映射，流程中出现$\Psi $是表示集合包含关系而已。<br>对下层求解成功的进行标记为1，和后续映射得到的下层解区分，存档$A$用于创建和验证逼近</p>
 </blockquote>
 </li>
 </ul>
@@ -409,30 +417,36 @@
 <ul>
 <li>父代选择：从群体P中随机选择2μ个成员，根据上层的适应性进行选择，产生μ个父代，存入集合${P_{par}}$.</li>
 <li>子代生成：从集合${P_{par}}$中使用遗传算子生成λ个子代，存入集合${P_{off}}$<blockquote>
-<p>仅针对上层变量进行父代选择和遗传算子的使用，生成上层变量的子代$x_u$</p>
+<p><strong>仅针对上层变量</strong>进行父代选择和遗传算子的使用，生成上层变量的子代$x_u$</p>
 </blockquote>
 </li>
 </ul>
-<p><strong>3. 后代更新</strong><br>对于上一步产生的每个子代$(x_u^{(j)},x_l^{(j)}) \in {P_{off}}$，使用以下策略之一更新下级决策变量$x_l^{(j)}$，然后更新种群</p>
+<p><strong>3. 后代更新</strong><br>对于上一步产生的每个子代子代$x_u \in {P_{off}}$，使用以下策略之一<strong>更新下层变量</strong>$x_l^{(j)}$，然后更新种群</p>
 <ul>
-<li>优化：如果$P$中被标记为1的成员少于一半(即超过一半的下层问题没有达到最优)，则使用$\Psi $映射对下层问题进行优化,对优化成功的标记为1存入存档$A$.</li>
+<li>优化：如果$P$中被标记为1的成员少于一半(即超过一半的下层问题没有达到最优)，则使用SQP等方法对下层问题进行完全优化,对优化成功的标记为1存入存档$A$.</li>
 <li>近似：如果$P$中被标记为1的成员大于一半，对与每个后代$(x_u^{(j)},x_l^{(j)}) \in {P_{off}}$使用他在存档A的相邻成员使用$\Psi $映射和$\varphi $映射构造一个局部二次逼近，比较两个映射近似值的均方误差：<ul>
 <li>如果$\Psi $映射的误差更小，则得到下层问题最优解$x_l^{(j)} &#x3D; q\Psi (x_u^{(j)})$</li>
-<li>如果$\varphi $映射的误差更小，固定上层变量解$\varphi $映射辅助优化问题得到$x_l^{(j)}$，具体见下文$\varphi $映射实现细节。</li>
+<li>如果$\varphi $映射的误差更小，固定上层变量解$\varphi $映射辅助优化问题得到$x_l^{(j)}$，具体见下文$\varphi $映射实现细节。<blockquote>
+<p>一半成员完全优化，一半成员择优选择映射</p>
+</blockquote>
+</li>
 </ul>
 </li>
 </ul>
 <p>从种群$P$中随机选择ρ个成员，并将它们与λ个后代集合在一起。根据标签1对集合进行排序，然后根据适应度选择最好的ρ个成员替换从种群$P$中随机选择的ρ个成员。</p>
 <p><strong>4. 改进</strong><br>在种群$P$中找出当前代中适应度最好的标记为1的成员，记为$x_{best}^{(j)}$，每k代之后，在$x_{best}^{(j)}$附近执行局部搜索，如果有改进，则更新$x_{best}^{(j)}$.</p>
 <ul>
-<li>局部搜索：使用$x_{best}^{(j)}$附近的且包含的在存档$A$成员构造$\Psi $映射和$\varphi $映射的局部二次逼近，记录两者均方误差，取误差低的</li>
+<li>局部搜索：使用$x_{best}^{(j)}$附近的且包含的在存档$A$成员构造$\Psi $映射和$\varphi $映射的局部二次逼近，记录两者均方误差，取误差低的<blockquote>
+<p>引入局部逼近可望显著提高逼近的质量。</p>
+</blockquote>
+</li>
 </ul>
 <p><strong>5. 终止检查</strong><br>达到终止条件（总体方差变小时）后执行下一代</p>
 <h3 id="实现细节"><a href="#实现细节" class="headerlink" title="实现细节"></a>实现细节</h3><p><strong>1. 适应度分配</strong><br>对于两个个体。如果他们都是可行的，就考虑函数值。如果都是不可行的，就考虑约束违反程度，其中，上层问题只考虑上层约束和上层函数，不考虑下层是否最优<br><strong>2. 遗传操作</strong><br>上层的遗传操作只涉及上层的变量，下层的遗传操作只涉及下层的变量，利用亲本交叉(PCX)和多项式突变来产生后代：<br>使用三个父代产生一个子代，大致思想是保留三个父代中最优父代的大部分信息，少部分其他父代的信息，具体计算方式见论文6.3<br><strong>3.下层问题的优化</strong><br>如果问题是凸的，使用SQP，否则使用进化算法<br><strong>4.$\varphi $映射实现细节</strong><br>对于子代$(x_u^{(j)},x_l^{(j)})$，将给定的上层变量$x_u^{(j)}$固定为$x_u$,解以下问题得到$x_l$<br>$$<br>\begin{aligned}<br>&amp;\min _{x_l} \hat{F}(x_u, x_l) \\<br>&amp;\text { subject to } \\<br>&amp;\hat{f}(x_u, x_l) \leq \hat{\varphi}(x_u) \\<br>&amp;\hat{g}_j(x_u, x_l) \leq 0, j&#x3D;1, \ldots, J \\<br>&amp;\hat{G}_k(x_u, x_l) \leq 0, k&#x3D;1, \ldots, K .<br>\end{aligned}<br>$$<br>我们对所有的约束条件使用线性逼近，而对其他函数使用二次逼近。<br>其中，$G$为上层约束。$g$为下层约束，帽子是为了和上文区分可以忽略。<br>$$<br>\varphi(x_u)&#x3D;\underset{x_l}{\operatorname{argmin}}{f(x_u, x_l): g_j(x_u, x_l) \leq 0, j&#x3D;1, \ldots, J},<br>$$</p>
 <blockquote>
 <p>$\varphi $映射通过二次逼近得到的是一个最小的目标函数值，为了满足$x_l$的最优条件$\hat{f}(x_u, x_l)$和$\hat{\varphi}(x_u)$理论上应取等号，可能是考虑到等式约束不好处理，加上$\hat{\varphi}(x_u)$只是近似最优，所以才统一成不等关系。</p>
 </blockquote>
-<p><strong>5. 局部搜索</strong><br>该算法在每k代之后都进行局部搜索，</p>
+<h2 id="代码链接"><a href="#代码链接" class="headerlink" title="代码链接"></a>代码链接</h2><p><a target="_blank" rel="noopener" href="https://github.com/ankurzing/bleaq2">https://github.com/ankurzing/bleaq2</a></p>
 
         </div>
         
@@ -444,10 +458,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2022-11-28T22:41:04+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2022-11-29T09:32:39+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>last updated at Nov 28, 2022</p>
+    <p>last updated at Nov 29, 2022</p>
   </a>
 </div>
 
@@ -695,7 +709,7 @@
 </header>
 
     <div class='content pure'>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E7%BD%AE%E7%90%86%E8%AE%BA"><span class="toc-text">前置理论</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Psi-%E6%98%A0%E5%B0%84%E5%92%8C-varphi-%E6%98%A0%E5%B0%84"><span class="toc-text">$\Psi $映射和$\varphi $映射</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8C%E5%B1%82%E8%A7%84%E5%88%92%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-text">双层规划的定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Psi-%E6%98%A0%E5%B0%84%E5%92%8C-varphi-%E7%9A%84%E4%BC%B0%E8%AE%A1"><span class="toc-text">$\Psi $映射和$\varphi $的估计</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#BLEAQ2%E7%AE%97%E6%B3%95"><span class="toc-text">BLEAQ2算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%97%E6%B3%95%E6%B5%81%E7%A8%8B"><span class="toc-text">算法流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0%E7%BB%86%E8%8A%82"><span class="toc-text">实现细节</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E7%BD%AE%E7%90%86%E8%AE%BA"><span class="toc-text">前置理论</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Psi-%E6%98%A0%E5%B0%84%E5%92%8C-varphi-%E6%98%A0%E5%B0%84"><span class="toc-text">$\Psi $映射和$\varphi $映射</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8C%E5%B1%82%E8%A7%84%E5%88%92%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-text">双层规划的定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Psi-%E6%98%A0%E5%B0%84%E5%92%8C-varphi-%E7%9A%84%E4%BC%B0%E8%AE%A1"><span class="toc-text">$\Psi $映射和$\varphi $的估计</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A1%BA%E5%BA%8F%E4%BA%8C%E6%AC%A1%E8%A7%84%E5%88%92SQP"><span class="toc-text">顺序二次规划SQP</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#BLEAQ2%E7%AE%97%E6%B3%95"><span class="toc-text">BLEAQ2算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%97%E6%B3%95%E6%B5%81%E7%A8%8B"><span class="toc-text">算法流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0%E7%BB%86%E8%8A%82"><span class="toc-text">实现细节</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E9%93%BE%E6%8E%A5"><span class="toc-text">代码链接</span></a></li></ol>
     </div>
   </section>
 
