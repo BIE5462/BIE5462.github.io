@@ -423,7 +423,7 @@
 </ul>
 <p><strong>3. 后代更新</strong><br>对于上一步产生的每个子代子代$x_u \in {P_{off}}$，使用以下策略之一<strong>更新下层变量</strong>$x_l^{(j)}$，然后更新种群</p>
 <ul>
-<li>优化：如果$P$中被标记为1的成员少于一半(即超过一半的下层问题没有达到最优)，则使用SQP等方法对下层问题进行完全优化,对优化成功的标记为1存入存档$A$.</li>
+<li>优化：如果$P$中被标记为1的成员少于一半(即超过一半的下层问题没有完全优化)，则使用SQP等方法对下层问题进行完全优化,对优化成功的标记为1存入存档$A$.</li>
 <li>近似：如果$P$中被标记为1的成员大于一半，对与每个后代$(x_u^{(j)},x_l^{(j)}) \in {P_{off}}$使用他在存档A的相邻成员使用$\Psi $映射和$\varphi $映射构造一个局部二次逼近，比较两个映射近似值的均方误差：<ul>
 <li>如果$\Psi $映射的误差更小，则得到下层问题最优解$x_l^{(j)} &#x3D; q\Psi (x_u^{(j)})$</li>
 <li>如果$\varphi $映射的误差更小，固定上层变量解$\varphi $映射辅助优化问题得到$x_l^{(j)}$，具体见下文$\varphi $映射实现细节。<blockquote>
@@ -458,7 +458,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2022-11-29T09:32:39+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2022-11-29T09:34:16+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
     <p>last updated at Nov 29, 2022</p>
